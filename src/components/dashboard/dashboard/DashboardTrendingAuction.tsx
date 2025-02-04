@@ -1,5 +1,6 @@
 
 'use client'
+import Image from "next/image";
 
 import React from 'react';
 import live_actions from '@/data/live-auction';
@@ -19,7 +20,7 @@ const DashboardTrendingAuction = () => {
         <div className="card border-0 shadow-sm">
           <div className="card-body p-4">
             <div className="d-flex align-items-center mb-3">
-              <img className="me-1" src="/assets/img/core-img/fire2.png" alt="" />
+              <Image layout="fill" className="me-1" src="/assets/img/core-img/fire2.png" alt="" />
               <h5 className="mb-0">Trending Auctions</h5>
             </div>
             <Swiper
@@ -57,9 +58,9 @@ const DashboardTrendingAuction = () => {
                   <div className="nft-card card border-0 bg-gray">
                     <div className="card-body">
                       <div className="img-wrap">
-                        <img src={item.image} alt="" />
+                        <Image layout="fill" src={item.image} alt="" />
                         <div className={`badge bg-${item.badgeInfo[0].color} position-absolute`}>
-                          <img src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
+                          <Image layout="fill" src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
                         
                         <div className="dropdown">
                           <button className="btn dropdown-toggle rounded-pill shadow-sm" id="dropdownqc22" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="bi bi-three-dots-vertical"></i></button>
@@ -86,7 +87,7 @@ const DashboardTrendingAuction = () => {
                         <div className="col-8">
                           <div className="name-info d-flex align-items-center">
                             <div className="author-img position-relative">
-                              <img className="shadow" src={item.authorAvater} alt="" />
+                              <Image layout="fill" className="shadow" src={item.authorAvater} alt="" />
                               <i className="bi bi-check position-absolute bg-success"></i>
                               </div>
                             <div className="name-author">

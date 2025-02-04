@@ -1,5 +1,6 @@
 import todays_data from "@/data/todays-drop";
 import top_buyer from "@/data/top-buyer";
+import Image from "next/image";
 import top_seller from "@/data/top-seller";
 import Link from "next/link";
 import React from "react";
@@ -20,7 +21,7 @@ const TopSellerHomeOne = () => {
 										<div className="row align-items-center g-3">
 											<div className="col-4">
 												<div className="img-wrap">
-													<img src={item.image} alt="" />
+													<Image layout="fill" src={item.image} alt="" />
 													<div className="badge bg-danger position-absolute px-2 py-1">
 														# {item.id}
 													</div>
@@ -30,7 +31,7 @@ const TopSellerHomeOne = () => {
 												<div className="meta-info">
 													<div className="name-info d-flex align-items-center mb-3">
 														<div className="author-img position-relative">
-															<img
+															<Image layout="fill"
 																className="shadow"
 																src={item.authorAvater}
 																alt=""
@@ -67,7 +68,7 @@ const TopSellerHomeOne = () => {
 															href="#"
 															style={{color: '#8084AE'}}
 														>
-															<img
+															<Image layout="fill"
 																className="me-1"
 																src="/assets/img/core-img/fire.png"
 																alt=""
@@ -104,7 +105,7 @@ const TopSellerHomeOne = () => {
 										<div className="row align-items-center g-3">
 											<div className="col-4">
 												<div className="img-wrap">
-													<img src={item.authorAvater} alt="" />
+													<Image layout="fill" src={item.authorAvater} alt="" />
 													<div className="badge bg-danger position-absolute px-2 py-1">
 														# {item.id}
 													</div>
@@ -169,7 +170,7 @@ const TopSellerHomeOne = () => {
 										<div className="row align-items-center g-3">
 											<div className="col-4">
 												<div className="img-wrap">
-													<img src={item.authorAvater} alt="" />
+													<Image layout="fill" src={item.authorAvater} alt="" />
 													<div className="badge bg-danger position-absolute px-2 py-1">
 														# {item.id}
 													</div>

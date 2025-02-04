@@ -16,9 +16,6 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 
 
 const HomeOne = () => {
-	if (typeof window !== "undefined") {
-		require("bootstrap/dist/js/bootstrap");
-	}
 	return (
 		<>
 			<ScrollToTop />

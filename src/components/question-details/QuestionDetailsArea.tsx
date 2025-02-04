@@ -1,5 +1,6 @@
 
 
+import Image from "next/image";
 import React from 'react';
 import Link from 'next/link';
 import help_all_questions from '@/data/help-all-questions';
@@ -16,7 +17,7 @@ const QuestionDetailsArea = () => {
               <h2 className="mb-4 fw-bold display-6">How can I stay safe and protect my NFTs?</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt fuga officia optio vero possimus molestiae voluptatibus nemo assumenda dolores veritatis consequatur provident error suscipit officiis, quo, ut corrupti sequi quos!</p>
               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, deleniti expedita, obcaecati repudiandae, saepe quibusdam unde officia tenetur mollitia commodi illo non voluptas consequuntur quod dolorem itaque esse exercitationem ab?</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe deleniti dignissimos vitae neque velit porro sunt ratione enim. Cupiditate corrupti consequatur officiis quae, ducimus sint ipsum quod! Porro, distinctio obcaecati!</p><img className="my-3 rounded" src="/assets/img/bg-img/44.jpg" alt="" data-action="zoom" />
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe deleniti dignissimos vitae neque velit porro sunt ratione enim. Cupiditate corrupti consequatur officiis quae, ducimus sint ipsum quod! Porro, distinctio obcaecati!</p><Image layout="fill" className="my-3 rounded" src="/assets/img/bg-img/44.jpg" alt="" data-action="zoom" />
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ipsum porro facere praesentium dolorum nesciunt ratione error omnis, corrupti saepe aspernatur. Cum quia corrupti quasi, fuga ipsa iste ab possimus.</p>
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur quibusdam, nisi blanditiis dolore suscipit molestiae dicta. Rem unde deserunt ratione iste, ex, perferendis odio voluptates aliquam, tempore debitis quos sed.</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo cum, quam, odit distinctio nesciunt aliquid mollitia soluta consectetur assumenda fugiat non doloribus? Perspiciatis harum, excepturi sequi facilis beatae nostrum vitae.</p>

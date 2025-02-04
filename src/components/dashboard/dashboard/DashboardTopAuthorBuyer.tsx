@@ -1,5 +1,6 @@
 
 'use client'
+import Image from "next/image";
 
 import React from 'react';
 import { Autoplay } from 'swiper/modules';
@@ -58,7 +59,7 @@ const DashboardTopAuthorBuyer = () => {
               className="top-authors-slide">
                 {slideData.map((item, i) => (
                   <SwiperSlide key={i}>
-                    <a href="#"><img src={item} alt="rk_theme" /></a>
+                    <a href="#"><Image layout="fill" src={item} alt="rk_theme" /></a>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -103,7 +104,7 @@ const DashboardTopAuthorBuyer = () => {
                className="top-buyer-slide">
                 {slideData.map((item, i) => (
                   <SwiperSlide key={i}>
-                    <a href="#"><img src={item} alt="rk_theme" /></a>
+                    <a href="#"><Image layout="fill" src={item} alt="rk_theme" /></a>
                   </SwiperSlide>
                 ))}
               </Swiper>

@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from "next/image";
 import React from 'react';
 
 const wallet_data = [
@@ -49,7 +50,7 @@ const MyWalletArea = () => {
               <div className="card wallet-card shadow-sm">
                 <div className="card-body px-4 text-center">
                   <div className="d-flex align-items-center">
-                    <div className="img-wrap"><img src="/assets/img/bg-img/metamask.png" alt="" /></div>
+                    <div className="img-wrap"><Image layout="fill" src="/assets/img/bg-img/metamask.png" alt="" /></div>
                     <h4 className="mb-0 me-3">Metamask</h4><a className="btn btn-sm btn-danger rounded-pill ms-auto" href="#">Change</a>
                   </div>
                 </div>
@@ -70,7 +71,7 @@ const MyWalletArea = () => {
                   <div className="card-body px-4">
                     <div className="d-flex align-items-center">
                       <div className="img-wrap">
-                        <img src={item.image} alt="" />
+                        <Image layout="fill" src={item.image} alt="" />
                       </div>
                       <h4 className="mb-0 me-3">{item.name}
                         <span className="badge bg-danger rounded-pill align-top fz-12 ms-1">{item.badgeText}</span>

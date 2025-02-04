@@ -3,6 +3,7 @@
 
 import discover_data from '@/data/discover-nft';
 import Link from 'next/link';
+import Image from "next/image";
 import React, { useState } from 'react';
 
 // data
@@ -85,15 +86,15 @@ const DiscoverHomeOne = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="row g-4 funto-collection-filter-list">
+              <div className="row g-4 kooponcraft-collection-filter-list">
 
                 {items.slice(0, next).map((item, index) => (
                    <div key={index} className="col-12 col-sm-6 col-lg-4 col-xl-3 list-item cards">
                    <div className="nft-card card shadow-sm">
                      <div className="card-body">
-                       <div className="img-wrap"><img src={item.image} alt="" />
+                       <div className="img-wrap"><Image layout="fill" src={item.image} alt="" />
  
-                         <div className="badge bg-primary position-absolute"><img src="/assets/img/core-img/fire.png" alt="" />Featured</div>
+                         <div className="badge bg-primary position-absolute"><Image layout="fill" src="/assets/img/core-img/fire.png" alt="" />Featured</div>
  
                          <div className="dropdown">
                            <button 
@@ -133,7 +134,7 @@ const DiscoverHomeOne = () => {
                          <div className="col-8">
                            <div className="name-info d-flex align-items-center">
                              <div className="author-img position-relative">
-                              <img className="shadow" src={item.authorAvater} alt="" />
+                              <Image layout="fill" className="shadow" src={item.authorAvater} alt="" />
                               <i className="bi bi-check position-absolute bg-success"></i>
                               </div>
                              <div className="name-author">

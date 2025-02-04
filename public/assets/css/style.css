@@ -1,7 +1,7 @@
 /*
 [Master Stylesheet]
 
-Template Name: Funto - HTML NFT Marketplace
+Template Name: Kooponcraft - HTML NFT Marketplace
 Template Author: Designing World
 Template Author URL: https://themeforest.net/user/designing-world
 Version: 1.2.0
@@ -615,7 +615,7 @@ table {
           transform: translateY(100px);
 }
 
-.funto-pagination .page-item .page-link {
+.kooponcraft-pagination .page-item .page-link {
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
@@ -629,7 +629,7 @@ table {
   color: #1f0757;
   background-color: #efeffd;
 }
-.funto-pagination .page-item.active .page-link {
+.kooponcraft-pagination .page-item.active .page-link {
   background-color: #0d6efd;
   color: #ffffff;
   font-weight: 700;
@@ -2566,7 +2566,7 @@ img.zoom-img {
   display: block;
 }
 
-.funto-error-area {
+.kooponcraft-error-area {
   margin-top: 80px;
 }
 
@@ -2997,11 +2997,11 @@ textarea.form-control {
 [data-theme=dark] .dashboard-header .menu-toggler {
   border-color: rgba(194, 212, 248, 0.2);
 }
-[data-theme=dark] .funto-pagination .page-item .page-link {
+[data-theme=dark] .kooponcraft-pagination .page-item .page-link {
   color: #ffffff;
   background-color: #0C153B;
 }
-[data-theme=dark] .funto-pagination .page-item.active .page-link {
+[data-theme=dark] .kooponcraft-pagination .page-item.active .page-link {
   background-color: #0d6efd;
   color: #ffffff;
 }

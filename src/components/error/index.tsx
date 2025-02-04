@@ -1,5 +1,6 @@
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import Breadcrumb from "../common/Breadcrumb";
 import Divider from "../common/Divider";
@@ -10,11 +11,11 @@ const Error = () => {
 		<>
     <HeaderOne />
     <Breadcrumb title="Error" subtitle="Error" />
-			<div className="funto-error-area text-center pt-120">
+			<div className="kooponcraft-error-area text-center pt-120">
 				<div className="container">
 					<div className="row justify-content-center">
 						<div className="col-12 col-sm-10 col-md-9 col-lg-6">
-							<img
+							<Image layout="fill"
 								className="mb-5"
 								src="/assets/img/illustrator/6.png"
 								alt=""

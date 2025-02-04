@@ -2,7 +2,7 @@ import CreateNew from "@/components/create-new";
 import React from "react";
 
 export const metadata = {
-	title: "Funto Create New - Next js NFT Marketplace",
+	title: "Kooponcraft Create New - Next js NFT Marketplace",
 };
 
 const index = () => {

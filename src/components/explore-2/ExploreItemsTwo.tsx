@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import discover_data from '@/data/discover-nft';
 import NiceSelect from '@/ui/NiceSelect';
 import Link from 'next/link';
@@ -157,11 +158,11 @@ const ExploreItemsTwo = () => {
 										<div className="nft-card card shadow-sm">
 											<div className="card-body">
 												<div className="img-wrap">
-													<img src={item.image} alt="" />
+													<Image layout="fill" src={item.image} alt="" />
 
 													{item.badgeInfo[0]?.icon && (
 														<div className="badge bg-primary position-absolute">
-															<img src={item.badgeInfo[0]?.icon} alt="" />
+															<Image layout="fill" src={item.badgeInfo[0]?.icon} alt="" />
 															{item.badgeInfo[0]?.text}
 														</div>
 													)}
@@ -230,7 +231,7 @@ const ExploreItemsTwo = () => {
 													<div className="col-8">
 														<div className="name-info d-flex align-items-center">
 															<div className="author-img position-relative">
-																<img
+																<Image layout="fill"
 																	className="shadow"
 																	src={item.authorAvater}
 																	alt=""

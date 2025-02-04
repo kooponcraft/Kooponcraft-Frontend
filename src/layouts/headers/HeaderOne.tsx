@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import UseSticky from '@/hooks/UseSticky';
 import Link from 'next/link';
 import NavMenu from './NavMenu';
@@ -29,10 +30,6 @@ const HeaderOne = () => {
     };
   }, [handleResize]);
 
-  if(typeof window !== 'undefined') {
-    require('bootstrap/dist/js/bootstrap');
-  }
-
 
   return (
     <>
@@ -42,19 +39,19 @@ const HeaderOne = () => {
           <div className="container">
 
             <Link className="navbar-brand" href="/">
-              <img className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
-              <img className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
+              <Image layout="fill" className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
+              <Image layout="fill" className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
 
             </Link>
 
-            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#funtoNav" aria-controls="funtoNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
+            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kooponcraftNav" aria-controls="kooponcraftNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
             </button>
             {openMenu && 
             <MobileMenus openMenu={openMenu} setOpenMenu={setOpenMenu} />
             }
 
 
-            <div className="collapse navbar-collapse d-none d-xl-block" id="funtoNav">
+            <div className="collapse navbar-collapse d-none d-xl-block" id="kooponcraftNav">
               <NavMenu />
 
               <div className="header-meta d-flex align-items-center ms-lg-auto">

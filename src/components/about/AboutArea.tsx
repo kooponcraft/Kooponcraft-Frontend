@@ -1,4 +1,5 @@
 import about_data from "@/data/about-card";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -43,7 +44,7 @@ const AboutArea = () => {
 							</a>
 						</div>
 						<div className="col-12 col-lg-5">
-							<img
+							<Image layout="fill"
 								className="rounded"
 								src="/assets/img/illustrator/4.png"
 								alt=""
@@ -68,7 +69,7 @@ const AboutArea = () => {
 									data-aos-duration="750"
 									data-aos-delay="600"
 								>
-									Resources for getting started with Funto.
+									Resources for getting started with Kooponcraft.
 								</h2>
 							</div>
 							<div className="col-12 col-md-4 col-lg-3">
@@ -92,7 +93,7 @@ const AboutArea = () => {
 				<div className="container">
 					<div className="row g-4 g-xl-5 align-items-center justify-content-between">
 						<div className="col-12 col-lg-5">
-							<img
+							<Image layout="fill"
 								className="rounded"
 								src="/assets/img/illustrator/4.png"
 								alt=""

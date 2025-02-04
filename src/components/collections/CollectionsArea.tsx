@@ -1,5 +1,6 @@
 'use client'
 import collection_data from '@/data/collection';
+import Image from "next/image";
 import React, { useState } from 'react';
 
 const CollectionsArea = () => {
@@ -28,12 +29,12 @@ const CollectionsArea = () => {
 
                 <div className="row gx-1">
                         <div className="col-6">
-                            <img className="rounded" src={item.firstImage} alt={item.name} />
-                            <img className="rounded" src={item.thirdImage} alt={item.name} />
+                            <Image layout="fill" className="rounded" src={item.firstImage} alt={item.name} />
+                            <Image layout="fill" className="rounded" src={item.thirdImage} alt={item.name} />
                         </div>
                         <div className="col-6">
-                            <img className="rounded" src={item.secondImage} alt={item.name} />
-                            <img className="rounded" src={item.fourthImage} alt={item.name} />
+                            <Image layout="fill" className="rounded" src={item.secondImage} alt={item.name} />
+                            <Image layout="fill" className="rounded" src={item.fourthImage} alt={item.name} />
                         </div>
                     </div>
 
