@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "next": "^15.1.6",
+    "react": "19",
+    "react-apexcharts": "^1.4.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "19",
+    "react-intersection-observer": "^9.10.2",
+    "react-timer-hook": "^3.0.7",
+    "react-use": "^17.5.0",
+    "sass": "^1.83.4",
+    "swiper": "^11.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "19",
+    "@types/react-dom": "19",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5"
+  }
+}

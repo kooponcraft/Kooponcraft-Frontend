@@ -1,0 +1,20 @@
+.cta-text {
+    border-radius: .75rem;
+
+    h2 {
+        font-size: 1.5rem;
+        color: $white;
+
+        @media #{$breakpoint-sm} {
+            font-size: 1.75rem;
+        }
+
+        @media #{$breakpoint-md} {
+            font-size: 2rem;
+        }
+
+        @media #{$breakpoint-xl} {
+            font-size: 2.5rem;
+        }
+    }
+}

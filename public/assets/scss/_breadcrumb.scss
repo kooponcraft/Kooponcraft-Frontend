@@ -1,0 +1,66 @@
+.breadcrumb-wrapper {
+    margin-top: 67px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $border;
+
+    @media #{$breakpoint-lg} {
+        margin-top: 80px;
+        padding-top: 50px;
+        padding-bottom: 35px;
+    }
+
+    .breadcrumb-title {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+
+        @media #{$breakpoint-md} {
+            font-size: 1.5rem;
+        }
+
+        @media #{$breakpoint-lg} {
+            font-size: 1.75rem;
+        }
+    }
+
+    .breadcrumb-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb {
+        padding: 0;
+        background-color: transparent;
+
+        .breadcrumb-item {
+            line-height: 1;
+            font-weight: 700;
+            color: $heading;
+
+            a {
+                font-size: 1rem;
+                color: $heading;
+                line-height: 1;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            &.active {
+                color: $primary;
+            }
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: $heading;
+            content: "\f285";
+            font-family: bootstrap-icons !important;
+            font-size: .75rem;
+            position: relative;
+            top: 3px;
+        }
+    }
+}

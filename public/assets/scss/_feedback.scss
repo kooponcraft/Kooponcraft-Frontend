@@ -1,0 +1,38 @@
+.feedback-card {
+    background-color: $gray;
+    border: 0 !important;
+
+    .client-info {
+        .client-thumb {
+            flex: 0 0 40px;
+            max-width: 40px;
+            width: 40px;
+        }
+    }
+
+    .ratings>i {
+        margin-right: 0.125rem;
+    }
+}
+
+.client-feedback-content {
+    .tns-nav {
+        margin-top: 1rem;
+        text-align: center;
+
+        button {
+            transition-duration: 300ms;
+            border: 0;
+            outline: none;
+            width: .875rem;
+            height: .5rem;
+            background-color: $gray;
+            margin: 0 .25rem;
+            border-radius: .25rem;
+
+            &.tns-nav-active {
+                background-color: $primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.welcome-area {
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+
+    @media #{$breakpoint-lg} {
+        margin-top: 80px;
+    }
+
+    .welcome-content {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+
+            @media #{$breakpoint-sm} {
+                font-size: 2.625rem;
+            }
+
+            @media #{$breakpoint-lg} {
+                font-size: 3rem;
+            }
+
+            @media #{$breakpoint-xl} {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+
+            @media #{$breakpoint-lg} {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
