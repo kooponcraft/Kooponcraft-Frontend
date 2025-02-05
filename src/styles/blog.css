@@ -1,0 +1,128 @@
+.blog-card .img-wrap {
+    border-radius: .75rem;
+}
+
+.blog-card .img-wrap img {
+    border-radius: .75rem;
+}
+
+.blog-card .post-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.blog-card p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.popular-blog {
+    margin-bottom: 2rem;
+}
+
+.popular-blog:last-child {
+    margin-bottom: 0;
+}
+
+.popular-blog .post-title {
+    display: flex;
+}
+
+.popular-blog .post-title h5 {
+    transition-duration: 400ms;
+}
+
+.popular-blog .post-title span {
+    margin-top: .5rem;
+    border-radius: .5rem;
+    flex: 0 0 2.5rem;
+    max-width: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    background-color: var(--color-warning);
+    margin-right: 1rem;
+    display: inline-block;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.blog-details-wrap img {
+    border-radius: .75rem;
+}
+
+.comment-wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.comment-wrapper .comment-content {
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.comment-wrapper .comment-content .comment-author {
+    flex: 0 0 48px;
+    width: 48px;
+    max-width: 48px;
+    margin-right: 1rem;
+    border-radius: 50%;
+    height: 48px;
+}
+
+.comment-wrapper .comment-content .comment-author img {
+    border-radius: 50%;
+}
+
+.comment-wrapper .comment-content .comment-meta {
+    border-left: 1px solid var(--color-border);
+    padding-left: 1rem;
+}
+
+.comment-wrapper .comment-content .comment-meta p {
+    font-size: 18px;
+    margin-bottom: 0.25rem;
+}
+
+.comment-wrapper .comment-content .comment-meta .author {
+    display: block;
+    font-size: 16px;
+    margin-bottom: .5rem;
+}
+
+.comment-wrapper .comment-content .comment-meta a.like,
+.comment-wrapper .comment-content .comment-meta a.reply {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-right: .5rem;
+    font-size: 14px;
+}
+
+.comment-wrapper .comment-content .comment-meta a.like i,
+.comment-wrapper .comment-content .comment-meta a.reply i {
+    margin-right: 0.25rem;
+}
+
+.comment-wrapper .comment-content .comment-meta a.like:focus,
+.comment-wrapper .comment-content .comment-meta a.like:hover,
+.comment-wrapper .comment-content .comment-meta a.reply:focus,
+.comment-wrapper .comment-content .comment-meta a.reply:hover {
+    color: var(--color-primary);
+}
+
+.comment-wrapper .children {
+    margin-left: 50px;
+}
+
+.comment-wrapper .children .single-comment:last-of-type {
+    margin-bottom: 0;
+}

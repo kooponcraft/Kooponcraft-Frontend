@@ -2,7 +2,7 @@ import React from "react";
 import HomeOne from "@/components/homes/home";
 
 export const metadata = {
-	title: "Kooponcraft",
+	title: "Kooponcraft - NFT Marketplace",
 };
 
 const index = () => {

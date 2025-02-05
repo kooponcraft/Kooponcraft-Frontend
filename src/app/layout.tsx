@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import "../styles/index.scss";
+import "@/styles/globals.css";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}`,
     title: "Kooponcraft - NFT Martketplace",
     // description: "Elevate your learning, Elevate your GPA",
-    siteName: "NFT Marketplace",
+    siteName: "Kooponcraft",
     images: [
       {
         url: "/favicon.ico",
