@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React from "react";
 
 const footer_content = {
@@ -104,7 +104,7 @@ const FooterOne = () => {
 				className="footer-area pb-120 pt-120"
 				style={{ backgroundImage: `url(/assets/img/bg-img/1.jpg)` }}
 			>
-				<Image layout="fill"
+				<AppImage
 					className="footer-bg-shape"
 					src="/assets/img/core-img/shape1.png"
 					alt=""
@@ -117,12 +117,12 @@ const FooterOne = () => {
 						<div className="col-12 col-lg-5">
 							<div className="footer-widget-area mb-70 pe-lg-4 pe-xl-5 me-lg-4 me-xl-5 border-end">
 								<Link className="d-block mb-4" href="/">
-									<Image layout="fill"
+									<AppImage
 										className="light-logo"
 										src="/assets/img/core-img/logo.png"
 										alt=""
 									/>
-									<Image layout="fill"
+									<AppImage
 										className="dark-logo"
 										src="/assets/img/core-img/logo-white.png"
 										alt=""
@@ -146,7 +146,7 @@ const FooterOne = () => {
 										data-bs-placement="top"
 										title="Facbook"
 									>
-										<Image layout="fill"
+										<AppImage
 											src="/assets/img/core-img/icons8-facebook.svg"
 											alt=""
 										/>
@@ -158,7 +158,7 @@ const FooterOne = () => {
 										data-bs-placement="top"
 										title="Twitter"
 									>
-										<Image layout="fill" src="/assets/img/core-img/icons8-twitter.svg" alt="" />
+										<AppImage src="/assets/img/core-img/icons8-twitter.svg" alt="" />
 									</a>
 									<a
 										href="https://instagram.com"
@@ -167,7 +167,7 @@ const FooterOne = () => {
 										data-bs-placement="top"
 										title="Instagram"
 									>
-										<Image layout="fill"
+										<AppImage
 											src="/assets/img/core-img/icons8-instagram.svg"
 											alt=""
 										/>
@@ -179,7 +179,7 @@ const FooterOne = () => {
 										data-bs-placement="top"
 										title="Slack"
 									>
-										<Image layout="fill" src="/assets/img/core-img/icons8-slack.svg" alt="" />
+										<AppImage src="/assets/img/core-img/icons8-slack.svg" alt="" />
 									</a>
 									<a
 										href="https://youtube.com"
@@ -188,7 +188,7 @@ const FooterOne = () => {
 										data-bs-placement="top"
 										title="Youtube"
 									>
-										<Image layout="fill" src="/assets/img/core-img/icons8-player.svg" alt="" />
+										<AppImage src="/assets/img/core-img/icons8-player.svg" alt="" />
 									</a>
 								</div>
 

@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import React, { useState } from 'react';
 import discover_data from '@/data/discover-nft';
@@ -122,7 +122,7 @@ const DiscoverHomeTwo = () => {
               <div key={i} className="col-12 col-sm-6 col-lg-4 col-xl-3">
                 <div className="nft-card card border-0">
                   <div className="card-body">
-                    <div className="img-wrap"><Image layout="fill" src={item.image} alt="" />
+                    <div className="img-wrap"><AppImage src={item.image} alt="" />
 
 
                       <div className="dropdown">
@@ -159,7 +159,7 @@ const DiscoverHomeTwo = () => {
                       <div className="col-8">
                         <div className="name-info d-flex align-items-center">
                           <div className="author-img position-relative">
-                            <Image layout="fill" className="shadow" src={item.authorAvater} alt="" />
+                            <AppImage className="shadow" src={item.authorAvater} alt="" />
                             <i className="bi bi-check position-absolute bg-success"></i></div>
                           <div className="name-author"><Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Monkey Arts #114">{item.title}</Link>
                             <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>

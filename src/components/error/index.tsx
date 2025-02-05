@@ -1,6 +1,6 @@
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React from "react";
 import Breadcrumb from "../common/Breadcrumb";
 import Divider from "../common/Divider";
@@ -15,7 +15,7 @@ const Error = () => {
 				<div className="container">
 					<div className="row justify-content-center">
 						<div className="col-12 col-sm-10 col-md-9 col-lg-6">
-							<Image layout="fill"
+							<AppImage
 								className="mb-5"
 								src="/assets/img/illustrator/6.png"
 								alt=""

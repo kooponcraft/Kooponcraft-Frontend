@@ -1,6 +1,6 @@
 'use client'
 import live_actions from '@/data/live-auction';
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -39,10 +39,10 @@ const LiveBiddingArea = () => {
             <div key={i} className="col-12 col-sm-6 col-lg-4 col-xl-3">
             <div className="nft-card card shadow-sm">
               <div className="card-body">
-                <div className="img-wrap"><Image layout="fill" src={item.image} alt="" />
+                <div className="img-wrap"><AppImage src={item.image} alt="" />
                   
                   <div className={`badge bg-${item.badgeInfo[0].color} position-absolute`}>
-                    <Image layout="fill" src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
+                    <AppImage src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
                   
                     <div className="dropdown">
 											<button
@@ -110,7 +110,7 @@ const LiveBiddingArea = () => {
                   <div className="col-8">
                     <div className="name-info d-flex align-items-center">
                       <div className="author-img position-relative">
-												<Image layout="fill" className="shadow" src={item.authorAvater} alt="" />
+												<AppImage className="shadow" src={item.authorAvater} alt="" />
 												<i className="bi bi-check position-absolute bg-success"></i>
 												</div>
                       <div className="name-author"><Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Fancy Car">{item.title}</Link><Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>

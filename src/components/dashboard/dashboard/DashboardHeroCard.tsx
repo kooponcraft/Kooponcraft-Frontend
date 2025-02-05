@@ -1,6 +1,6 @@
 import React from "react";
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 const DashboardHeroCard = () => {
 	return (
 		<>

@@ -1,7 +1,7 @@
 import collection_data from "@/data/collection";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 const CollectionHomeOne = () => {
 	return (
@@ -32,24 +32,24 @@ const CollectionHomeOne = () => {
 									<div className="card-body">
 										<div className="row g-1">
 											<div className="col-6">
-												<Image layout="fill"
+												<AppImage
 													className="rounded"
 													src={item.firstImage}
 													alt={item.name}
 												/>
-												<Image layout="fill"
+												<AppImage
 													className="rounded"
 													src={item.thirdImage}
 													alt={item.name}
 												/>
 											</div>
 											<div className="col-6">
-												<Image layout="fill"
+												<AppImage
 													className="rounded"
 													src={item.secondImage}
 													alt={item.name}
 												/>
-												<Image layout="fill"
+												<AppImage
 													className="rounded"
 													src={item.fourthImage}
 													alt={item.name}

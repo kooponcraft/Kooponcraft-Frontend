@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import Link from 'next/link';
 import React from 'react';
@@ -24,7 +24,7 @@ const ItemDetailsArea = () => {
           <div className="modal-content">
             <div className="modal-body p-4 text-center">
               <h4 className="mb-4" id="shareModalLabel">Share this item</h4>
-              <div className="d-flex align-items-center justify-content-center"><a className="mx-2" href="#"><Image layout="fill" src="/assets/img/core-img/icons8-facebook.svg" alt="" /></a><a className="mx-2" href="#"><Image layout="fill" src="/assets/img/core-img/icons8-twitter.svg" alt="" /></a><a className="mx-2" href="#"><Image layout="fill" src="/assets/img/core-img/icons8-instagram.svg" alt="" /></a><a className="mx-2" href="#"><Image layout="fill" src="/assets/img/core-img/icons8-slack.svg" alt="" /></a><a className="mx-2" href="#"><Image layout="fill" src="/assets/img/core-img/icons8-player.svg" alt="" /></a></div>
+              <div className="d-flex align-items-center justify-content-center"><a className="mx-2" href="#"><AppImage src="/assets/img/core-img/icons8-facebook.svg" alt="" /></a><a className="mx-2" href="#"><AppImage src="/assets/img/core-img/icons8-twitter.svg" alt="" /></a><a className="mx-2" href="#"><AppImage src="/assets/img/core-img/icons8-instagram.svg" alt="" /></a><a className="mx-2" href="#"><AppImage src="/assets/img/core-img/icons8-slack.svg" alt="" /></a><a className="mx-2" href="#"><AppImage src="/assets/img/core-img/icons8-player.svg" alt="" /></a></div>
               <button className="btn btn-danger btn-sm rounded-pill mt-4" type="button" data-bs-dismiss="modal" aria-label="Close"><i className="me-1 bi bi-x-lg"></i>Close</button>
             </div>
           </div>
@@ -64,7 +64,7 @@ const ItemDetailsArea = () => {
         <div className="container">
           <div className="row g-4 g-lg-5 justify-content-center">
             <div className="col-12 col-md-12 col-lg-6">
-              <div className="item-big-thumb"><Image layout="fill" src="/assets/img/bg-img/4.jpg" alt="" data-action="zoom" /></div>
+              <div className="item-big-thumb"><AppImage src="/assets/img/bg-img/4.jpg" alt="" data-action="zoom" /></div>
             </div>
 
             <div className="col-12 col-md-9 col-lg-6">
@@ -86,7 +86,7 @@ const ItemDetailsArea = () => {
                 </div>
                 <h2 className="my-3">Diamond Horse Animals #47</h2>
                 <div className="d-flex align-items-center mb-4">
-                  <div className="author-img position-relative me-3"><Image layout="fill" className="shadow" src="/assets/img/bg-img/u3.jpg" alt="" /><i className="bi bi-check position-absolute bg-primary"></i></div>
+                  <div className="author-img position-relative me-3"><AppImage className="shadow" src="/assets/img/bg-img/u3.jpg" alt="" /><i className="bi bi-check position-absolute bg-primary"></i></div>
                   <div className="name-author"><span className="d-block fz-14">Created by</span><a className="author d-block fz-16 hover-primary text-truncate" href="#">@creative_world</a></div>
                 </div>
                 <div className="border-top w-75 mb-4"></div>
@@ -100,7 +100,7 @@ const ItemDetailsArea = () => {
                     <p className="mb-2">Floor price</p>
                     <h5 className="text-center mb-0 border border-2 px-3 py-2 border-primary d-inline-block rounded text-primary w-100">7.803 ETH </h5>
                   </div>
-                  <div className="col-6 col-sm-4 col-lg-5"><a className="btn btn-primary rounded-pill w-100" href="#"><Image layout="fill" className="me-1" src="/assets/img/core-img/fire.png" alt="" />Place a bid</a></div>
+                  <div className="col-6 col-sm-4 col-lg-5"><a className="btn btn-primary rounded-pill w-100" href="#"><AppImage className="me-1" src="/assets/img/core-img/fire.png" alt="" />Place a bid</a></div>
                 </div>
                 <div className="border-top w-75 my-4"></div>
                 <div className="short-description">
@@ -147,30 +147,30 @@ const ItemDetailsArea = () => {
                       <table className="table mb-0">
                         <tbody>
                           <tr>
-                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <Image layout="fill" className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</Link></th>
+                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</Link></th>
                             <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
-                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><Image layout="fill" className="rounded-pill me-1" src="/assets/img/bg-img/u1.jpg" alt="" />@creative_art</Link></td>
+                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><AppImage className="rounded-pill me-1" src="/assets/img/bg-img/u1.jpg" alt="" />@creative_art</Link></td>
                             <td><i className="bi bi-cart"></i>Sales</td>
                             <td><i className="bi bi-clock"></i>29 min ago</td>
                           </tr>
                           <tr>
-                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <Image layout="fill" className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</Link></th>
+                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</Link></th>
                             <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
-                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><Image layout="fill" className="rounded-pill me-1" src="/assets/img/bg-img/u2.jpg" alt="" />@designing_world</Link></td>
+                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><AppImage className="rounded-pill me-1" src="/assets/img/bg-img/u2.jpg" alt="" />@designing_world</Link></td>
                             <td><i className="bi bi-percent"></i>Offer</td>
                             <td><i className="bi bi-clock"></i>1h ago</td>
                           </tr>
                           <tr>
-                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <Image layout="fill" className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</Link></th>
+                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <AppImage className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</Link></th>
                             <td> <span className="d-inline-block fw-bold fz-14">0.105 ETH</span></td>
-                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><Image layout="fill" className="rounded-pill me-1" src="/assets/img/bg-img/u3.jpg" alt="" />@art_world</Link></td>
+                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><AppImage className="rounded-pill me-1" src="/assets/img/bg-img/u3.jpg" alt="" />@art_world</Link></td>
                             <td><i className="bi bi-patch-exclamation"></i>Alert</td>
                             <td><i className="bi bi-clock"></i>2h ago</td>
                           </tr>
                           <tr>
-                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <Image layout="fill" className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</Link></th>
+                            <th scope="row"><Link className="btn btn-minimal text-dark hover-primary" href="/item-details"> <AppImage className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</Link></th>
                             <td> <span className="d-inline-block fw-bold fz-14">0.95 ETH</span></td>
-                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><Image layout="fill" className="rounded-pill me-1" src="/assets/img/bg-img/u4.jpg" alt="" />@fancy_car</Link></td>
+                            <td><Link className="btn btn-minimal text-dark hover-primary" href="/author"><AppImage className="rounded-pill me-1" src="/assets/img/bg-img/u4.jpg" alt="" />@fancy_car</Link></td>
                             <td><i className="bi bi-cart"></i>Sales</td>
                             <td><i className="bi bi-clock"></i>3h ago</td>
                           </tr>

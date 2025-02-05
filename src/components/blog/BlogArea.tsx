@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import blog_data from '@/data/blog-list';
 import Link from 'next/link';
@@ -32,7 +32,7 @@ const BlogArea = () => {
                     <div className="card blog-card border-0 bg-transparent bg-transparent">
                       <div className="img-wrap">
                         <Link href="/blog-details">
-                          <Image layout="fill" src={item.image} alt="" />
+                          <AppImage src={item.image} alt="" />
                         </Link>
                       </div>
                       <div className="card-body p-3">

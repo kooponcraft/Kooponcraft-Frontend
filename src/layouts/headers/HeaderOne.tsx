@@ -1,14 +1,11 @@
 'use client'
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import UseSticky from '@/hooks/UseSticky';
 import Link from 'next/link';
 import NavMenu from './NavMenu';
 import MobileMenus from './mobile-menus';
 import React, { useCallback, useEffect, useState } from 'react';
-
-import light_logo from "/assets/img/core-img/logo.png";
-import dark_logo from "/assets/img/core-img/logo-white.png";
 
 
 const HeaderOne = () => {
@@ -30,7 +27,6 @@ const HeaderOne = () => {
     };
   }, [handleResize]);
 
-
   return (
     <>
 
@@ -39,8 +35,8 @@ const HeaderOne = () => {
           <div className="container">
 
             <Link className="navbar-brand" href="/">
-              <Image layout="fill" className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
-              <Image layout="fill" className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
+              <AppImage className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
+              <AppImage className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
 
             </Link>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 
 import active_data from "@/data/activity-data";
@@ -72,7 +72,7 @@ const ActivityArea = () => {
 												className="btn btn-minimal text-dark hover-primary"
 												href="/item-details"
 											>
-												<Image layout="fill" className="rounded me-1" src={item.img} alt="" />
+												<AppImage className="rounded me-1" src={item.img} alt="" />
 												{item.item}
 											</Link>
 										</th>
@@ -87,7 +87,7 @@ const ActivityArea = () => {
 												className="btn btn-minimal text-dark hover-primary"
 												href="/author"
 											>
-												<Image layout="fill"
+												<AppImage
 													className="rounded-pill me-1"
 													src={item.authorImg}
 													alt=""

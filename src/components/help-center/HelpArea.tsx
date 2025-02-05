@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React from "react";
 
 const catagoriesLists = [
@@ -59,7 +59,7 @@ const HelpArea = () => {
 								<div className="card support-catagory-card shadow-sm text-center">
 									<div className="card-body py-5 px-4">
 										<Link className="d-block" href="/help-questions">
-											<Image layout="fill" className="mb-4" src={item.icon} alt="" />
+											<AppImage className="mb-4" src={item.icon} alt="" />
 											<h6 className="mb-1">{item.title}</h6>
 											<span>{item.quantity} Resources</span>
 										</Link>

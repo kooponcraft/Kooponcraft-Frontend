@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -34,9 +34,9 @@ const DashboardFeaturedCard = () => {
                 <div key={i} className="col-12 col-sm-6 col-xl-4">
                   <div className="nft-card card featured-card border-0 bg-gray">
                     <div className="img-wrap">
-                      <Image layout="fill" src={item.image} alt="" />
+                      <AppImage src={item.image} alt="" />
                       <div className="badge bg-primary position-absolute">
-                        <Image layout="fill" src={item.badgeIcon} alt="" />{item.badgeText}</div> 
+                        <AppImage src={item.badgeIcon} alt="" />{item.badgeText}</div> 
                       <div className="dropdown">                    
                     <button 
                     onClick={() => handleActive(item.id)}
@@ -71,7 +71,7 @@ const DashboardFeaturedCard = () => {
                         <div className="col-8">
                           <div className="name-info d-flex align-items-center">
                             <div className="author-img position-relative">
-                              <Image layout="fill" className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
+                              <AppImage className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
                             <div className="name-author">
                               <Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Cowboy Riding Bull Nature">{item.title}</Link><Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>
                           </div>

@@ -1,6 +1,6 @@
 
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 'use client'
 
 import collection_data from '@/data/collection';
@@ -39,12 +39,12 @@ const MyCollectionArea = () => {
                   <div className="card-body">
                     <div className="row gx-1">
                       <div className="col-6">
-                        <Image layout="fill" className="rounded" src={elem.firstImage} alt={elem.name} />
-                        <Image layout="fill" className="rounded" src={elem.thirdImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.firstImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.thirdImage} alt={elem.name} />
                       </div>
                       <div className="col-6">
-                        <Image layout="fill" className="rounded" src={elem.secondImage} alt={elem.name} />
-                        <Image layout="fill" className="rounded" src={elem.fourthImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.secondImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.fourthImage} alt={elem.name} />
                       </div>
                     </div>
 

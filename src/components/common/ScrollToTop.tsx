@@ -1,6 +1,7 @@
 "use client";
 import UseSticky from "@/hooks/UseSticky";
 import React, { useState, useEffect } from "react";
+import { FaArrowUp } from "react-icons/fa6";
 
 
 const ScrollToTop = () => {
@@ -32,7 +33,7 @@ const ScrollToTop = () => {
 				onClick={scrollTop}
 				className={`${sticky ? "scrolltop-show" : "scrolltop-hide"}`}
 			>
-				<i className="bi bi-arrow-up-short"></i>
+				<FaArrowUp />
 			</div>
 		</>
 	);

@@ -1,6 +1,6 @@
 
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React from 'react';
 import todays_data from '@/data/todays-drop';
 
@@ -18,7 +18,7 @@ const DashboardTodaysPick = () => {
                 <div className="card-body">
                   <div className="row align-items-center g-3">
                     <div className="col-4">
-                      <div className="img-wrap"><Image layout="fill" src={item.authorAvater} alt="" />
+                      <div className="img-wrap"><AppImage src={item.authorAvater} alt="" />
                         <div className="badge bg-danger position-absolute px-2 py-1"># {item.id}</div>
                       </div>
                     </div>

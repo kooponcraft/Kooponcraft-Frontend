@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import React, { useState } from 'react';
 // import Chart from 'react-apexcharts';
@@ -36,7 +36,7 @@ const DashboardPriceHistory = () => {
           <div className="card border-0 shadow-sm">
             <div className="card-body p-4 pb-3">
               <div className="d-flex align-items-center">
-                <Image layout="fill" className="me-1" src="/assets/img/core-img/ethereum.png" alt="" />
+                <AppImage className="me-1" src="/assets/img/core-img/ethereum.png" alt="" />
                 <h5 className="mb-0">Price History</h5>
               </div>
 

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React, { useState } from "react";
 
 const LoginArea = () => {
@@ -81,7 +81,7 @@ const LoginArea = () => {
 
 						<div className="col-12 col-md-6">
 							<div className="register-thumbnail mt-5 mt-md-0">
-								<Image layout="fill" src="/assets/img/illustrator/4.png" alt="" />
+								<AppImage src="/assets/img/illustrator/4.png" alt="" />
 							</div>
 						</div>
 					</div>

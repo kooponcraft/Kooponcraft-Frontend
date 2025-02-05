@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -49,10 +49,10 @@ const LivebidsArea = () => {
               <div key={i} className="col-12 col-sm-6 col-xl-4 col-xxl-3">
                 <div className="nft-card card border-0">
                   <div className="card-body">
-                    <div className="img-wrap"><Image layout="fill" src={item.image} alt="" />
+                    <div className="img-wrap"><AppImage src={item.image} alt="" />
 
                       <div className="badge bg-dark position-absolute">
-                        <Image layout="fill" src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
+                        <AppImage src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
 
 
                       <div className="dropdown">
@@ -91,7 +91,7 @@ const LivebidsArea = () => {
                       <div className="col-8">
                         <div className="name-info d-flex align-items-center">
                           <div className="author-img position-relative">
-                            <Image layout="fill" className="shadow" src={item.authorAvater} alt="" />
+                            <AppImage className="shadow" src={item.authorAvater} alt="" />
                             <i className="bi bi-check position-absolute bg-success"></i>
                           </div>
                           <div className="name-author">

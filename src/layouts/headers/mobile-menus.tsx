@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 // internal  
 import Link from "next/link";
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import menu_data from "./MenuData";
 
 

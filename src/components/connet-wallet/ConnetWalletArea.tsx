@@ -1,6 +1,6 @@
 
 
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import React from 'react';
 
 const conner_data = [
@@ -78,7 +78,7 @@ const ConnetWalletArea = () => {
                   <div className="card-body px-4">
                     <div className="d-flex align-items-center">
                       <div className="img-wrap">
-                        <Image layout="fill" src={item.image} alt="" /></div>
+                        <AppImage src={item.image} alt="" /></div>
                       <h4 className="mb-0 me-3">{item.name}
                       {item.badgeText && 
                         <span className="badge bg-danger rounded-pill align-top fz-12 ms-1">

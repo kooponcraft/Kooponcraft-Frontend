@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 import Link from "next/link";
 import React from "react";
 
@@ -55,7 +55,7 @@ const HeorAreaHomeOne = () => {
 								data-aos-duration="750"
 								data-aos-delay="500"
 							>
-								<Image
+								<AppImage
 									src="/assets/img/illustrator/2.png"
 									width={596}
 									height={100}

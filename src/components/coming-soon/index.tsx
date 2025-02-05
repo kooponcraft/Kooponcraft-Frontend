@@ -1,6 +1,6 @@
 
 'use client'
-import Image from "next/image";
+import AppImage from "@/components/common/AppImage";
 
 import Link from 'next/link';
 import React from 'react';
@@ -17,7 +17,7 @@ const ComingSoon = () => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                <div className="logo mb-5"><Image layout="fill" src="/assets/img/core-img/logo-white.png" alt="" /></div> 
+                <div className="logo mb-5"><AppImage src="/assets/img/core-img/logo-white.png" alt="" /></div> 
 
                  <MyTimer />
 
