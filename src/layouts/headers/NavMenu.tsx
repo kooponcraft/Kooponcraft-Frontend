@@ -4,7 +4,7 @@ import menu_data from "./MenuData";
 const NavMenu = () => {
 	return (
 		<>
-			<ul className="navbar-nav navbar-nav-scroll my-2 my-lg-0">
+			<ul className="navbar-nav navbar-nav-scroll flex lg:flex-row my-2 lg:my-0">
 				{menu_data.map((item, i) => (
 					<li key={i} className={`${item.has_dropdown ? "ft-dd" : ""}`}>
 						<Link href={item.link}>{item.title}</Link>

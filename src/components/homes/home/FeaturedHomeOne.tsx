@@ -6,6 +6,7 @@ import featured_data from "@/data/featured-nft";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
+import { BsArrowLeft, BsArrowRight, BsThreeDotsVertical, BsShare, BsFlag, BsBookmark, BsCheck, BsActivity } from "react-icons/bs";
 
 const FeaturedHomeOne = () => {
 	const [active, setActive] = useState(null);
@@ -21,7 +22,7 @@ const FeaturedHomeOne = () => {
 	return (
 		<>
 			<div className="featured-nfts-wrap">
-				<div className="container">
+				<div className="container mx-auto">
 					<div className="row">
 						<div className="col-12 col-sm-9 col-lg-6">
 							<div className="section-heading">
@@ -30,12 +31,12 @@ const FeaturedHomeOne = () => {
 						</div>
 					</div>
 				</div>
-				<div className="container">
+				<div className="container mx-auto">
 					<div className="row">
 						<div className="col-12">
-							<div className="tns-outer" id="tns1-ow">
+							<div className="relative" id="tns1-ow">
 								<div
-									className="tns-controls"
+									className="absolute inset-0 flex justify-between items-center"
 									aria-label="Carousel Navigation"
 									tabIndex={0}
 								>
@@ -46,7 +47,7 @@ const FeaturedHomeOne = () => {
 										tabIndex={-1}
 										aria-controls="tns1"
 									>
-										<i className="bi bi-arrow-left"></i>
+										<BsArrowLeft />
 									</button>
 									<button
 										className="slide-next"
@@ -55,7 +56,7 @@ const FeaturedHomeOne = () => {
 										tabIndex={-1}
 										aria-controls="tns1"
 									>
-										<i className="bi bi-arrow-right"></i>
+										<BsArrowRight />
 									</button>
 								</div>
 
@@ -97,10 +98,10 @@ const FeaturedHomeOne = () => {
 									{featured_data.map((item, i) => (
 										<SwiperSlide key={i}>
 											<div className="nft-card card featured-card border-0 bg-gray">
-												<div className="img-wrap">
+												<div className="img-wrap relative">
 													<AppImage src={item.image} alt="" />
 													{item.badgeIcon ? (
-														<div className="badge bg-primary position-absolute">
+														<div className="badge bg-primary absolute">
 															<AppImage src={item.badgeIcon} alt="" />
 															{item.badgeText}
 														</div>
@@ -117,7 +118,7 @@ const FeaturedHomeOne = () => {
 															aria-expanded="false"
 															onClick={() => handleActive(item.id)}
 														>
-															<i className="bi bi-three-dots-vertical"></i>
+															<BsThreeDotsVertical />
 														</button>
 
 														<ul
@@ -134,17 +135,17 @@ const FeaturedHomeOne = () => {
 														>
 															<li>
 																<a className="dropdown-item" href="#">
-																	<i className="me-1 bi bi-share"></i>Share
+																	<BsShare className="me-1" />Share
 																</a>
 															</li>
 															<li>
 																<a className="dropdown-item" href="#">
-																	<i className="me-1 bi bi-flag"></i>Report
+																	<BsFlag className="me-1" />Report
 																</a>
 															</li>
 															<li>
 																<a className="dropdown-item" href="#">
-																	<i className="me-1 bi bi-bookmark"></i>
+																	<BsBookmark className="me-1" />
 																	Bookmark
 																</a>
 															</li>
@@ -175,13 +176,13 @@ const FeaturedHomeOne = () => {
 													<div className="row gx-2 align-items-center mt-2">
 														<div className="col-8">
 															<div className="name-info d-flex align-items-center">
-																<div className="author-img position-relative">
+																<div className="author-img relative">
 																	<AppImage
 																		className="shadow"
 																		src={item.authorAvater}
 																		alt=""
 																	/>
-																	<i className="bi bi-check position-absolute bg-success"></i>
+																	<BsCheck className="absolute bg-success" />
 																</div>
 																<div className="name-author">
 																	<Link
@@ -226,7 +227,7 @@ const FeaturedHomeOne = () => {
 																className="btn btn-minimal btn-sm hover-primary"
 																href="/activity"
 															>
-																<i className="bi bi-activity me-1"></i>Activity
+																<BsActivity className="me-1" />Activity
 															</Link>
 														</div>
 													</div>

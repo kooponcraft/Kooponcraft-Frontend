@@ -9,16 +9,8 @@ import ItemDetailsArea from './ItemDetailsArea';
 import FooterOne from '@/layouts/footers/FooterOne';
 import RelatedProjects from '../common/RelatedProjects';
 
- 
 
 const ItemDetails = () => {
-
-  if (typeof window !== "undefined") {
-    require("bootstrap/dist/js/bootstrap");
-  }
-
-  
-
   return (
     <>
     <HeaderOne />

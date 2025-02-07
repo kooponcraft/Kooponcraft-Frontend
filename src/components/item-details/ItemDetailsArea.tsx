@@ -11,11 +11,6 @@ const MyTimer = dynamic(() => import('../common/Timer'), { ssr: false });
 
 const ItemDetailsArea = () => {
 
-  if (typeof window !== "undefined") {
-    require("bootstrap/dist/js/bootstrap");
-  }
-
-
   return (
     <>
 

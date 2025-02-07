@@ -6,7 +6,7 @@ import Link from 'next/link';
 import NavMenu from './NavMenu';
 import MobileMenus from './mobile-menus';
 import React, { useCallback, useEffect, useState } from 'react';
-
+import { BsGrid, BsSearch, BsThreeDots, BsSpeedometer2, BsCollection, BsBell, BsGear } from 'react-icons/bs';
 
 const HeaderOne = () => {
 
@@ -19,7 +19,7 @@ const HeaderOne = () => {
     }
   }, []);
 
-  useEffect(() => { 
+  useEffect(() => {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => {
@@ -32,52 +32,49 @@ const HeaderOne = () => {
 
       <header className={`header-area ${sticky ? 'sticky-on' : ''} ${openMenu? 'mobile-menu-open' : ''}`}>
         <nav className="navbar navbar-expand-lg">
-          <div className="container">
+          <div className="container flex justify-between items-center">
 
             <Link className="navbar-brand" href="/">
               <AppImage className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
               <AppImage className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
-
             </Link>
 
-            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kooponcraftNav" aria-controls="kooponcraftNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
+            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler lg:hidden" type="button" aria-controls="kooponcraftNav" aria-expanded="false" aria-label="Toggle navigation">
+              <BsGrid className="text-xl" />
             </button>
             {openMenu && 
-            <MobileMenus openMenu={openMenu} setOpenMenu={setOpenMenu} />
+              <MobileMenus openMenu={openMenu} setOpenMenu={setOpenMenu} />
             }
 
-
-            <div className="collapse navbar-collapse d-none d-xl-block" id="kooponcraftNav">
+            <div className="hidden xl:flex items-center justify-between w-full" id="kooponcraftNav">
               <NavMenu />
 
-              <div className="header-meta d-flex align-items-center ms-lg-auto">
+              <div className="header-meta flex items-center ml-auto">
 
-                <div className="search-form position-relative d-flex align-items-center">
+                <div className="search-form relative flex items-center">
                   <input className="form-control" type="text" placeholder="Search" />
-                  <button className="position-absolute" type="submit"><i className="bi bi-search"></i></button>
+                  <button className="absolute right-0" type="submit"><BsSearch /></button>
                 </div>
 
-                <div className="user-dropdown dropdown mx-3">
-                  <button className="btn dropdown-toggle user-btn" id="dropdownMenuButton1" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="bi bi-three-dots"></i></button>
-                  <ul className="dropdown-menu mt-3" aria-labelledby="dropdownMenuButton1">
-                    <li><Link className="dropdown-item" href="/dashboard"><i className="me-2 bi bi-speedometer2"></i>Dashboard</Link></li>
-                    <li><Link className="dropdown-item" href="/my-collection"><i className="me-2 bi bi-collection"></i>Collections</Link></li>
-                    <li><Link className="dropdown-item" href="/notifications"><i className="me-2 bi bi-bell"></i>Notifications</Link></li>
-                    <li><Link className="dropdown-item" href="/settings"><i className="me-2 bi bi-gear"></i>Settings</Link></li>
+                <div className="user-dropdown dropdown mx-3 relative">
+                  <button className="btn dropdown-toggle user-btn" id="dropdownMenuButton1" type="button" aria-expanded="false"><BsThreeDots /></button>
+                  <ul className="dropdown-menu mt-3 absolute right-0" aria-labelledby="dropdownMenuButton1">
+                    <li><Link className="dropdown-item flex items-center" href="/dashboard"><BsSpeedometer2 className="mr-2" />Dashboard</Link></li>
+                    <li><Link className="dropdown-item flex items-center" href="/my-collection"><BsCollection className="mr-2" />Collections</Link></li>
+                    <li><Link className="dropdown-item flex items-center" href="/notifications"><BsBell className="mr-2" />Notifications</Link></li>
+                    <li><Link className="dropdown-item flex items-center" href="/settings"><BsGear className="mr-2" />Settings</Link></li>
                   </ul>
                 </div>
 
-                <Link className="btn btn-warning btn-sm rounded-pill" href="/create-new">Create</Link>
+                <Link className="btn btn-warning btn-sm rounded-pill bg-yellow-300" href="/create-new">Create</Link>
 
               </div>
             </div>
-
 
           </div>
         </nav>
       </header>
 
-      
     </>
   );
 };
