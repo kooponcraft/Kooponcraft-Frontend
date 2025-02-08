@@ -1,6 +1,7 @@
 "use client";
 
 
+import AppImage from "@/components/common/AppImage";
 
 import active_data from "@/data/activity-data";
 import NiceSelect from "@/ui/NiceSelect";
@@ -71,7 +72,7 @@ const ActivityArea = () => {
 												className="btn btn-minimal text-dark hover-primary"
 												href="/item-details"
 											>
-												<img className="rounded me-1" src={item.img} alt="" />
+												<AppImage className="rounded me-1" src={item.img} alt="" />
 												{item.item}
 											</Link>
 										</th>
@@ -86,7 +87,7 @@ const ActivityArea = () => {
 												className="btn btn-minimal text-dark hover-primary"
 												href="/author"
 											>
-												<img
+												<AppImage
 													className="rounded-pill me-1"
 													src={item.authorImg}
 													alt=""
@@ -109,7 +110,7 @@ const ActivityArea = () => {
 					</div>
 				</div>
 
-				<div className="kooponcraft-pagination">
+				<div className="funto-pagination">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination justify-content-center mb-0">
 							<li className="page-item active">

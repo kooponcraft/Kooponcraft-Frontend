@@ -131,7 +131,7 @@ const RankingArea = () => {
         </div>
       </div>
       
-      <div className="kooponcraft-pagination">
+      <div className="funto-pagination">
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-center mb-0">
             <li className="page-item active"><a className="page-link" href="#">1</a></li>

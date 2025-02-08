@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import React from 'react';
 
@@ -16,12 +17,12 @@ const ComingSoon = () => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                <div className="logo mb-5"><img src="/assets/img/core-img/logo-white.png" alt="" /></div> 
+                <div className="logo mb-5"><AppImage src="/assets/img/core-img/logo-white.png" alt="" /></div> 
 
                  <MyTimer />
 
                 <h2 className="display-4 mb-4 fw-bold">Coming Soon</h2>
-                <p className="mb-4">Build an excellent NFTs website with Kooponcraft.</p>
+                <p className="mb-4">Build an excellent NFTs website with Funto.</p>
                 <Link className="btn btn-primary btn-sm rounded-pill" href="/">View Status</Link>
               </div>
             </div>

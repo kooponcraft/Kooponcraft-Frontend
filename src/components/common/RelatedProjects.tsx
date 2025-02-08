@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import discover_data from '@/data/discover-nft';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -94,9 +95,9 @@ const RelatedProjects = () => {
 
                   <div className="nft-card card shadow-sm">
                     <div className="card-body">
-                      <div className="img-wrap"><img src={item.image} alt="" />
+                      <div className="img-wrap"><AppImage src={item.image} alt="" />
                         {item.badgeInfo[0].icon &&
-                          <div className="badge bg-primary position-absolute"><img src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
+                          <div className="badge bg-primary position-absolute"><AppImage src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
                         }
 
                         <div className="dropdown">
@@ -130,7 +131,7 @@ const RelatedProjects = () => {
                       <div className="row gx-2 align-items-center mt-2">
                         <div className="col-8">
                           <div className="name-info d-flex align-items-center">
-                            <div className="author-img position-relative"><img className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
+                            <div className="author-img position-relative"><AppImage className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
                             <div className="name-author">
                               <Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Monkey Arts #114">{item.title}</Link>
                               <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>

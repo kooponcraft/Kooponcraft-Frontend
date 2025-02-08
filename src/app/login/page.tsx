@@ -2,7 +2,7 @@ import Login from "@/components/login";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Login - Next js NFT Marketplace",
+	title: "Funto Login - Next js NFT Marketplace",
 };
 
 const index = () => {

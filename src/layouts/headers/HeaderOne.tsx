@@ -8,12 +8,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import light_logo from "/assets/img/core-img/logo.png";
 import dark_logo from "/assets/img/core-img/logo-white.png";
+import AppImage from '@/components/common/AppImage';
 
 
 const HeaderOne = () => {
 
   const {sticky} = UseSticky()
-  const [openMenu, setOpenMenu] = useState(false) 
+  const [openMenu, setOpenMenu] = useState(false)
 
   const handleResize = useCallback(() => {
     if (window.innerWidth <= 990) {
@@ -42,19 +43,19 @@ const HeaderOne = () => {
           <div className="container">
 
             <Link className="navbar-brand" href="/">
-              <img className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
-              <img className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
+              <AppImage className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
+              <AppImage className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
 
             </Link>
 
-            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kooponcraftNav" aria-controls="kooponcraftNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
+            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#funtoNav" aria-controls="funtoNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
             </button>
             {openMenu && 
             <MobileMenus openMenu={openMenu} setOpenMenu={setOpenMenu} />
             }
 
 
-            <div className="collapse navbar-collapse d-none d-xl-block" id="kooponcraftNav">
+            <div className="collapse navbar-collapse d-none d-xl-block" id="funtoNav">
               <NavMenu />
 
               <div className="header-meta d-flex align-items-center ms-lg-auto">

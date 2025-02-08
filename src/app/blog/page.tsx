@@ -2,7 +2,7 @@ import React from "react";
 import Blog from "@/components/blog";
 
 export const metadata = {
-	title: "Kooponcraft Blog - Next js NFT Marketplace",
+	title: "Funto Blog - Next js NFT Marketplace",
 };
 
 const index = () => {

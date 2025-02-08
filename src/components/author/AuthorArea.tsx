@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import React, { useState } from 'react';
 import discover_data from '@/data/discover-nft';
 import Link from 'next/link';
@@ -45,19 +46,19 @@ const AuthorArea = () => {
               <h4 className="mb-4" id="shareModalLabel">Share this author</h4>
               <div className="d-flex align-items-center justify-content-center">
                 <a className="mx-2" href="#">
-                  <img src="/assets/img/core-img/icons8-facebook.svg" alt="" />
+                  <AppImage src="/assets/img/core-img/icons8-facebook.svg" alt="" />
                 </a>
                 <a className="mx-2" href="#">
-                  <img src="/assets/img/core-img/icons8-twitter.svg" alt="" />
+                  <AppImage src="/assets/img/core-img/icons8-twitter.svg" alt="" />
                 </a>
                 <a className="mx-2" href="#">
-                  <img src="/assets/img/core-img/icons8-instagram.svg" alt="" />
+                  <AppImage src="/assets/img/core-img/icons8-instagram.svg" alt="" />
                 </a>
                 <a className="mx-2" href="#">
-                  <img src="/assets/img/core-img/icons8-slack.svg" alt="" />
+                  <AppImage src="/assets/img/core-img/icons8-slack.svg" alt="" />
                 </a>
                 <a className="mx-2" href="#">
-                  <img src="/assets/img/core-img/icons8-player.svg" alt="" />
+                  <AppImage src="/assets/img/core-img/icons8-player.svg" alt="" />
                 </a>
               </div>
               <button className="btn btn-danger btn-sm rounded-pill mt-4" type="button" data-bs-dismiss="modal" aria-label="Close"><i className="me-1 bi bi-x-lg"></i>Close</button>
@@ -101,7 +102,7 @@ const AuthorArea = () => {
             <div className="card-body p-4 p-sm-5">
               <div className="row g-4 g-lg-5 align-items-center">
                 <div className="col-7 col-sm-4 col-lg-3">
-                  <div className="author-thumbnail"><img className="rounded" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-patch-check-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Verified"></i></div>
+                  <div className="author-thumbnail"><AppImage className="rounded" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-patch-check-fill" data-bs-toggle="tooltip" data-bs-placement="top" title="Verified"></i></div>
                 </div>
                 <div className="col-12 col-sm-8 col-lg-9">
                   <div className="author-data">
@@ -172,10 +173,10 @@ const AuthorArea = () => {
                   <div key={i} className="col-12 col-sm-6 col-lg-6">
                     <div className="nft-card card shadow-sm">
                       <div className="card-body">
-                        <div className="img-wrap"><img src={item.image} alt="" />
+                        <div className="img-wrap"><AppImage src={item.image} alt="" />
                           {item.badgeInfo[0].text &&
                             <div className="badge bg-primary position-absolute" >
-                              <img src={item.badgeInfo[0].icon} alt="" />
+                              <AppImage src={item.badgeInfo[0].icon} alt="" />
                               {item.badgeInfo[0].text}
                             </div>
                           } 
@@ -235,7 +236,7 @@ const AuthorArea = () => {
                         <div className="row gx-2 align-items-center mt-2">
                           <div className="col-8">
                             <div className="name-info d-flex align-items-center">
-                              <div className="author-img position-relative"><img className="shadow" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
+                              <div className="author-img position-relative"><AppImage className="shadow" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
                               <div className="name-author"><Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Monkey Arts #114">{item.title}</Link>
                               <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>
                             </div>

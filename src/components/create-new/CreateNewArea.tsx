@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import NiceSelect from '@/ui/NiceSelect';
 import Link from 'next/link';
 import React from 'react';
@@ -141,9 +142,9 @@ const CreateNewArea = () => {
 
               <div className="nft-card card shadow-sm">
                 <div className="card-body">
-                  <div className="img-wrap"><img src="/assets/img/bg-img/17.jpg" alt="" />
+                  <div className="img-wrap"><AppImage src="/assets/img/bg-img/17.jpg" alt="" />
 
-                    <div className="badge bg-dark position-absolute"><img src="/assets/img/core-img/fire.png" alt="" />Hot bid</div>
+                    <div className="badge bg-dark position-absolute"><AppImage src="/assets/img/core-img/fire.png" alt="" />Hot bid</div>
                   </div>
 
                   <div className="row gx-2 align-items-center mt-3">
@@ -156,7 +157,7 @@ const CreateNewArea = () => {
                   <div className="row gx-2 align-items-center mt-2">
                     <div className="col-8">
                       <div className="name-info d-flex align-items-center">
-                        <div className="author-img position-relative"><img className="shadow" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
+                        <div className="author-img position-relative"><AppImage className="shadow" src="/assets/img/bg-img/u1.jpg" alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
                         <div className="name-author"><Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Macaw Bird">Macaw Bird</Link><Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@creative_art</Link></div>
                       </div>
                     </div>

@@ -1,6 +1,7 @@
 
 'use client'
 import Link from 'next/link';
+import AppImage from "@/components/common/AppImage";
 import React from 'react';
 
 const ForgetPasswordArea = () => {
@@ -25,7 +26,7 @@ const ForgetPasswordArea = () => {
             </div>
             <div className="col-12 col-md-6">
               <div className="register-thumbnail mt-5 mt-md-0">
-                <img src="/assets/img/illustrator/4.png" alt="" /></div>
+                <AppImage src="/assets/img/illustrator/4.png" alt="" /></div>
             </div>
           </div>
         </div>

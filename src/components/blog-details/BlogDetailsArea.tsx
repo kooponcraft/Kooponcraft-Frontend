@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import AppImage from "@/components/common/AppImage";
 
 const BlogDetailsArea = () => {
 	return (
@@ -21,7 +22,7 @@ const BlogDetailsArea = () => {
 							<div className="mb-5"></div>
 						</div>
 						<div className="col-12">
-							<img
+							<AppImage
 								className="mb-5"
 								src="/assets/img/bg-img/44.jpg"
 								alt=""
@@ -65,14 +66,14 @@ const BlogDetailsArea = () => {
 						<div className="col-12">
 							<div className="row g-4">
 								<div className="col-6">
-									<img
+									<AppImage
 										src="/assets/img/bg-img/28.jpg"
 										alt=""
 										data-action="zoom"
 									/>
 								</div>
 								<div className="col-6">
-									<img
+									<AppImage
 										src="/assets/img/bg-img/19.jpg"
 										alt=""
 										data-action="zoom"
@@ -120,7 +121,7 @@ const BlogDetailsArea = () => {
 									<li className="single-comment">
 										<div className="comment-content d-flex">
 											<div className="comment-author">
-												<img src="/assets/img/bg-img/u4.jpg" alt="author" />
+												<AppImage src="/assets/img/bg-img/u4.jpg" alt="author" />
 											</div>
 											<div className="comment-meta">
 												<p>
@@ -142,7 +143,7 @@ const BlogDetailsArea = () => {
 											<li className="single-comment">
 												<div className="comment-content d-flex">
 													<div className="comment-author">
-														<img src="/assets/img/bg-img/u2.jpg" alt="author" />
+														<AppImage src="/assets/img/bg-img/u2.jpg" alt="author" />
 													</div>
 													<div className="comment-meta">
 														<p>
@@ -167,7 +168,7 @@ const BlogDetailsArea = () => {
 									<li className="single-comment">
 										<div className="comment-content d-flex">
 											<div className="comment-author">
-												<img src="/assets/img/bg-img/u3.jpg" alt="author" />
+												<AppImage src="/assets/img/bg-img/u3.jpg" alt="author" />
 											</div>
 											<div className="comment-meta">
 												<p>

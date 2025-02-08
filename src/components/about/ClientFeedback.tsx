@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import React from 'react';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -57,7 +58,7 @@ const ClientFeedback = () => {
                     <div className="card-body p-4">
                       <div className="client-info d-flex align-items-center">
                         <div className="client-thumb rounded-circle me-1 position-relative">
-                          <img className="rounded-circle" src={item.image} alt="" />
+                          <AppImage className="rounded-circle" src={item.image} alt="" />
                         </div>
                         <div className="client-name" style={{color: '#8084AE'}}>
                           <h6 className="fz-16 mb-0">{item.name}</h6>

@@ -1,6 +1,7 @@
 "use client";
 
 import featured_data from "@/data/featured-nft";
+import AppImage from "@/components/common/AppImage";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -35,13 +36,13 @@ const FeaturedItemsArea = () => {
 							<div key={i} className="col-12 col-sm-6 col-lg-4 col-xl-3">
 								<div className="nft-card card featured-card border-0 bg-gray">
 									<div className="img-wrap">
-										<img src={item.image} alt="" />
+										<AppImage src={item.image} alt="" />
 
 										{item.badgeIcon && (
 											<div
 												className={`badge bg-${item.badgeColor} position-absolute`}
 											>
-												<img src={item.badgeIcon} alt="" />
+												<AppImage src={item.badgeIcon} alt="" />
 												{item.badgeText}
 											</div>
 										)}
@@ -109,7 +110,7 @@ const FeaturedItemsArea = () => {
 											<div className="col-8">
 												<div className="name-info d-flex align-items-center">
 													<div className="author-img position-relative">
-														<img
+														<AppImage
 															className="shadow"
 															src={item.authorAvater}
 															alt=""

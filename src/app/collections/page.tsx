@@ -2,7 +2,7 @@ import React from "react";
 import Collections from "@/components/collections";
 
 export const metadata = {
-	title: "Kooponcraft Collections - Next js NFT Marketplace",
+	title: "Funto Collections - Next js NFT Marketplace",
 };
 
 const index = () => {

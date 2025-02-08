@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import AppImage from "@/components/common/AppImage";
 import featured_data from "@/data/featured-nft";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -97,10 +98,10 @@ const FeaturedHomeOne = () => {
 										<SwiperSlide key={i}>
 											<div className="nft-card card featured-card border-0 bg-gray">
 												<div className="img-wrap">
-													<img src={item.image} alt="" />
+													<AppImage src={item.image} alt="" />
 													{item.badgeIcon ? (
 														<div className="badge bg-primary position-absolute">
-															<img src={item.badgeIcon} alt="" />
+															<AppImage src={item.badgeIcon} alt="" />
 															{item.badgeText}
 														</div>
 													) : null}
@@ -175,7 +176,7 @@ const FeaturedHomeOne = () => {
 														<div className="col-8">
 															<div className="name-info d-flex align-items-center">
 																<div className="author-img position-relative">
-																	<img
+																	<AppImage
 																		className="shadow"
 																		src={item.authorAvater}
 																		alt=""

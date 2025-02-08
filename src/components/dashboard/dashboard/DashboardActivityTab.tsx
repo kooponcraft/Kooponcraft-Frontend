@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import React from 'react'; 
 
 
@@ -34,37 +35,37 @@ const DashboardActivityTab = () => {
                   <table className="table mb-0">
                     <tbody>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>29 min ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>1h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.105 ETH</span></td>
                         <td><i className="bi bi-patch-exclamation"></i>Alert</td>
                         <td><i className="bi bi-clock"></i>2h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.95 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>3h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>12h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>17h ago</td>
@@ -78,37 +79,37 @@ const DashboardActivityTab = () => {
                   <table className="table mb-0">
                     <tbody>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>29 min ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>1h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.105 ETH</span></td>
                         <td><i className="bi bi-patch-exclamation"></i>Alert</td>
                         <td><i className="bi bi-clock"></i>2h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.95 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>3h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>12h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>17h ago</td>
@@ -122,37 +123,37 @@ const DashboardActivityTab = () => {
                   <table className="table mb-0">
                     <tbody>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>29 min ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>1h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/7.jpg" alt="" />Funny Pigs</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.105 ETH</span></td>
                         <td><i className="bi bi-patch-exclamation"></i>Alert</td>
                         <td><i className="bi bi-clock"></i>2h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/8.jpg" alt="" />Fancy Car 2</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.95 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>3h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/5.jpg" alt="" />NFT Logo</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.235 ETH</span></td>
                         <td><i className="bi bi-cart"></i>Sales</td>
                         <td><i className="bi bi-clock"></i>12h ago</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <img className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
+                        <th scope="row"><a className="btn btn-minimal text-dark hover-primary" href="#"> <AppImage className="rounded me-1" src="/assets/img/bg-img/6.jpg" alt="" />Pixel Art</a></th>
                         <td> <span className="d-inline-block fw-bold fz-14">0.706 ETH</span></td>
                         <td><i className="bi bi-percent"></i>Offer</td>
                         <td><i className="bi bi-clock"></i>17h ago</td>

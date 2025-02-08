@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import React from 'react';
 import popular_data from '@/data/popular-nft'; 
 import Link from 'next/link';
@@ -46,7 +47,7 @@ const PopularCollectionHomeOne = () => {
               <div className="card-body">
                 <div className="row align-items-center g-3">
                   <div className="col-4">
-                    <div className="img-wrap"><img src={item.image} alt="" />
+                    <div className="img-wrap"><AppImage src={item.image} alt="" />
                       <div className="badge bg-danger position-absolute px-2 py-1"># {item.id}</div>
                     </div>
                   </div>
@@ -55,7 +56,7 @@ const PopularCollectionHomeOne = () => {
                     <div className="meta-info">
                       <div className="name-info d-flex align-items-center mb-3">
                         <div className="author-img position-relative">
-                          <img className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
+                          <AppImage className="shadow" src={item.authorAvater} alt="" /><i className="bi bi-check position-absolute bg-success"></i></div>
                         <div className="name-author">
                           <Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Trees Growing Seedlings">{item.title}</Link>
                           <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.authorName}</Link></div>
@@ -63,7 +64,7 @@ const PopularCollectionHomeOne = () => {
                       <div className="price-bid d-flex align-items-center">
                         <div className="price me-2 me-sm-3">
                           <h6 className="mb-0 d-inline-block fz-14 border border-2 border-info rounded py-1 px-2 text-info">{item.currentPrice}</h6>
-                        </div><a className="btn btn-minimal btn-sm hover-primary d-flex align-items-center" href="#"><img className="me-1" src="/assets/img/core-img/fire.png" alt="" />{item.buttonInfo[0].text}</a>
+                        </div><a className="btn btn-minimal btn-sm hover-primary d-flex align-items-center" href="#"><AppImage className="me-1" src="/assets/img/core-img/fire.png" alt="" />{item.buttonInfo[0].text}</a>
                       </div>
                     </div>
                   </div>

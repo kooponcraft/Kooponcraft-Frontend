@@ -1,6 +1,7 @@
 import React from "react";
 
 const AppDownloadHomeTwo = () => {
+import AppImage from "@/components/common/AppImage";
 	return (
 		<>
 			<div className="app-download-wrapper">
@@ -32,7 +33,7 @@ const AppDownloadHomeTwo = () => {
 											data-aos-duration="750"
 											data-aos-delay="500"
 										>
-											<img
+											<AppImage
 												className="p-3 bg-white shadow rounded border w-100"
 												src="/assets/img/core-img/qr-code.svg"
 												alt=""
@@ -48,7 +49,7 @@ const AppDownloadHomeTwo = () => {
 												data-aos-duration="750"
 												data-aos-delay="700"
 											>
-												<img
+												<AppImage
 													src="/assets/img/core-img/google-play.png"
 													alt=""
 												/>
@@ -60,7 +61,7 @@ const AppDownloadHomeTwo = () => {
 												data-aos-duration="750"
 												data-aos-delay="800"
 											>
-												<img src="/assets/img/core-img/app-store.png" alt="" />
+												<AppImage src="/assets/img/core-img/app-store.png" alt="" />
 											</button>
 										</div>
 									</div>
@@ -69,7 +70,7 @@ const AppDownloadHomeTwo = () => {
 						</div>
 						<div className="col-12 col-sm-8 col-lg-6">
 							<div className="download-img">
-								<img src="/assets/img/illustrator/2.png" alt="" />
+								<AppImage src="/assets/img/illustrator/2.png" alt="" />
 							</div>
 						</div>
 					</div>

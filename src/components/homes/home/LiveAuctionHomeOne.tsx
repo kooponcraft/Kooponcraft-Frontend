@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import React, { useState } from 'react';
 import live_actions from '@/data/live-auction';
@@ -49,9 +50,9 @@ const LiveAuctionHomeOne = ({ style_2 }: any) => {
               <div key={i} className="col-12 col-sm-6 col-lg-4 col-xl-3">
                 <div className="nft-card card border-0">
                   <div className="card-body">
-                    <div className="img-wrap"><img src={item.image} alt="" />
+                    <div className="img-wrap"><AppImage src={item.image} alt="" />
                       <div className={`badge bg-${item.badgeInfo[0].color} position-absolute`}>
-                        <img src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
+                        <AppImage src={item.badgeInfo[0].icon} alt="" />{item.badgeInfo[0].text}</div>
                       <div className="dropdown">
 
                         <button
@@ -91,7 +92,7 @@ const LiveAuctionHomeOne = ({ style_2 }: any) => {
                       <div className="col-8">
                         <div className="name-info d-flex align-items-center">
                           <div className="author-img position-relative">
-                            <img className="shadow" src={item.authorAvater} alt="" />
+                            <AppImage className="shadow" src={item.authorAvater} alt="" />
                             <i className="bi bi-check position-absolute bg-success"></i></div>
                           <div className="name-author">
                             <Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title="Fancy Car">{item.title}</Link>

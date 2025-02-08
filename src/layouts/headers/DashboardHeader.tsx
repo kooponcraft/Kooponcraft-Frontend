@@ -1,6 +1,7 @@
 
 'use client'
 
+import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import UseSticky from '@/hooks/UseSticky';
 import React, { useState } from 'react';
@@ -87,7 +88,7 @@ const DashboardHeader = () => {
             <div className="d-flex align-items-center">
 
               <div className="admin-logo me-1 me-sm-3">
-                <img src="/assets/img/core-img/dashboard-logo.png" alt="" />
+                <AppImage src="/assets/img/core-img/dashboard-logo.png" alt="" />
               </div>
 
               <div className="search-form position-relative d-flex align-items-center">
@@ -100,7 +101,7 @@ const DashboardHeader = () => {
 
               <div className="user-dropdown dropdown mx-2 mx-sm-3">
                 <button className="btn dropdown-toggle user-btn" id="dd10" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="/assets/img/core-img/notification.png" alt="" />
+                  <AppImage src="/assets/img/core-img/notification.png" alt="" />
                 </button>
                 <ul className="dropdown-menu noti-dd-menu dropdown-menu-end mt-3" aria-labelledby="dd10">
                   <li><a className="dropdown-item" href="#"><i className="me-2 bi bi-percent"></i>You have an offer!</a></li>
@@ -114,7 +115,7 @@ const DashboardHeader = () => {
               <div className="user-dropdown dropdown">
 
                 <button onClick={handleUserToggle} className={`btn dropdown-toggle user-btn ${userActive ? 'show' : ''}`} id="dd20" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="/assets/img/core-img/user.png" alt="" />
+                  <AppImage src="/assets/img/core-img/user.png" alt="" />
                 </button>
 
                 <ul className={`dropdown-menu dropdown-menu-end mt-3 ${userActive ? 'show' : ''}`} aria-labelledby="dd20">
@@ -144,7 +145,7 @@ const DashboardHeader = () => {
             {/* User Name */}
             <div className="user-name mb-5">
               <div className="d-flex align-items-center">
-                <img src="/assets/img/bg-img/u2.jpg" alt="" />
+                <AppImage src="/assets/img/bg-img/u2.jpg" alt="" />
                 <div className="ms-3">
                   <h6 className="lh-1 text-dark fz-18">{userInfo[0].username}</h6>
                   <span className="badge bg-primary fz-12">{userInfo[0].userType}</span>
@@ -157,7 +158,7 @@ const DashboardHeader = () => {
               <div className="card-body text-center p-4">
                 <h6 className="mb-1">{balanceCard[0].title}</h6>
                 <h5 className="mb-0 text-dark d-flex align-items-center justify-content-center">
-                  <img className="me-1" src={`${balanceCard[0].icon}`} alt="" />
+                  <AppImage className="me-1" src={`${balanceCard[0].icon}`} alt="" />
                   <span className="counter">
                     <Count number={balanceCard[0].balance} /></span>
                   <span className="ms-2">{balanceCard[0].balanceType}</span>

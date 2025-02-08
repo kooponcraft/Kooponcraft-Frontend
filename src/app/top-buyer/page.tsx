@@ -2,7 +2,7 @@ import React from "react";
 import TopBuyer from "@/components/top-buyer";
 
 export const metadata = {
-	title: "Kooponcraft Top Buyer - Next js NFT Marketplace",
+	title: "Funto Top Buyer - Next js NFT Marketplace",
 };
 
 const index = () => {

@@ -1,6 +1,7 @@
 
 
 'use client'
+import AppImage from "@/components/common/AppImage";
 
 import collection_data from '@/data/collection';
 import Link from 'next/link';
@@ -38,12 +39,12 @@ const MyCollectionArea = () => {
                   <div className="card-body">
                     <div className="row gx-1">
                       <div className="col-6">
-                        <img className="rounded" src={elem.firstImage} alt={elem.name} />
-                        <img className="rounded" src={elem.thirdImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.firstImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.thirdImage} alt={elem.name} />
                       </div>
                       <div className="col-6">
-                        <img className="rounded" src={elem.secondImage} alt={elem.name} />
-                        <img className="rounded" src={elem.fourthImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.secondImage} alt={elem.name} />
+                        <AppImage className="rounded" src={elem.fourthImage} alt={elem.name} />
                       </div>
                     </div>
 
