@@ -1,6 +1,14 @@
 
 
-import "../styles/index.scss";
+import "@/styles/index.scss";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kooponcraft",
+  description: "Welcome to Kooponcraft - a gamified NFT marketplace for coupons",
+  keywords: ["coupons", "nfts", "blockchain"],
+  authors: { name: "Kooponcraft Team" },
+}
 
 export default function RootLayout({
   children,
@@ -9,13 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <head> 
-      <link rel="icon" href="favicon.png" sizes="any" />
-      <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-        /> 
-      </head>
       <body  suppressHydrationWarning={true}>{children}</body>
     </html>
   );

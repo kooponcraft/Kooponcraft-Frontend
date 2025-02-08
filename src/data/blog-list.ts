@@ -72,7 +72,7 @@ import AppImage from "@/components/common/AppImage";
 		id: 5,
 		image: "/assets/img/bg-img/13.jpg",
 		largeImage: "/assets/img/bg-img/13.jpg",
-		title: "Funto annual tour 2022 report",
+		title: "Kooponcraft annual tour 2022 report",
 		postDate: "Jun 22, 2022",
 		excerpt:
 			"It is crafted with the latest trend of design with all modern approaches.",
@@ -174,7 +174,7 @@ import AppImage from "@/components/common/AppImage";
 		id: 11,
 		image: "/assets/img/bg-img/13.jpg",
 		largeImage: "/assets/img/bg-img/13.jpg",
-		title: "Funto annual tour 2022 report",
+		title: "Kooponcraft annual tour 2022 report",
 		postDate: "Jun 22, 2022",
 		excerpt:
 			"It is crafted with the latest trend of design with all modern approaches.",

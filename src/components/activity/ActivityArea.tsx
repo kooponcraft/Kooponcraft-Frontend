@@ -110,7 +110,7 @@ const ActivityArea = () => {
 					</div>
 				</div>
 
-				<div className="funto-pagination">
+				<div className="kooponcraft-pagination">
 					<nav aria-label="Page navigation example">
 						<ul className="pagination justify-content-center mb-0">
 							<li className="page-item active">

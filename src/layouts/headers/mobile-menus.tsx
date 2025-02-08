@@ -31,7 +31,7 @@ const MobileMenus = ({ setOpenMenu, openMenu }: any) => {
 
   return (
     <>
-      <div className={`navbar-collapse collapse ${openMenu ? 'show' : ''}`} id="funtoNav">
+      <div className={`navbar-collapse collapse ${openMenu ? 'show' : ''}`} id="kooponcraftNav">
         <ul className="navbar-nav navbar-nav-scroll my-2 my-lg-0">
           {menu_data.map((item, i) => (
             <li key={i} className={`${item.has_dropdown ? 'ft-dd' : ''}`} onClick={() => openMobileMenu(item.title)}>

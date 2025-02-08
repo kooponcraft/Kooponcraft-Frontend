@@ -113,7 +113,7 @@ const ItemDetailsArea = () => {
         </div>
       </div>
       <div className="d-block w-100 mb-70"></div>
-      <div className="funto-tab-area">
+      <div className="kooponcraft-tab-area">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -121,7 +121,7 @@ const ItemDetailsArea = () => {
 
 
 
-                <ul className="nav nav-tabs" id="funtoTab" role="tablist">
+                <ul className="nav nav-tabs" id="kooponcraftTab" role="tablist">
                   <li className="nav-item"><a className="nav-link rounded-pill bg-gradient active" id="tab--1" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Details</a></li>
                   <li className="nav-item"><a className="nav-link rounded-pill bg-gradient" id="tab--2" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Activity</a></li>
                 </ul>

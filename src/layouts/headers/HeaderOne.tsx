@@ -48,14 +48,14 @@ const HeaderOne = () => {
 
             </Link>
 
-            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#funtoNav" aria-controls="funtoNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
+            <button onClick={() => setOpenMenu(!openMenu)} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kooponcraftNav" aria-controls="kooponcraftNav" aria-expanded="false" aria-label="Toggle navigation"><i className="bi bi-grid"></i>
             </button>
             {openMenu && 
             <MobileMenus openMenu={openMenu} setOpenMenu={setOpenMenu} />
             }
 
 
-            <div className="collapse navbar-collapse d-none d-xl-block" id="funtoNav">
+            <div className="collapse navbar-collapse d-none d-xl-block" id="kooponcraftNav">
               <NavMenu />
 
               <div className="header-meta d-flex align-items-center ms-lg-auto">

@@ -1,7 +1,7 @@
 import React from "react";
+import AppImage from "@/components/common/AppImage";
 
 const AppDownloadHomeTwo = () => {
-import AppImage from "@/components/common/AppImage";
 	return (
 		<>
 			<div className="app-download-wrapper">

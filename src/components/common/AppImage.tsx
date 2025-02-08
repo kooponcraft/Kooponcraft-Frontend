@@ -1,3 +1,5 @@
+"use client"
+
 import React, { use } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { useImageSize } from '@/hooks/useImageSize';
