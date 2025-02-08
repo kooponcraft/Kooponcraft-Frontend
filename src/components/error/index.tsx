@@ -10,7 +10,7 @@ const Error = () => {
 		<>
     <HeaderOne />
     <Breadcrumb title="Error" subtitle="Error" />
-			<div className="funto-error-area text-center pt-120">
+			<div className="kooponcraft-error-area text-center pt-120">
 				<div className="container">
 					<div className="row justify-content-center">
 						<div className="col-12 col-sm-10 col-md-9 col-lg-6">

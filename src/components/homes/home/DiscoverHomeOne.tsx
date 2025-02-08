@@ -85,7 +85,7 @@ const DiscoverHomeOne = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="row g-4 funto-collection-filter-list">
+              <div className="row g-4 kooponcraft-collection-filter-list">
 
                 {items.slice(0, next).map((item, index) => (
                    <div key={index} className="col-12 col-sm-6 col-lg-4 col-xl-3 list-item cards">

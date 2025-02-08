@@ -21,7 +21,7 @@ const ComingSoon = () => {
                  <MyTimer />
 
                 <h2 className="display-4 mb-4 fw-bold">Coming Soon</h2>
-                <p className="mb-4">Build an excellent NFTs website with Funto.</p>
+                <p className="mb-4">Build an excellent NFTs website with Kooponcraft.</p>
                 <Link className="btn btn-primary btn-sm rounded-pill" href="/">View Status</Link>
               </div>
             </div>

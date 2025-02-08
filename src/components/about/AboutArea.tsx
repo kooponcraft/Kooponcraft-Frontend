@@ -68,7 +68,7 @@ const AboutArea = () => {
 									data-aos-duration="750"
 									data-aos-delay="600"
 								>
-									Resources for getting started with Funto.
+									Resources for getting started with Kooponcraft.
 								</h2>
 							</div>
 							<div className="col-12 col-md-4 col-lg-3">
