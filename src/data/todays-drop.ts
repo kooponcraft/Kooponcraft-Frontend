@@ -31,7 +31,7 @@ const todays_data = [
 		price: "0.63 ETH",
 		image: "/assets/img/bg-img/8.jpg",
 		badgeColor: "danger",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u2.jpg",
 		authorVerified: "true",
 		buttonText: "Place bid",

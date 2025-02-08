@@ -59,7 +59,7 @@ const DashboardTopAuthorBuyer = () => {
               className="top-authors-slide">
                 {slideData.map((item, i) => (
                   <SwiperSlide key={i}>
-                    <a href="#"><AppImage src={item} alt="rk_theme" /></a>
+                    <a href="#"><AppImage src={item} alt="kooponcraft" /></a>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -104,7 +104,7 @@ const DashboardTopAuthorBuyer = () => {
                className="top-buyer-slide">
                 {slideData.map((item, i) => (
                   <SwiperSlide key={i}>
-                    <a href="#"><AppImage src={item} alt="rk_theme" /></a>
+                    <a href="#"><AppImage src={item} alt="kooponcraft" /></a>
                   </SwiperSlide>
                 ))}
               </Swiper>

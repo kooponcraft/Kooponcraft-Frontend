@@ -38,7 +38,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -365,7 +365,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -692,7 +692,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1346,7 +1346,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1673,7 +1673,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -2000,7 +2000,7 @@ const discover_data = [
 				icon: "bi-arrow-up",
 			},
 		],
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [

@@ -10,6 +10,39 @@ export const metadata: Metadata = {
   description: "Welcome to Kooponcraft - a gamified NFT marketplace for coupons",
   keywords: ["coupons", "nfts", "blockchain"],
   authors: { name: "Kooponcraft Team" },
+  icons: {
+    icon: [
+      {
+        url: "assets/img/favicon_io/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/assets/img/favicon_io/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    apple: [
+      {
+        url: "/assets/img/favicon_io/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+    other: [
+      {
+        url: "/assets/img/favicon_io/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/assets/img/favicon_io/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     url: `${baseUrl}`,
@@ -18,17 +51,17 @@ export const metadata: Metadata = {
     siteName: "Kooponcraft",
     images: [
       {
-        url: "/full_logo.png",
+        url: "/assets/img/KooponCraft Logo (1)/1.png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: `${baseUrl}`,
-    creator: "@BemdooMaor",
+    creator: "@kooponcraft",
     title: "Kooponcraft - NFT Marketplace",
     description: "Welcome to Kooponcraft - a gamified NFT marketplace for coupons",
-    images: "/full_logo.png",
+    images: "/assets/img/KooponCraft Logo (1)/1.png",
   },
 }
 

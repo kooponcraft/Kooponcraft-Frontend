@@ -42,7 +42,7 @@ const HeaderOne = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
 
-            <Link className="navbar-brand" href="/">
+            <Link className="navbar-brand" style={{width: "170px"}} href="/">
               <AppImage className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
               <AppImage className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
 

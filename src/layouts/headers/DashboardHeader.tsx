@@ -88,7 +88,7 @@ const DashboardHeader = () => {
             <div className="d-flex align-items-center">
 
               <div className="admin-logo me-1 me-sm-3">
-                <AppImage src="/assets/img/core-img/dashboard-logo.png" alt="" />
+                <AppImage src="/assets/img/core-img/dashboard-logo.png" style={{width: "100px", height: "70px"}} alt="" />
               </div>
 
               <div className="search-form position-relative d-flex align-items-center">
@@ -194,10 +194,7 @@ const DashboardHeader = () => {
             <div className="mt-5" />
             {/* Copyright Text */}
             <div className="copywrite-text mt-4">
-              <p className="mb-0 fz-14">{new Date().getFullYear()} © All rights reserved by
-                <a className="fz-14 ms-1" rel="noreferrer"
-                  href="https://themeforest.net/user/rk_theme/portfolio" target="_blank">rk_theme</a>
-              </p>
+              <p className="mb-0 fz-14">{new Date().getFullYear()} © All rights reserved Kooponcraft</p>
             </div>
           </div>
 

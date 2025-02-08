@@ -129,7 +129,7 @@ const BlogDetailsArea = () => {
 													good work! The best on the net!
 												</p>
 												<a className="author" href="#">
-													@rk_theme
+													@kooponcraft
 												</a>
 												<a className="like" href="#">
 													<i className="bi bi-heart-fill"></i>Like

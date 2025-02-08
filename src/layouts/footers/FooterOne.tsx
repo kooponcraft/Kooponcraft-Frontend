@@ -236,11 +236,11 @@ const FooterOne = () => {
 							<p className="mb-0">
 								{new Date().getFullYear()} &copy; All rights reserved by{" "}
 								<a
-									href="https://themeforest.net/user/rk_theme/portfolio"
+									href="https://themeforest.net/user/kooponcraft/portfolio"
 									target="_blank"
 									rel="noreferrer"
 								>
-									rk_theme
+									kooponcraft
 								</a>
 							</p>
 						</div>

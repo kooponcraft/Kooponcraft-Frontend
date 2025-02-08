@@ -29,7 +29,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.061 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -122,7 +122,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.78 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u2.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -215,7 +215,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 1.065 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -301,7 +301,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.98 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -394,7 +394,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.061 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -487,7 +487,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.78 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u2.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -580,7 +580,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 1.065 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -666,7 +666,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.98 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -759,7 +759,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.061 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -852,7 +852,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.78 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u2.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -945,7 +945,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 1.065 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1031,7 +1031,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.98 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1124,7 +1124,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.061 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u1.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1217,7 +1217,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.78 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u2.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1310,7 +1310,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 1.065 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u3.jpg",
 		authorVerified: "true",
 		buttonGroup: [
@@ -1396,7 +1396,7 @@ const featured_data = [
 		],
 		topLevelText: "Hightest bid 0.98 ETH",
 		topLevelIcon: "bi-arrow-up",
-		authorName: "rk_theme",
+		authorName: "kooponcraft",
 		authorAvater: "/assets/img/bg-img/u4.jpg",
 		authorVerified: "true",
 		buttonGroup: [
