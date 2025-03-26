@@ -1,7 +1,8 @@
+import { getUser } from "@/lib/auth/getUser";
 import Link from "next/link";
 import React from "react";
 
-const HeroAreaHomeTwo = () => {
+const HeroAreaHomeTwo = async () => {
 	return (
 		<>
 			<div className="welcome-area pt-120">
@@ -14,7 +15,7 @@ const HeroAreaHomeTwo = () => {
 									data-aos-duration="750"
 									data-aos-delay="300"
 								>
-									Digital arts are trends now. Welcome to the world of NFTs.
+									Revolutionizing the Coupon Industry with NFTs<br /> Welcome to KooponCraft
 								</h2>
 								<p
 									className="mb-4"
@@ -22,9 +23,7 @@ const HeroAreaHomeTwo = () => {
 									data-aos-duration="750"
 									data-aos-delay="500"
 								>
-									It is crafted with the latest trend of design &amp; coded with
-									all modern approaches. Its a robust &amp; multi-dimensional
-									usable template.
+									Imagine you get a coupon for a free cup of coffee. With KooponCraft, you could redeem that for your drink—or, if coffee isn't your thing, you could sell it to someone else who really wants it. The possibilities are endless.
 								</p>
 								<Link
 									className="btn btn-primary rounded-pill"
