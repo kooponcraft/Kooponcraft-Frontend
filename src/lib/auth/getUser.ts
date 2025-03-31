@@ -12,7 +12,7 @@ export async function getUser() {
         });
         return response.data.user;
     } catch (error: unknown) {
-        console.error('Error fetching user:', error);
-        return {success: false};
+        // console.error('Error fetching user:', error);
+        return null;
     }
 }
