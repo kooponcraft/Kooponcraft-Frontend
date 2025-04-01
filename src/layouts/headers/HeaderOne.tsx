@@ -109,7 +109,7 @@ const HeaderOne = () => {
                         <AppImage src='/assets/img/core-img/coins.png' alt='coins image' width={40} height={40} />
                       </div>
                       <button
-                        className="btn btn-danger btn-sm rounded-pill"
+                        className="btn btn-danger btn-sm rounded-pill ms-2"
                         onClick={logout}
                       >
                           Logout
