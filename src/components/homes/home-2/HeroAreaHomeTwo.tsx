@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const HeroAreaHomeTwo = async () => {
+	const user = await getUser()
 	return (
 		<>
 			<div className="welcome-area pt-120">
@@ -26,14 +27,19 @@ const HeroAreaHomeTwo = async () => {
 									Imagine you get a coupon for a free cup of coffee. With KooponCraft, you could redeem that for your drink—or, if coffee isn't your thing, you could sell it to someone else who really wants it. The possibilities are endless.
 								</p>
 								<Link
-									className="btn btn-primary rounded-pill"
-									href="/collections"
+									className={`btn ${ user ? "btn-primary" : "btn-warning" } rounded-pill`}
+									href={user ? "/collections" : "/register"}
 									data-aos="fade-up"
 									data-aos-duration="750"
 									data-aos-delay="800"
 								>
-									<i className="me-2 bi bi-grid-3x3-gap"></i>View All
-									Collections
+									{
+										user ? (
+											<>
+												<i className="me-2 bi bi-grid-3x3-gap"></i>View All Collections
+											</>
+										)	: "Get Started"
+									}
 								</Link>
 							</div>
 						</div>
