@@ -1,7 +1,9 @@
+"use server"
+
 import appAxios from '@/config/axios';
 import { cookies } from 'next/headers';
 
-export async function getUser() {
+export async function getUser(): Promise<User | null> {
     const token = (await cookies()).get("token")?.value;
 
     try {

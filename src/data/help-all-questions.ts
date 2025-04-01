@@ -1,7 +1,6 @@
 const help_all_questions = [
 	{
 		id: 1,
-import AppImage from "@/components/common/AppImage";
 		catagory: "licenses",
 		question: "How do I create an account?",
 		answer: [
