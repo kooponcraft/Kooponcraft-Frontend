@@ -1,7 +1,6 @@
 import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import React from 'react';
-import live_actions from '@/data/live-auction';
 import { getAllCoupons } from "@/lib/getAllCoupons";
 
 const TrendingInStores = async () => {
@@ -30,7 +29,7 @@ const TrendingInStores = async () => {
               <div key={i} className="col-12 col-sm-6 col-lg-4 col-xl-3">
                 <div className="nft-card card border-0">
                   <div className="card-body">
-                    <div className="img-wrap" style={{ height: 200 }}><AppImage src={item.tokenImageUrl} className="w-100 h-100" alt="" />
+                    <div className="img-wrap" style={{ height: 200 }}><AppImage src={item.tokenImageUrl} className="object-fit-cover w-100 h-100" alt="" />
                       <div className={`badge bg-primary position-absolute`}>
                         <AppImage src="/assets/img/core-img/fire.png" alt="" />Featured</div>
                     </div>
