@@ -8,7 +8,7 @@ import FooterOne from "@/layouts/footers/FooterOne";
 import ProcessHomeOne from "../home/ProcessHomeOne";
 import AppDownloadHomeTwo from "./AppDownloadHomeTwo";
 import TopSellerHomeOne from "../home/TopSellerHomeOne";
-import LiveAuctionHomeOne from "../home/LiveAuctionHomeOne";
+import TrendingInStores from "../home/TrendingInStores";
 import PopularCollectionHomeOne from "../home/PopularCollectionHomeOne";
 import ScrollToTop from "@/components/common/ScrollToTop";
 
@@ -19,7 +19,7 @@ const HomeTwo = () => {
 			<HeaderOne />
 			<HeroAreaHomeTwo />
 			<Divider />
-			<LiveAuctionHomeOne style_2={true} />
+			<TrendingInStores />
 			<Divider />
 			<ProcessHomeOne />
 			<Divider />

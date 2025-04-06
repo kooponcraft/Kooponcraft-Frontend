@@ -118,7 +118,7 @@ const HeaderOne = () => {
                   ) : (
                     <>
                       <Link className="btn btn-outline-warning btn-sm rounded-pill" href="/login">Login</Link>
-                      <Link className="btn btn-warning btn-sm rounded-pill ms-2" href="/register">Get Started</Link>
+                      <Link className="btn btn-warning btn-sm rounded-pill ms-2" href="/register" style={{ textWrap: "nowrap" }}>Get Started</Link>
                     </>
                   )
 

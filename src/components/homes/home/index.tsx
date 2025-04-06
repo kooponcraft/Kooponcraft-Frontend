@@ -5,7 +5,7 @@ import HeorAreaHomeOne from "./HeorAreaHomeOne";
 import FeaturedHomeOne from "./FeaturedHomeOne";
 import TopSellerHomeOne from "./TopSellerHomeOne";
 import HeaderOne from "@/layouts/headers/HeaderOne";
-import LiveAuctionHomeOne from "./LiveAuctionHomeOne";
+import LiveAuctionHomeOne from "./TrendingInStores";
 import Divider from "@/components/common/Divider";
 import DiscoverHomeOne from "./DiscoverHomeOne";
 import PopularCollectionHomeOne from "./PopularCollectionHomeOne";
