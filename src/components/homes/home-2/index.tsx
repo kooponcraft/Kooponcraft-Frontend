@@ -12,6 +12,7 @@ import TrendingInStores from "../home/TrendingInStores";
 import PopularCollectionHomeOne from "../home/PopularCollectionHomeOne";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import ExploreCategeries from "./ExploreCategeries";
+import RareToken from "./RareToken";
 
 const HomeTwo = () => {
 	return (
@@ -23,6 +24,8 @@ const HomeTwo = () => {
 			<TrendingInStores />
 			<Divider />
 			<ExploreCategeries />
+			<Divider />
+			<RareToken />
 			<Divider />
 			<ProcessHomeOne />
 			<Divider />
