@@ -49,7 +49,7 @@ const ExploreCategeries = () => {
                 <div className="col-12 col-md-10 col-lg-4" key={id}>
                     <div className="catagory-card card shadow-sm h-100">
                     <div className="card-body">
-                        <div className="d-grid gap-1" style={{ gridTemplateColumns: "repeat(2, 1fr)", minHeight: 350 }}>
+                        <div className="d-grid gap-1" style={{ gridTemplateColumns: "repeat(2, 1fr)", minHeight: 365 }}>
                             {
                               images.map((image: string, idx: number) => (
                                 <AppImage 
