@@ -6,8 +6,6 @@ import Divider from "@/components/common/Divider";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import FooterOne from "@/layouts/footers/FooterOne";
 import ProcessHomeOne from "../home/ProcessHomeOne";
-import AppDownloadHomeTwo from "./AppDownloadHomeTwo";
-import TopSellerHomeOne from "../home/TopSellerHomeOne";
 import TrendingInStores from "../home/TrendingInStores";
 import TopPerformers from "../home/TopPerformers";
 import ScrollToTop from "@/components/common/ScrollToTop";
