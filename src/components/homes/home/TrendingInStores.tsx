@@ -39,21 +39,17 @@ const TrendingInStores = async () => {
                         <div className="name-info d-flex align-items-center">
                           <div className="author-img position-relative">
                             <AppImage className="shadow" src={item.profileImageUrl || `https://api.dicebear.com/6.x/identicon/svg?seed=${encodeURIComponent(item.ownerName)}`} alt="" />
-                            <i className="bi bi-check position-absolute bg-success"></i></div>
+                            <i className="bi bi-check position-absolute bg-success true"></i></div>
                           <div className="name-author">
                             <Link className="name d-block hover-primary fw-bold text-truncate" href="/item-details" data-bs-toggle="tooltip" data-bs-placement="top" title={item.tokenName}>{item.tokenName}</Link>
-                            <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@ {item.ownerName}</Link></div>
+                            <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@{item.ownerName}</Link></div>
                         </div>
                       </div>
                       <div className="col-4" style={{ color: '#8084AE' }}>
                         <div className="price text-end">
                           <span className="fz-12 d-block">Current Price</span>
                           <h6 className="mb-0">
-                            {new Intl.NumberFormat('en-US', { 
-                              minimumFractionDigits: 2, 
-                              maximumFractionDigits: 2 
-                            }).format(item.finalPriceOfCoupon)}
-                            {" "}UNQ
+                          {item.finalPriceOfCoupon.toFixed(2)} UNQ
                           </h6>
                         </div>
                       </div>

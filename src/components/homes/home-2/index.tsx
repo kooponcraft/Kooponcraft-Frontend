@@ -1,7 +1,7 @@
 import React from "react";
 import CtaHomeTwo from "./CtaHomeTwo";
 import HeroAreaHomeTwo from "./HeroAreaHomeTwo";
-import DiscoverHomeTwo from "./DiscoverHomeTwo";
+import LatestCouponDeals from "./LatestCouponDeals";
 import Divider from "@/components/common/Divider";
 import HeaderOne from "@/layouts/headers/HeaderOne";
 import FooterOne from "@/layouts/footers/FooterOne";
@@ -31,7 +31,7 @@ const HomeTwo = () => {
 			<Divider />
 			<TopPerformers />
 			<Divider />
-			<DiscoverHomeTwo />
+			<LatestCouponDeals />
 			<Divider />
 			<TopSellerHomeOne />
 			<Divider />

@@ -3268,6 +3268,30 @@ textarea.form-control {
   box-shadow: none;
 }
 
+.ribbon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+
+.ribbon {
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  background: #ff6b6b;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
 @media only screen and (min-width:992px) {
   [data-theme=dark] .header-area .navbar-nav li .ft-dd-menu {
     background-color: #0C153B;

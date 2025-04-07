@@ -6,6 +6,6 @@ export async function getAllCoupons(params?: any) {
         return response.data.coupons;
     } catch (error) {
         console.error('Error fetching coupons:', error);
-        return error
+        return []
     }
 }
