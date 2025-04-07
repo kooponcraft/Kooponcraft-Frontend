@@ -9,86 +9,25 @@ const footer_content = {
 			widgetTitle: "Explore",
 			navList: [
 				{
-					text: "Featured Drops",
-					url: "/featured-items",
+					text: "Marketplace",
+					url: "/",
 				},
 				{
-					text: "Live Auctions",
-					url: "/live-bidding",
-				},
-				{
-					text: "Collections",
-					url: "/collections",
-				},
-				{
-					text: "Top Seller",
-					url: "/top-seller",
-				},
-				{
-					text: "Top Buyer",
-					url: "/top-buyer",
-				},
-				{
-					text: "Item Details",
-					url: "/live-bid/1",
+					text: "Help Center",
+					url: "/help-center",
 				},
 			],
 		},
 		{
-			widgetTitle: "Marketplace",
+			widgetTitle: "Shops",
 			navList: [
 				{
-					text: "Art",
-					url: "#",
+					text: "Coupon",
+					url: "/",
 				},
 				{
-					text: "Cards",
-					url: "#",
-				},
-				{
-					text: "Collectibles",
-					url: "#",
-				},
-				{
-					text: "Domain",
-					url: "#",
-				},
-				{
-					text: "Photos",
-					url: "#",
-				},
-				{
-					text: "Sports",
-					url: "#",
-				},
-				{
-					text: "Videos",
-					url: "#",
-				},
-			],
-		},
-		{
-			widgetTitle: "Company",
-			navList: [
-				{
-					text: "Forum",
-					url: "#",
-				},
-				{
-					text: "Licences",
-					url: "#",
-				},
-				{
-					text: "Careers",
-					url: "#",
-				},
-				{
-					text: "Conditions",
-					url: "#",
-				},
-				{
-					text: "Privacy",
-					url: "#",
+					text: "Items",
+					url: "/",
 				},
 			],
 		},
@@ -101,8 +40,7 @@ const FooterOne = () => {
 	return (
 		<>
 			<footer
-				className="footer-area pb-120 pt-120"
-				style={{ backgroundImage: `url(/assets/img/bg-img/1.jpg)` }}
+				className="footer-area pb-120 pt-120 bg-primary"
 			>
 				<AppImage
 					className="footer-bg-shape"
@@ -129,83 +67,33 @@ const FooterOne = () => {
 									/>
 								</Link>
 								<p>
-									It is crafted with the latest trend of design &amp; coded with
-									all modern approaches.
+								We believe in providing an experience, not just a product. The possibilities are endless.
 								</p>
-								<p className="mb-0">
+								{/* <p className="mb-0">
 									Call: +123 456 789 <br /> Email: help@example.com
-								</p>
+								</p> */}
 
 								<h5 className="mt-4 mb-3">Join the community</h5>
                 
 								<div className="footer-social-icon d-flex align-items-center flex-wrap">
-									<a
-										href="https://facebook.com"
-                    target="_blank"
-										data-bs-toggle="tooltip"
-										data-bs-placement="top"
-										title="Facbook"
-									>
-										<AppImage
-											src="/assets/img/core-img/icons8-facebook.svg"
-											alt=""
-										/>
-									</a>
-									<a
-										href="https://twitter.com"
-                    target="_blank"
+									<Link
+										href="https://x.com/kooponcraft"
+                    					target="_blank"
 										data-bs-toggle="tooltip"
 										data-bs-placement="top"
 										title="Twitter"
 									>
 										<AppImage src="/assets/img/core-img/icons8-twitter.svg" alt="" />
-									</a>
-									<a
-										href="https://instagram.com"
-                    target="_blank"
-										data-bs-toggle="tooltip"
-										data-bs-placement="top"
-										title="Instagram"
-									>
-										<AppImage
-											src="/assets/img/core-img/icons8-instagram.svg"
-											alt=""
-										/>
-									</a>
-									<a
-										href="https://slack.com"
-                    target="_blank"
-										data-bs-toggle="tooltip"
-										data-bs-placement="top"
-										title="Slack"
-									>
-										<AppImage src="/assets/img/core-img/icons8-slack.svg" alt="" />
-									</a>
-									<a
-										href="https://youtube.com"
-                    target="_blank"
+									</Link>
+									<Link
+										href="https://youtube.com/@KooponCraft"
+                    					target="_blank"
 										data-bs-toggle="tooltip"
 										data-bs-placement="top"
 										title="Youtube"
 									>
 										<AppImage src="/assets/img/core-img/icons8-player.svg" alt="" />
-									</a>
-								</div>
-
-								<div className="newsletter-form mt-5 me-5">
-									<form
-										className="d-flex align-items-stretch"
-										onSubmit={(e) => e.preventDefault()}
-									>
-										<input
-											className="form-control"
-											type="email"
-											placeholder="Enter email"
-										/>
-										<button className="btn btn-warning px-3" type="submit">
-											Subscribe
-										</button>
-									</form>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -234,14 +122,7 @@ const FooterOne = () => {
 					<div className="copywrite-wrapper d-lg-flex align-items-lg-center justify-content-lg-between">
 						<div className="copywrite-text text-center text-lg-start mb-3 mb-lg-0">
 							<p className="mb-0">
-								{new Date().getFullYear()} &copy; All rights reserved by{" "}
-								<a
-									href="https://themeforest.net/user/kooponcraft/portfolio"
-									target="_blank"
-									rel="noreferrer"
-								>
-									kooponcraft
-								</a>
+								{new Date().getFullYear()} &copy; All rights reserved by Kooponcraft
 							</p>
 						</div>
 
