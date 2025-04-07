@@ -33,11 +33,7 @@ const HomeTwo = () => {
 			<Divider />
 			<LatestCouponDeals />
 			<Divider />
-			<TopSellerHomeOne />
-			<Divider />
 			<CtaHomeTwo />
-			<Divider />
-			<AppDownloadHomeTwo />
 			<Divider />
 			<FooterOne />
 		</>

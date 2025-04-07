@@ -19,14 +19,14 @@ const CtaHomeTwo = () => {
 								data-aos-duration="750"
 								data-aos-delay="600"
 							>
-								Resources for getting started with Kooponcraft.
+								Don't waste any more time! Get started with <span className="text-warning">Kooponcraft</span> Now!
 							</h2>
 						</div>
 						<div className="col-12 col-md-4 col-lg-3">
 							<div className="text-md-end">
 								<Link
 									className="btn btn-warning rounded-pill"
-									href="/help-center"
+									href="/register"
 									data-aos="zoom-in"
 									data-aos-duration="750"
 									data-aos-delay="900"
