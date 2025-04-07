@@ -60,7 +60,7 @@ const ExploreCategeries = () => {
                                   style={(images.length === 3 && idx === 2) 
                                   ? { gridColumnStart: 2, gridRowStart: 1, gridRowEnd: "span 2" } 
                                   : { }}
-                                  unoptimized={image.includes("webp")}
+                                  unoptimized={image.includes("webp") || images.includes("gif")}
                                 />
                               ))
                             }
