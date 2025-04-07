@@ -9,7 +9,7 @@ import ProcessHomeOne from "../home/ProcessHomeOne";
 import AppDownloadHomeTwo from "./AppDownloadHomeTwo";
 import TopSellerHomeOne from "../home/TopSellerHomeOne";
 import TrendingInStores from "../home/TrendingInStores";
-import PopularCollectionHomeOne from "../home/PopularCollectionHomeOne";
+import TopPerformers from "../home/TopPerformers";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import ExploreCategeries from "./ExploreCategeries";
 import RareToken from "./RareToken";
@@ -29,7 +29,7 @@ const HomeTwo = () => {
 			<Divider />
 			<ProcessHomeOne />
 			<Divider />
-			<PopularCollectionHomeOne />
+			<TopPerformers />
 			<Divider />
 			<DiscoverHomeTwo />
 			<Divider />

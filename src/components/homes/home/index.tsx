@@ -8,7 +8,7 @@ import HeaderOne from "@/layouts/headers/HeaderOne";
 import LiveAuctionHomeOne from "./TrendingInStores";
 import Divider from "@/components/common/Divider";
 import DiscoverHomeOne from "./DiscoverHomeOne";
-import PopularCollectionHomeOne from "./PopularCollectionHomeOne";
+import PopularCollectionHomeOne from "./TopPerformers";
 import ProcessHomeOne from "./ProcessHomeOne";
 import CollectionHomeOne from "./CollectionHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
