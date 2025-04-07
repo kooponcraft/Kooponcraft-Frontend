@@ -11,6 +11,7 @@ import TopSellerHomeOne from "../home/TopSellerHomeOne";
 import TrendingInStores from "../home/TrendingInStores";
 import PopularCollectionHomeOne from "../home/PopularCollectionHomeOne";
 import ScrollToTop from "@/components/common/ScrollToTop";
+import ExploreCategeries from "./ExploreCategeries";
 
 const HomeTwo = () => {
 	return (
@@ -20,6 +21,8 @@ const HomeTwo = () => {
 			<HeroAreaHomeTwo />
 			<Divider />
 			<TrendingInStores />
+			<Divider />
+			<ExploreCategeries />
 			<Divider />
 			<ProcessHomeOne />
 			<Divider />
