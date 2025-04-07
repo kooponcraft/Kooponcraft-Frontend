@@ -2,7 +2,7 @@ import Register from "@/components/register";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Register - Next js NFT Marketplace",
+	title: "Kooponcraft Register - NFT Marketplace",
 };
 
 const index = () => {

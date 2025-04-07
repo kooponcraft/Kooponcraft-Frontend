@@ -2,7 +2,7 @@ import HelpCenter from "@/components/help-center";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Help Center - Next js NFT Marketplace",
+	title: "Kooponcraft Help Center - NFT Marketplace",
 };
 
 const index = () => {

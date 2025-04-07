@@ -4,7 +4,7 @@ import ComingSoon from '@/components/coming-soon';
 import React from 'react';
 
 export const metadata = {
-	title: "Kooponcraft Coming Soon - Next js NFT Marketplace",
+	title: "Kooponcraft Coming Soon - NFT Marketplace",
 };
 
 
