@@ -9,7 +9,7 @@ const ExploreTwo = () => {
 	return (
 		<>
 			
-			<Breadcrumb title="Explore" subtitle="Explore Two" />
+			<Breadcrumb title="Explore" subtitle="Explore Items" />
 			<Divider />
 			<ExploreItemsTwo />
 			<Divider />

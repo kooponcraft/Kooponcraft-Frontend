@@ -118,7 +118,7 @@ const menu_data:DataType[] = [
 	{
 		id: 6,
 		title: "Shops",
-		link: "#",
+		link: "/explore",
 		has_dropdown: false,
 	},
 	{

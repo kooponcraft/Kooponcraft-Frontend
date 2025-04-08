@@ -77,7 +77,7 @@ const LatestCouponDeals = () => {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-12"><a className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href="#">Buy</a></div>
+                      <div className="col-12"><Link className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href="#">Buy</Link></div>
                     </div>
                   </div>
                 </div>
