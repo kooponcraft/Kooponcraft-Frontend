@@ -3,8 +3,6 @@ import CtaHomeTwo from "./CtaHomeTwo";
 import HeroAreaHomeTwo from "./HeroAreaHomeTwo";
 import LatestCouponDeals from "./LatestCouponDeals";
 import Divider from "@/components/common/Divider";
-import HeaderOne from "@/layouts/headers/HeaderOne";
-
 import ProcessHomeOne from "../home/ProcessHomeOne";
 import TrendingInStores from "../home/TrendingInStores";
 import TopPerformers from "../home/TopPerformers";

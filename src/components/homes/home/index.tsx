@@ -4,7 +4,7 @@ import React from "react";
 import HeorAreaHomeOne from "./HeorAreaHomeOne";
 import FeaturedHomeOne from "./FeaturedHomeOne";
 import TopSellerHomeOne from "./TopSellerHomeOne";
-import HeaderOne from "@/layouts/headers/HeaderOne";
+
 import LiveAuctionHomeOne from "./TrendingInStores";
 import Divider from "@/components/common/Divider";
 import DiscoverHomeOne from "./DiscoverHomeOne";
