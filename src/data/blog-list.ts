@@ -1,7 +1,6 @@
 const blog_data = [
 	{
 		id: 1,
-import AppImage from "@/components/common/AppImage";
 		image: "/assets/img/bg-img/5.jpg",
 		largeImage: "/assets/img/bg-img/5.jpg",
 		title: "The beginners guide to creating & selling digital art NFTs.",
