@@ -52,21 +52,32 @@ const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filter
                       <React.Fragment key={index}>
 
                         <li className={`${submenu.inner_has_dropdown ? 'ft-dd' : ''}`} onClick={() => openMobileMenu2(submenu.title)}>
-                          <Link href={submenu.link}>{submenu.title}</Link>
-
-                          {submenu.inner_has_dropdown &&
+                          {submenu.title === "No Stores Available" ? (
+                            <span className="px-2">{submenu.title}</span>
+                          ) : (
                             <>
-                              <div className="dropdown-toggler">
-                                <i className="bi bi-caret-down-fill"></i>
-                              </div>
-                              <ul className="ft-dd-menu" style={{ display: navTitle2 === submenu.title ? "block" : "none", }}>
-                                {submenu.inner_sub?.map((sub_item, sub_index) => (
-                                  <li key={sub_index}><Link href={sub_item.link}>{sub_item.title}</Link></li>
-                                ))}
-                              </ul>
+                              <Link href={submenu.link}>{submenu.title}</Link>
+                              {submenu.inner_has_dropdown && (
+                                <>
+                                  <div className="dropdown-toggler">
+                                    <i className="bi bi-caret-down-fill"></i>
+                                  </div>
+                                  <ul
+                                    className="ft-dd-menu"
+                                    style={{
+                                      display: navTitle2 === submenu.title ? "block" : "none",
+                                    }}
+                                  >
+                                    {submenu.inner_sub?.map((sub_item, sub_index) => (
+                                      <li key={sub_index}>
+                                        <Link href={sub_item.link}>{sub_item.title}</Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </>
+                              )}
                             </>
-
-                          }
+                          )}
                         </li>
                       </React.Fragment>
                     ))}

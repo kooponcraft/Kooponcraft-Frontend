@@ -12,6 +12,7 @@ import AppImage from '@/components/common/AppImage';
 import { getUser } from '@/lib/auth/getUser';
 import menu_data from './MenuData';
 import { logout } from '@/lib/auth/logout';
+import { getStores } from '@/lib/getStores';
 
 
 const HeaderOne = () => {
@@ -22,19 +23,31 @@ const HeaderOne = () => {
   const [filteredMenuData, setFilteredMenuData] = useState(menu_data);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchData = async () => {
       const fetchedUser = await getUser();
+      const stores = await getStores()
       setUser(fetchedUser);
       setFilteredMenuData(
         menu_data.filter((item) =>
           fetchedUser
             ? item.isAuthenticated === true || item.isAuthenticated === undefined
             : item.isAuthenticated === false || item.isAuthenticated === undefined
-        )
+        ).map((item) => {
+          if (item.id === 8) {
+            item.sub_menus = stores.length < 1 ? [{
+              title: "No Stores Available",
+              link: "#"
+            }] : stores.map((store: any) => ({
+              title: store.username,
+              link: `/`,
+            }));
+          }
+          return item;
+        })
       );
     };
 
-    fetchUser();
+    fetchData();
   }, []);
 
   const handleResize = useCallback(() => {

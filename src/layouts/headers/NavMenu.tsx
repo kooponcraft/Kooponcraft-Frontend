@@ -15,19 +15,23 @@ const NavMenu = ({ filteredMenuData }: { filteredMenuData: typeof menu_data }) =
 										key={index}
 										className={`${sub_item.inner_has_dropdown ? "ft-dd" : ""}`}
 									>
-										<Link href={sub_item.link}>{sub_item.title}</Link>
-										{sub_item.inner_has_dropdown && (
+										{sub_item.title !== "No Stores Available" ? (
 											<>
-												<ul className="ft-dd-menu">
-													{sub_item.inner_sub?.map((inner_sub, inner_index) => (
-														<li key={inner_index}>
-															<Link href={inner_sub.link}>
-																{inner_sub.title}
-															</Link>
-														</li>
-													))}
-												</ul>
+												<Link href={sub_item.link}>{sub_item.title}</Link>
+												{sub_item.inner_has_dropdown && (
+													<ul className="ft-dd-menu">
+														{sub_item.inner_sub?.map((inner_sub, inner_index) => (
+															<li key={inner_index}>
+																<Link href={inner_sub.link}>
+																	{inner_sub.title}
+																</Link>
+															</li>
+														))}
+													</ul>
+												)}
 											</>
+										) : (
+											<span className="px-2">{sub_item.title}</span>
 										)}
 									</li>
 								))}

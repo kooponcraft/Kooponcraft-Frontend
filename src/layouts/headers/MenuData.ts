@@ -139,10 +139,6 @@ const menu_data:DataType[] = [
 		title: "NFT Stores",
 		link: "#",
 		has_dropdown: true,
-		sub_menus: [
-			{ link: "/dashboard", title: "Dashboard" },
-			{ link: "/live-bids", title: "Live Bids" },
-		],
 		isAuthenticated: true,
 	},
 	{
