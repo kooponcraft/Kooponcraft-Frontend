@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
         {
-            pathname.startsWith("/dashboard") || pathname.startsWith("//live-bids") || pathname.startsWith("/my-collection") || pathname.startsWith("/my-wallet") || pathname.startsWith("/notifications") || pathname.startsWith("/settings") ? <DashboardHeader /> : <HeaderOne />
+            pathname.startsWith("/dashboard") || pathname.startsWith("/live-bids") || pathname.startsWith("/my-collection") || pathname.startsWith("/my-wallet") || pathname.startsWith("/notifications") || pathname.startsWith("/settings") ? <DashboardHeader /> : <HeaderOne />
         }
     </>
   )
