@@ -15,7 +15,7 @@ const Notifications = () => {
 
   return (
     <>
-      <DashboardHeader /> 
+       
       <NotificationsArea />
     </>
   );

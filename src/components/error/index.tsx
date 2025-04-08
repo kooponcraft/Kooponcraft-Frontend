@@ -4,12 +4,12 @@ import React from "react";
 import AppImage from "@/components/common/AppImage";
 import Breadcrumb from "../common/Breadcrumb";
 import Divider from "../common/Divider";
-import FooterOne from "@/layouts/footers/FooterOne";
+
 
 const Error = () => {
 	return (
 		<>
-    <HeaderOne />
+    
     <Breadcrumb title="Error" subtitle="Error" />
 			<div className="kooponcraft-error-area text-center pt-120">
 				<div className="container">
@@ -30,7 +30,7 @@ const Error = () => {
 				</div>
 			</div>
       <Divider />
-      <FooterOne />
+      
 		</>
 	);
 };

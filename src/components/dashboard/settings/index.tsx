@@ -7,7 +7,7 @@ import DashboardHeader from '@/layouts/headers/DashboardHeader';
 const Settings = () => {
   return (
     <>
-      <DashboardHeader /> 
+       
       <SettingsArea />      
     </>
   );

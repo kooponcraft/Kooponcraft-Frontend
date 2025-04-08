@@ -7,7 +7,7 @@ import DashboardHeader from '@/layouts/headers/DashboardHeader';
 const MyWallet = () => {
   return (
     <>
-      <DashboardHeader /> 
+       
       <MyWalletArea />
     </>
   );

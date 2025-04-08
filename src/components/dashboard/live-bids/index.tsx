@@ -7,7 +7,7 @@ import LivebidsArea from './LivebidsArea';
 const Livebids = () => {
   return (
     <>
-      <DashboardHeader /> 
+       
       <LivebidsArea />
     </>
   );

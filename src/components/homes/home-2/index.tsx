@@ -4,7 +4,7 @@ import HeroAreaHomeTwo from "./HeroAreaHomeTwo";
 import LatestCouponDeals from "./LatestCouponDeals";
 import Divider from "@/components/common/Divider";
 import HeaderOne from "@/layouts/headers/HeaderOne";
-import FooterOne from "@/layouts/footers/FooterOne";
+
 import ProcessHomeOne from "../home/ProcessHomeOne";
 import TrendingInStores from "../home/TrendingInStores";
 import TopPerformers from "../home/TopPerformers";
@@ -16,7 +16,7 @@ const HomeTwo = () => {
 	return (
 		<>
 			<ScrollToTop />
-			<HeaderOne />
+			
 			<HeroAreaHomeTwo />
 			<Divider />
 			<TrendingInStores />
@@ -33,7 +33,7 @@ const HomeTwo = () => {
 			<Divider />
 			<CtaHomeTwo />
 			<Divider />
-			<FooterOne />
+			
 		</>
 	);
 };

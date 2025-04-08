@@ -1,5 +1,7 @@
 
 
+import FooterOne from "@/layouts/footers/FooterOne";
+import Header from "@/layouts/headers/Header";
 import "@/styles/index.scss";
 import { Metadata } from "next";
 
@@ -72,7 +74,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark">
-      <body  suppressHydrationWarning={true}>{children}</body>
+      <body  suppressHydrationWarning={true}>
+        <Header />
+        {children}
+        <FooterOne />
+      </body>
     </html>
   );
 }

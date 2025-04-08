@@ -11,7 +11,7 @@ import DiscoverHomeOne from "./DiscoverHomeOne";
 import PopularCollectionHomeOne from "./TopPerformers";
 import ProcessHomeOne from "./ProcessHomeOne";
 import CollectionHomeOne from "./CollectionHomeOne";
-import FooterOne from "@/layouts/footers/FooterOne";
+
 import ScrollToTop from "@/components/common/ScrollToTop";
 
 
@@ -22,7 +22,7 @@ const HomeOne = () => {
 	return (
 		<>
 			<ScrollToTop />
-			<HeaderOne />
+			
 			<HeorAreaHomeOne />
 			<Divider />
 			<FeaturedHomeOne />
@@ -39,7 +39,7 @@ const HomeOne = () => {
 			<Divider />
 			<CollectionHomeOne />
 			<Divider />
-			<FooterOne />
+			
 		</>
 	);
 };

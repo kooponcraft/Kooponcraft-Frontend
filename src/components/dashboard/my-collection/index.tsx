@@ -7,7 +7,7 @@ import MyCollectionArea from './MyCollectionArea';
 const MyCollection = () => {
   return (
     <>
-      <DashboardHeader /> 
+       
       <MyCollectionArea />
     </>
   );

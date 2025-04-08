@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import DashboardHeader from "@/layouts/headers/DashboardHeader";
+
 import DashboardHeroCard from "./DashboardHeroCard";
 import DashboardStatisticsChart from "./DashboardStatisticsChart";
 import DashboardActivityTab from "./DashboardActivityTab";
@@ -13,7 +13,7 @@ import DashboardTopAuthorBuyer from "./DashboardTopAuthorBuyer";
 const Dashboard = () => {
 	return (
 		<>
-			<DashboardHeader />
+			
 			<div className="create-new-button">
 				<Link
 					className="shadow-lg btn btn-warning"
