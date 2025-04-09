@@ -3,16 +3,15 @@ import React from 'react';
 
 import Breadcrumb from '../common/Breadcrumb';
 import Divider from '../common/Divider';
-import ExploreItems from './ExploreItems';
-import FooterOne from '@/layouts/footers/FooterOne';
+import ExploreNfts from './ExploreNfts';
 
 const ExploreOne = () => {
   return (
     <>
     
-    <Breadcrumb title="Explore" subtitle="Explore One" />
+    <Breadcrumb title="Explore" subtitle="Explore Nfts" />
     <Divider />
-    <ExploreItems />
+    <ExploreNfts />
     <Divider />
          
     </>

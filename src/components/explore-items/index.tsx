@@ -2,7 +2,7 @@ import React from "react";
 
 import Breadcrumb from "../common/Breadcrumb";
 import Divider from "../common/Divider";
-import ExploreItemsTwo from "./ExploreItemsTwo";
+import ExploreItems from "./ExploreItems";
 
 
 const ExploreTwo = () => {
@@ -11,7 +11,7 @@ const ExploreTwo = () => {
 			
 			<Breadcrumb title="Explore" subtitle="Explore Items" />
 			<Divider />
-			<ExploreItemsTwo />
+			<ExploreItems />
 			<Divider />
 			
 		</>

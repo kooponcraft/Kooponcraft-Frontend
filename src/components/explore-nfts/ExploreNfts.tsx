@@ -9,7 +9,7 @@ import NiceSelect from "@/ui/NiceSelect";
  
 const perView = 12;
 
-const ExploreItems = () => {
+const ExploreNfts = () => {
 	const [active, setActive] = useState(null);
 	// handleActive function
 	const handleActive = (id: any) => {
@@ -369,4 +369,4 @@ const ExploreItems = () => {
 	);
 };
 
-export default ExploreItems;
+export default ExploreNfts;

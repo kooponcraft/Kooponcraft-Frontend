@@ -118,13 +118,13 @@ const menu_data:DataType[] = [
 	{
 		id: 6,
 		title: "Shops",
-		link: "/explore",
+		link: "/explore/items",
 		has_dropdown: false,
 	},
 	{
 		id: 7,
-		title: "Explore Coupon Marketplace",
-		link: "#",
+		title: "Coupon Marketplace",
+		link: "/explore/nfts",
 		has_dropdown: false,
 	},
 	{

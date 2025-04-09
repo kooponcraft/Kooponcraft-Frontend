@@ -8,7 +8,7 @@ import { getStores } from '@/lib/getStores';
 import { getAllCoupons } from '@/lib/getAllCoupons';
 import { useSearchParams, useRouter } from "next/navigation";
 
-const ExploreItemsTwo = () => {
+const ExploreItems = () => {
 
 	const searchParams = useSearchParams()
 	const router = useRouter()
@@ -176,4 +176,4 @@ const ExploreItemsTwo = () => {
 	);
 };
 
-export default ExploreItemsTwo;
+export default ExploreItems;
