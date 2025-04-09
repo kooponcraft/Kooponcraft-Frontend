@@ -31,7 +31,7 @@ const NavMenu = ({ filteredMenuData }: { filteredMenuData: typeof menu_data }) =
 												)}
 											</>
 										) : (
-											<span className="px-2">{sub_item.title}</span>
+											<span className="px-4">{sub_item.title}</span>
 										)}
 									</li>
 								))}
