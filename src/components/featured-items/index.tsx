@@ -3,7 +3,7 @@ import React from 'react';
 import Divider from '../common/Divider';
 import Breadcrumb from '../common/Breadcrumb';
 
-import FooterOne from '@/layouts/footers/FooterOne';
+
 import FeaturedItemsArea from './FeaturedItemsArea';
 
 const FeaturedItems = () => {

@@ -8,7 +8,7 @@ import Breadcrumb from '../common/Breadcrumb';
 import ClientFeedback from './ClientFeedback';
 
 
-import FooterOne from '@/layouts/footers/FooterOne';
+
 
 const About = () => {
   return (

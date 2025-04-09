@@ -4,7 +4,7 @@
 import React from 'react';
 import Breadcrumb from '../common/Breadcrumb';
 import Divider from '../common/Divider';
-import FooterOne from '@/layouts/footers/FooterOne';
+
 import BlogDetailsArea from './BlogDetailsArea';
 
 const BlogDetails = () => {

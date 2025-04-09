@@ -6,7 +6,7 @@ import React from 'react';
 import Breadcrumb from '../common/Breadcrumb';
 import Divider from '../common/Divider';
 import ItemDetailsArea from './ItemDetailsArea';
-import FooterOne from '@/layouts/footers/FooterOne';
+
 import RelatedProjects from '../common/RelatedProjects';
 
  
