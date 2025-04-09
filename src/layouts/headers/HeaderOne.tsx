@@ -117,12 +117,24 @@ const HeaderOne = () => {
                 {
                   user ? (
                     <>
-                      <div className="position-relative">
+                        {/* STREAK */}
+                        {/* <div className="position-relative">
+                          <AppImage
+                            src="/assets/img/core-img/fire.png"
+                            alt="streak icon"
+                            width={40}
+                            height={40}
+                          />
+                          <span className="position-absolute start-50 text-white translate-middle-x" style={{ fontSize: 20, fontWeight: 700, bottom: 2 }}>
+                            {user.currentStreak}
+                          </span>
+                        </div> */}
+                      <div className="position-relative ms-3">
                         <span className="position-absolute rounded-pill bg-danger text-white px-1" style={{fontSize: 12, top: -5, left: -5}}>{user.points}</span>
                         <AppImage src='/assets/img/core-img/coins.png' alt='coins image' width={40} height={40} />
                       </div>
                       <button
-                        className="btn btn-danger btn-sm rounded-pill ms-2"
+                        className="btn btn-danger btn-sm rounded-pill ms-3"
                         onClick={logout}
                       >
                           Logout
