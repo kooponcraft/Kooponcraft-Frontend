@@ -78,7 +78,7 @@ const ExploreItems = () => {
 							<button className="btn btn-primary rounded-pill w-100" type="submit">Apply<i className="ms-1 bi bi-arrow-right"></i></button>
 						</div>
 						<div className="col-12 col-md-7 col-lg-8 col-xxl-9">
-							<div className="row g-4 justify-content-center">
+							<div className={`row g-4 ${items.length == 0 && "justify-content-center"}`}>
 								{
 									items.length === 0 ? 
 									<div className="col-12 text-center">
