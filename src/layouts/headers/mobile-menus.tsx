@@ -53,7 +53,7 @@ const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filter
 
                         <li className={`${submenu.inner_has_dropdown ? 'ft-dd' : ''}`} onClick={() => openMobileMenu2(submenu.title)}>
                           {submenu.title === "No Stores Available" ? (
-                            <span className="px-2">{submenu.title}</span>
+                            <span className="px-4">{submenu.title}</span>
                           ) : (
                             <>
                               <Link href={submenu.link}>{submenu.title}</Link>
