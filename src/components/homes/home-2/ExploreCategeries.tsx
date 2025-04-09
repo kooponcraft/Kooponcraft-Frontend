@@ -70,7 +70,7 @@ const ExploreCategeries = () => {
                             <h5 className="mb-0">{name}</h5>
                         </div>
                         <div className="col-4 text-end">
-                            <Link className="btn btn-minimal hover-primary view-all-category" href="#">
+                            <Link className="btn btn-minimal hover-primary view-all-category" href={`/explore/items?category=${name.toLowerCase()}`}>
                                 View all<i className="ms-1 fz-14 bi bi-arrow-right"></i>
                             </Link>
                         </div>                    

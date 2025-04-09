@@ -19,7 +19,7 @@ const TrendingInStores = async () => {
               </div>
             </div>
             <div className="col-5 text-end">
-              <Link className="btn rounded-pill btn-outline-primary btn-sm border-2 mb-5" href="/">View All Items</Link>
+              <Link className="btn rounded-pill btn-outline-primary btn-sm border-2 mb-5" href="/explore/items">View All Items</Link>
             </div>
           </div>
         </div>

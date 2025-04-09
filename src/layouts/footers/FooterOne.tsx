@@ -11,7 +11,7 @@ const footer_content = {
 			navList: [
 				{
 					text: "Marketplace",
-					url: "/",
+					url: "#",
 				},
 				{
 					text: "Help Center",
@@ -23,12 +23,12 @@ const footer_content = {
 			widgetTitle: "Shops",
 			navList: [
 				{
-					text: "Coupon",
-					url: "/",
+					text: "NFTs",
+					url: "/explore/nfts",
 				},
 				{
 					text: "Items",
-					url: "/",
+					url: "/explore/items",
 				},
 			],
 		},

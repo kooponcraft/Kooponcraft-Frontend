@@ -28,7 +28,7 @@ const HeroAreaHomeTwo = async () => {
 								</p>
 								<Link
 									className={`btn ${ user ? "btn-primary" : "btn-warning" } rounded-pill`}
-									href={user ? "/collections" : "/register"}
+									href={user ? "/explore/nfts" : "/register"}
 									data-aos="fade-up"
 									data-aos-duration="750"
 									data-aos-delay="800"
@@ -36,7 +36,7 @@ const HeroAreaHomeTwo = async () => {
 									{
 										user ? (
 											<>
-												<i className="me-2 bi bi-grid-3x3-gap"></i>View All Collections
+												<i className="me-2 bi bi-grid-3x3-gap"></i>View All Coupons
 											</>
 										)	: "Get Started"
 									}
