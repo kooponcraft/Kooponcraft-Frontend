@@ -13,18 +13,11 @@ export const metadata: Metadata = {
   keywords: ["coupons", "nfts", "blockchain"],
   authors: { name: "Kooponcraft Team" },
   icons: {
-    icon: [
-      {
-        url: "assets/img/favicon_io/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/assets/img/favicon_io/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-    ],
+    icon: {
+      url: "assets/img/favicon_io/favicon-nbg.png",
+      sizes: "any",
+      type: "image/png",
+    },
     apple: [
       {
         url: "/assets/img/favicon_io/apple-touch-icon.png",
