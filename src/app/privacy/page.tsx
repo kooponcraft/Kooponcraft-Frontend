@@ -2,7 +2,7 @@ import Privacy from "@/components/privacy";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Privacy - NFT Marketplace",
+	title: "Privacy - Kooponcraft",
 };
 
 const index = () => {

@@ -2,7 +2,7 @@ import Login from "@/components/login";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Login - NFT Marketplace",
+	title: "Login - Kooponcraft",
 };
 
 const index = () => {

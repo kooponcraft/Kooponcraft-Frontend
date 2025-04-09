@@ -2,7 +2,7 @@ import React from "react";
 import Newsletter from "@/components/newsletter";
 
 export const metadata = {
-	title: "Kooponcraft Newsletter - NFT Marketplace",
+	title: "Newsletter - Kooponcraft",
 };
 
 const index = () => {

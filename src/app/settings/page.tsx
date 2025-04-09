@@ -2,7 +2,7 @@ import React from "react";
 import Settings from "@/components/dashboard/settings";
 
 export const metadata = {
-	title: "Kooponcraft Settings - NFT Marketplace",
+	title: "Settings - Kooponcraft",
 };
 
 const index = () => {

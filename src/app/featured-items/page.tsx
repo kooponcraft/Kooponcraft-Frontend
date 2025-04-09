@@ -2,7 +2,7 @@ import React from "react";
 import FeaturedItems from "@/components/featured-items";
 
 export const metadata = {
-	title: "Kooponcraft Featured Items - NFT Marketplace",
+	title: "Featured Items - Kooponcraft",
 };
 
 const index = () => {

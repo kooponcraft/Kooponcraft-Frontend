@@ -1,7 +1,7 @@
 import Error from "@/components/error";
 
 export const metadata = {
-	title: "404 error || Kooponcraft - NFT Marketplace",
+	title: "404 - Kooponcraft",
 };
 const index = () => {
 	return (

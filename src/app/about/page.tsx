@@ -2,7 +2,7 @@ import React from "react";
 import About from "@/components/about";
 
 export const metadata = {
-	title: "Kooponcraft About - NFT Marketplace",
+	title: "About - Kooponcraft",
 };
 
 const index = () => {

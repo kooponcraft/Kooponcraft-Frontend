@@ -2,7 +2,7 @@ import React from "react";
 import MyWallet from "@/components/dashboard/my-wallet";
 
 export const metadata = {
-	title: "Kooponcraft My Wallet - NFT Marketplace",
+	title: "My Wallet - Kooponcraft",
 };
 
 const index = () => {

@@ -2,7 +2,7 @@ import ConnetWallet from "@/components/connet-wallet";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Connet Wallet - NFT Marketplace",
+	title: "Connet Wallet - Kooponcraft",
 };
 
 const index = () => {

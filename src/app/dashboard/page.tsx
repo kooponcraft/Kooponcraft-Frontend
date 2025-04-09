@@ -2,7 +2,7 @@ import Dashboard from "@/components/dashboard/dashboard";
 
 
 export const metadata = {
-  title: "Kooponcraft Dashboard - NFT Marketplace",
+  title: "Dashboard - Kooponcraft",
 };
 
 

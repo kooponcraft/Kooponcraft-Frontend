@@ -2,7 +2,7 @@ import Ranking from "@/components/ranking";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Ranking - NFT Marketplace",
+	title: "Ranking - Kooponcraft",
 };
 
 const index = () => {

@@ -2,7 +2,7 @@ import HelpQuestions from "@/components/help-questions";
 import React from "react";
 
 export const metadata = {
-	title: "Kooponcraft Help Questions - NFT Marketplace",
+	title: "Help Questions - Kooponcraft",
 };
 
 const index = () => {

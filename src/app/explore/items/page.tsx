@@ -2,7 +2,7 @@ import ExploreItems from "@/components/explore-items";
 import React from "react";
 
 export const metadata = {
-	title: "Explore Items - NFT Marketplace",
+	title: "Explore Items - Kooponcraft",
 };
 
 const index = () => {

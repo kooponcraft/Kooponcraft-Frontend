@@ -2,7 +2,7 @@ import React from "react";
 import Author from "@/components/author";
 
 export const metadata = {
-	title: "Kooponcraft Author - NFT Marketplace",
+	title: "Author - Kooponcraft",
 };
 
 const index = () => {
