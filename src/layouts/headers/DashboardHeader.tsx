@@ -4,27 +4,12 @@
 import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
 import UseSticky from '@/hooks/UseSticky';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Count from '@/components/common/Count';
-
-
-
-const userInfo = [
-  {
-    thumbnail: "img/bg-img/u2.jpg",
-    username: "Designing W.",
-    userType: "Premium User"
-  }
-]
-
-const balanceCard = [
-  {
-    title: "Current balance",
-    icon: "/assets/img/core-img/ethereum.png",
-    balance: 40678,
-    balanceType: "ETH"
-  }
-]
+import { logout } from "@/lib/auth/logout";
+import { getUser } from "@/lib/auth/getUser";
+import { getUserBalance } from "@/lib/getUserBalance";
+import { usePathname } from "next/navigation";
 
 const AdminNav = [
   {
@@ -35,38 +20,61 @@ const AdminNav = [
   },
   {
     id: 2,
-    path: "/live-bids",
-    icon: "bi-hammer",
-    text: "Live Bids"
+    path: "/my-transactions",
+    icon: "bi-receipt",
+    text: "My Transactions"
   },
   {
     id: 3,
-    path: "/my-collection",
+    path: "/my-collections",
     icon: "bi-columns-gap",
-    text: "My Collections"
+    text: "My Collections",
+    isAdmin: true // Add a flag to indicate this item should be hidden
   },
   {
     id: 4,
+    path: "/my-tokens",
+    icon: "bi-coin",
+    text: "My Tokens"
+  },
+  {
+    id: 5,
     path: "/my-wallet",
     icon: "bi-wallet2",
     text: "My Wallet"
   },
   {
-    id: 5,
-    path: "/notifications",
-    icon: "bi-bell",
-    text: "Notifications"
-  },
-  {
     id: 6,
-    path: "/settings",
-    icon: "bi-gear",
-    text: "Settings"
-  }
-]
+    path: "/my-store",
+    icon: "bi-shop",
+    text: "My Store",
+    isAdmin: true // Add a flag to indicate this item should be hidden
+  },
+  // {
+  //   id: 7,
+  //   path: "/notifications",
+  //   icon: "bi-bell",
+  //   text: "Notifications"
+  // },
+  // {
+  //   id: 8,
+  //   path: "/settings",
+  //   icon: "bi-gear",
+  //   text: "Settings"
+  // },
+  // {
+  //   id: 9,
+  //   path: "live-bids",
+  //   icon: "bi-clock-history",
+  //   text: "Live Bids"
+  // }
+];
 
 const DashboardHeader = () => {
   const { sticky } = UseSticky()
+  const pathname = usePathname()
+  const [user, setUser] = useState<User | null>(null)
+  const [balance, setBalance] = useState<any>()
 
   const [isActive, setActive] = useState(false);
 
@@ -74,10 +82,14 @@ const DashboardHeader = () => {
     setActive(!isActive);
   };
 
-  const [userActive, setUserActive] = useState(false);
-  const handleUserToggle = () => {
-    setUserActive(!userActive);
-  }
+  useEffect(() => {
+    (async () => {
+      const user = await getUser()
+      setUser(user)
+      const balance = await getUserBalance()
+      setBalance(balance)
+    })()
+  }, [])
 
   return (
     <>
@@ -87,9 +99,9 @@ const DashboardHeader = () => {
           <div className="container-fluid">
             <div className="d-flex align-items-center">
 
-              <div className="admin-logo me-1 me-sm-3">
-                <AppImage src="/assets/img/core-img/dashboard-logo.png" style={{width: "100px", height: "70px"}} alt="" />
-              </div>
+              <Link href="/" className="admin-logo me-1 me-sm-3">
+                <AppImage src="/assets/img/core-img/dashboard-logo.png" style={{width: 170}} alt="" />
+              </Link>
 
               <div className="search-form position-relative d-flex align-items-center">
                 <input className="form-control" type="text" placeholder="Search" />
@@ -98,37 +110,6 @@ const DashboardHeader = () => {
             </div>
 
             <div className="header-meta d-flex align-items-center">
-
-              <div className="user-dropdown dropdown mx-2 mx-sm-3">
-                <button className="btn dropdown-toggle user-btn" id="dd10" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <AppImage src="/assets/img/core-img/notification.png" alt="" />
-                </button>
-                <ul className="dropdown-menu noti-dd-menu dropdown-menu-end mt-3" aria-labelledby="dd10">
-                  <li><a className="dropdown-item" href="#"><i className="me-2 bi bi-percent"></i>You have an offer!</a></li>
-                  <li><a className="dropdown-item" href="#"><i className="bg-info me-2 bi bi-tags"></i>Congratulations! You sale an item.</a></li>
-                  <li><a className="dropdown-item" href="#"><i className="bg-danger me-2 bi bi-gift"></i>January freebies have arrived.</a></li>
-                  <li><a className="dropdown-item" href="#"><i className="bg-warning me-2 bi bi-star"></i>A new rating has been received.</a></li>
-                  <li><Link className="dropdown-item justify-content-center" href="/notifications">View all notifications</Link></li>
-                </ul>
-              </div>
-
-              <div className="user-dropdown dropdown">
-
-                <button onClick={handleUserToggle} className={`btn dropdown-toggle user-btn ${userActive ? 'show' : ''}`} id="dd20" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <AppImage src="/assets/img/core-img/user.png" alt="" />
-                </button>
-
-                <ul className={`dropdown-menu dropdown-menu-end mt-3 ${userActive ? 'show' : ''}`} aria-labelledby="dd20">
-                  <li><Link className="dropdown-item" href="/dashboard"><i className="me-2 bi bi-person-circle"></i>Dashboard</Link></li>
-                  <li><Link className="dropdown-item" href="/live-bids"><i className="me-2 bi bi-hammer"></i>My bids</Link></li>
-                  <li><Link className="dropdown-item" href="/my-collection"><i className="me-2 bi bi-collection"></i>Collection</Link></li>
-                  <li><Link className="dropdown-item" href="/settings"><i className="me-2 bi bi-gear"></i>Settings</Link></li>
-                </ul>
-              </div>
-
-              <Link className="btn btn-sm btn-danger rounded-pill ms-2 ms-sm-3 d-none d-sm-block" href="/">
-                <i className="bi bi-eye me-1"></i>Frontend</Link>
-
               <div onClick={handleToggle} className="menu-toggler ms-2 ms-sm-3" id="dashboardMenuTrigger">
                 <i className="bi bi-list"></i>
               </div>
@@ -145,10 +126,10 @@ const DashboardHeader = () => {
             {/* User Name */}
             <div className="user-name mb-5">
               <div className="d-flex align-items-center">
-                <AppImage src="/assets/img/bg-img/u2.jpg" alt="" />
+                <AppImage src={user?.isAdmin ? "https://api.dicebear.com/6.x/identicon/svg?seed=default" : (user?.profileImageUrl || `https://api.dicebear.com/6.x/identicon/svg?seed=${encodeURIComponent(user?.username || "default")}`)} alt="" />
                 <div className="ms-3">
-                  <h6 className="lh-1 text-dark fz-18">{userInfo[0].username}</h6>
-                  <span className="badge bg-primary fz-12">{userInfo[0].userType}</span>
+                  <h6 className="lh-1 text-dark fz-18">{user?.username}</h6>
+                  <span className="badge bg-primary fz-12">{user?.isAdmin ? "Store Owner": "Premium User"}</span>
                 </div>
               </div>
             </div>
@@ -156,12 +137,14 @@ const DashboardHeader = () => {
             {/* Balance */}
             <div className="card shadow mb-5">
               <div className="card-body text-center p-4">
-                <h6 className="mb-1">{balanceCard[0].title}</h6>
+                <h6 className="mb-1">Current Balance</h6>
                 <h5 className="mb-0 text-dark d-flex align-items-center justify-content-center">
-                  <AppImage className="me-1" src={`${balanceCard[0].icon}`} alt="" />
+                  {/* <AppImage className="me-1" src={`${balanceCard[0].icon}`} alt="" /> */}
                   <span className="counter">
-                    <Count number={balanceCard[0].balance} /></span>
-                  <span className="ms-2">{balanceCard[0].balanceType}</span>
+                    {balance && balance.availableBalance && (
+                      <Count number={parseFloat(parseFloat(balance.availableBalance.amount).toFixed(5))} />
+                    )}</span>
+                  <span className="ms-2 text-danger">UNQ</span>
                 </h5>
 
                 {/* Recharge Button */}
@@ -179,15 +162,21 @@ const DashboardHeader = () => {
           <div className="sidenav">
             <ul>
               <li>Menu</li>
-              {AdminNav.map((elem, index) => (
+              {AdminNav.filter(({ isAdmin }) => !isAdmin || user?.isAdmin).map((elem, index) => (
                 <li key={index}>
-                  <Link href={elem.path} >
+                  <Link href={elem.path} className={pathname === elem.path ? "active" : ""}>
                     <i className={`bi ${elem.icon}`} />
                     {elem.text}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
+
+          <hr className="my-4"/>
+          <div>
+            <div className="btn btn-sm btn-danger rounded-pill ms-2 ms-sm-3" onClick={logout}>
+            <i className="bi bi-box-arrow-left me-1"></i>Logout</div>
           </div>
 
           <div className="mt-auto">
