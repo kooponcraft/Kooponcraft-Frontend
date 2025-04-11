@@ -140,10 +140,13 @@ const DashboardHeader = () => {
                 <h6 className="mb-1">Current Balance</h6>
                 <h5 className="mb-0 text-dark d-flex align-items-center justify-content-center">
                   {/* <AppImage className="me-1" src={`${balanceCard[0].icon}`} alt="" /> */}
-                  <span className="counter">
-                    {balance && balance.availableBalance && (
-                      <Count number={parseFloat(parseFloat(balance.availableBalance.amount).toFixed(5))} />
-                    )}</span>
+                  {balance && balance.availableBalance && (
+                    <span className="d-flex counter">
+                          <Count number={parseFloat(parseFloat(balance.availableBalance.amount).toFixed(5).slice(0, parseFloat(balance.availableBalance.amount).toFixed(5).indexOf(".")))} />
+                          .
+                          <Count number={parseFloat(parseFloat(balance.availableBalance.amount).toFixed(5).slice(parseFloat(balance.availableBalance.amount).toFixed(5).indexOf(".") + 1))} />
+                    </span>
+                  )}
                   <span className="ms-2 text-danger">UNQ</span>
                 </h5>
 

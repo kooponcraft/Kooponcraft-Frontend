@@ -14,7 +14,7 @@ const Dashboard = () => {
 	return (
 		<>
 			
-			{/* <div className="create-new-button">
+			<div className="create-new-button">
 				<Link
 					className="shadow-lg btn btn-warning"
 					href="/create-new"
@@ -24,7 +24,7 @@ const Dashboard = () => {
 				>
 					<i className="fz-18 bi bi-plus-lg"></i>
 				</Link>
-			</div> */}
+			</div>
 			<div className="admin-wrapper">
 				<div className="container">
 					<div className="row g-4">
