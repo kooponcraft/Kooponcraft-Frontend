@@ -30,12 +30,12 @@ const Dashboard = () => {
 					<div className="row g-4">
 						<DashboardHeroCard />
 						<DashboardStatisticsChart />
-						<DashboardActivityTab />
+						{/* <DashboardActivityTab />
 						<DashboardTrendingAuction />
 						<DashboardFeaturedCard />
 						<DashboardPriceHistory />
 						<DashboardTodaysPick />
-						<DashboardTopAuthorBuyer />
+						<DashboardTopAuthorBuyer /> */}
 					</div>
 				</div>
 			</div>
