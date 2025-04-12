@@ -12,7 +12,7 @@ import { BsArrowRight } from 'react-icons/bs'
 const DashboardCouponSwap = () => {
     const [swapOffersData, setSwapOffersData] = useState<any>([])
     const [selectedOffer, setSelectedOffer] = useState<any>(null)
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [toast, setToast] = useState({
         show: false,
         message: '',
