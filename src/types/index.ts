@@ -1,3 +1,24 @@
+interface User {
+  _id: string;
+  username: string;
+  email: string;
+  isAdmin: boolean;
+  accountAddress: string;
+  collectedTokens: any[];
+  mnemonic: string;
+  walletBalance: number;
+  points: number;
+  lastPointsAssigned: string;
+  currentStreak: number;
+  lastStreakUpdate: string,
+  highestStreak: number;
+  profileImageUrl: string;
+  firstUse: boolean;
+  walletType: string | null;
+  createdAt: string;
+  __v: number
+}
+
 type Collection = {
     collectionId: string;
     name: string;
@@ -38,3 +59,20 @@ type Collection = {
     };
     message?: string;
   };
+
+
+type Purchase = {
+  nameOfItemPurchased: string;
+  totalPrice: number;
+  buyerName: string;
+};
+
+type StoreSummary = {
+  totalSales: number;
+  totalItems: number;
+  totalTransactions: number;
+  highestBuyer: {
+    buyerName: string;
+    totalPurchase: number;
+  };
+};
