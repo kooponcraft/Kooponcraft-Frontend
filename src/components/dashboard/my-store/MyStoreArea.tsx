@@ -99,7 +99,7 @@ export default function MyStoreArea() {
                     <Button 
                       variant="primary" 
                       className="rounded-pill ms-auto btn-sm"
-                      onClick={() => router.push('/my-store-items')}
+                      onClick={() => router.push('/my-store/items')}
                     >
                       View <i className="ms-1 bi bi-arrow-right"></i>
                     </Button>
