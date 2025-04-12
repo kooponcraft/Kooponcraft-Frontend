@@ -9,6 +9,7 @@ import DashboardFeaturedCard from "./DashboardFeaturedCard";
 import DashboardPriceHistory from "./DashboardPriceHistory";
 import DashboardTodaysPick from "./DashboardTodaysPick";
 import DashboardTopAuthorBuyer from "./DashboardTopAuthorBuyer";
+import DashboardCouponSwap from "./DashboardCouponSwap";
 
 const Dashboard = () => {
 	return (
@@ -30,6 +31,7 @@ const Dashboard = () => {
 					<div className="row g-4">
 						<DashboardHeroCard />
 						<DashboardStatisticsChart />
+						<DashboardCouponSwap />
 						{/* <DashboardActivityTab />
 						<DashboardTrendingAuction />
 						<DashboardFeaturedCard />
