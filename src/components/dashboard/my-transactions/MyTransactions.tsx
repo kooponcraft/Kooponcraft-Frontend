@@ -23,7 +23,7 @@ const MyTransactionsArea = async () => {
             <div className="container">
             <div className="row g-4 justify-content-center">
                 <div className="col-12 col-lg-10">
-                <h5>My Transactions</h5>
+                <h5>Your Transactions</h5>
                 <div className="tab-content">
                     <div className="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab--1">
                     <div className="notification-content-wrap">
