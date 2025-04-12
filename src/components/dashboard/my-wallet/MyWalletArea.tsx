@@ -1,7 +1,10 @@
+'use client';
 
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import AppImage from "@/components/common/AppImage";
+import { getUser } from '@/lib/auth/getUser';
+import { Toast, ToastContainer } from 'react-bootstrap';
 
 const wallet_data = [
   {
@@ -32,6 +35,39 @@ const wallet_data = [
 
 
 const MyWalletArea = () => {
+  const [user, setUser] = React.useState<User | null>(null);
+  const [toast, setToast] = React.useState({
+    show: false,
+    message: "",
+    bg: "",
+  });
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await getUser();
+      setUser(user);
+    };
+    fetchUser();
+  }, [])
+  const handleCopy = () => {
+    if (user) {
+      navigator.clipboard.writeText(user.accountAddress).then(() => {
+        setToast({
+          show: true,
+          message: "Wallet address copied to clipboard!",
+          bg: "success",
+        });
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+        setToast({
+          show: true,
+          message: "Failed to copy wallet address.",
+          bg: "danger",
+        });
+      });
+    }
+  }
+
   return (
     <>
       <div className="create-new-button">
@@ -48,14 +84,16 @@ const MyWalletArea = () => {
             </div>
             <div className="col-12 col-xl-7 col-xxl-6">
               <div className="card wallet-card shadow-sm">
-                <div className="card-body px-4 text-center">
+                  <div className="card-body px-4 text-center">
                   <div className="d-flex align-items-center">
-                    <div className="img-wrap"><AppImage src="/assets/img/bg-img/metamask.png" alt="" /></div>
-                    <h4 className="mb-0 me-3">Metamask</h4><a className="btn btn-sm btn-danger rounded-pill ms-auto" href="#">Change</a>
+                      <div className="img-wrap"><AppImage src="/assets/img/unique_network_cover.jpeg" alt="" /></div>
+
+                      <h4 className="mb-0 me-3">UNQ Wallet Address</h4>
+                      <button className="btn btn-sm btn-warning rounded-pill ms-auto" id="copyButton" onClick={handleCopy}>Copy</button>
                   </div>
-                </div>
+                  </div>
               </div>
-            </div>
+        </div>
           </div>
 
           <div className="row g-4 justify-content-center">
@@ -71,14 +109,13 @@ const MyWalletArea = () => {
                   <div className="card-body px-4">
                     <div className="d-flex align-items-center">
                       <div className="img-wrap">
-                        <AppImage src={item.image} alt="" />
+                        <AppImage src={item.image} width={70} alt="" />
                       </div>
                       <h4 className="mb-0 me-3">{item.name}
                         <span className="badge bg-danger rounded-pill align-top fz-12 ms-1">{item.badgeText}</span>
                       </h4>
-                      <Link className="btn btn-sm btn-warning rounded-pill ms-auto" href="/login">
-                        Connect
-                        <i className="ms-1 bi bi-arrow-right"></i>
+                      <Link className="btn btn-sm btn-warning rounded-pill ms-auto" href="#">
+                        Coming Soon
                       </Link>
                     </div>
                   </div>
@@ -90,6 +127,11 @@ const MyWalletArea = () => {
 
         </div>
       </div>
+      <ToastContainer position='top-end' className="p-3" style={{ zIndex: 9999 }}>
+        <Toast show={toast.show} onClose={() => setToast({ ...toast, show: false })} bg={toast.bg}>
+          <Toast.Body className='text-white'>{toast.message}</Toast.Body>
+        </Toast>
+      </ToastContainer>
     </>
   );
 };
