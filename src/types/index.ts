@@ -16,3 +16,25 @@ type Collection = {
     imageFile: File | null;
     imagePreview: string;
   };
+  type Token = {
+    tokenId: string;
+    collectionId: string;
+    tokenName: string;
+    tokenImageUrl: string;
+    priceOfCoupon: number;
+    isPurchased: boolean;
+    metadata?: {
+      storeAddress: string;
+    };
+    tokenOwnerAddress: string;
+  };
+  
+  type TokenResponse = {
+    success: boolean;
+    allTokens: {
+      standardTokens: Token[];
+      specialTokens: Token[];
+      itemTokens: Token[];
+    };
+    message?: string;
+  };
