@@ -10,6 +10,7 @@ import DashboardPriceHistory from "./DashboardPriceHistory";
 import DashboardTodaysPick from "./DashboardTodaysPick";
 import DashboardTopAuthorBuyer from "./DashboardTopAuthorBuyer";
 import DashboardCouponSwap from "./DashboardCouponSwap";
+import DashboardRedeemNfts from "./DashboardRedeemNfts";
 
 const Dashboard = () => {
 	return (
@@ -32,6 +33,7 @@ const Dashboard = () => {
 						<DashboardHeroCard />
 						<DashboardStatisticsChart />
 						<DashboardCouponSwap />
+						<DashboardRedeemNfts />
 						{/* <DashboardActivityTab />
 						<DashboardTrendingAuction />
 						<DashboardFeaturedCard />
