@@ -10,10 +10,7 @@ const CreateNew = () => {
   return (
     <>
     
-    <Breadcrumb title="Create New" subtitle="Create New" />
-    <Divider />
     <CreateNewArea />
-    <Divider />
           
     </>
   );
