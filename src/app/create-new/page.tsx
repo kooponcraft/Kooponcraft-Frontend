@@ -1,4 +1,4 @@
-import CreateNew from "@/components/create-new";
+import CreateNew from "@/components/dashboard/create-new";
 import React from "react";
 
 export const metadata = {

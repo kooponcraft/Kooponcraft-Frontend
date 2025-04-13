@@ -14,13 +14,13 @@ const CreateNewArea = () => {
 
   return (
     <>
-      <div className="create-new-wrapper">
+      <div className="admin-wrapper">
         <div className="container">
           <div className="row g-5 justify-content-center">
             <div className="col-12 col-lg-8">
 
               <div className="create-new-form border shadow-sm p-4 p-sm-5">
-                <h2 className="mb-4">Create new NFT</h2>
+                <h2 className="mb-4">Create Collection</h2>
                 <form action="#">
                   <div className="row align-items-center">
                     <div className="col-12">

@@ -1,8 +1,8 @@
 
 
 import React from 'react';
-import Breadcrumb from '../common/Breadcrumb';
-import Divider from '../common/Divider';
+import Breadcrumb from '../../common/Breadcrumb';
+import Divider from '../../common/Divider';
 
 import CreateNewArea from './CreateNewArea';
 
