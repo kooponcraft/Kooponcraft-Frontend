@@ -16,7 +16,7 @@ import {
 import { getUserBalance } from '@/lib/getUserBalance';
 import { createCollection } from '@/lib/createCollection';
 
-export default function CreateCollection() {
+export default function CreateNewArea() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -85,13 +85,13 @@ export default function CreateCollection() {
       return;
     }
 
-    try {
-      const reader = new FileReader();
-      reader.readAsDataURL(formData.collectionImage);
+    const reader = new FileReader();
+    reader.readAsDataURL(formData.collectionImage);
+    
+    reader.onload = async () => {
+      const base64Image = reader.result as string;
       
-      reader.onload = async () => {
-        const base64Image = reader.result as string;
-        
+      try {
         const data = await createCollection({...formData, collectionImageUrl: base64Image});
 
         if (data.success) {
@@ -101,18 +101,21 @@ export default function CreateCollection() {
         } else {
           showNotification(data.error || 'Failed to create collection', 'danger');
         }
-      };
+      } catch (error: any) {
+          console.error('Error creating collection:', error);
+          showNotification(error?.response?.data?.message || error?.message || 'An error occurred while creating collection', 'danger');
+      } finally {
+        setLoading(false);
+      }
 
       reader.onerror = () => {
-        throw new Error('Error reading image file');
+        console.error('Error reading file:', reader.error);
+        showNotification(reader?.error?.message || 'Error reading image file', 'danger');
       };
-    } catch (error: any) {
-      console.error('Error creating collection:', error);
-      showNotification(error?.response.data.error || error.message || 'An error occurred while creating collection', 'danger');
-    } finally {
-      setLoading(false);
-    }
   };
+};
+
+
 
   const fetchUserBalance = async () => {
     const data = await getUserBalance()
@@ -137,7 +140,7 @@ export default function CreateCollection() {
                             <Row>
                               <Col xs={12}>
                                 <Form.Group className="mb-4">
-                                  <Form.Label className="mb-2 fz-16">Name</Form.Label>
+                                  <Form.Label className="mb-2 fz-16 text-white">Name</Form.Label>
                                   <Form.Control
                                     type="text"
                                     name="name"
@@ -152,7 +155,7 @@ export default function CreateCollection() {
                             <Row>
                               <Col xs={12} md={6} className="mb-4 mb-md-0">
                                 <Form.Group>
-                                  <Form.Label className="mb-2 fz-16">Description</Form.Label>
+                                  <Form.Label className="mb-2 fz-16 text-white">Description</Form.Label>
                                   <Form.Control
                                     as="textarea"
                                     name="description"
@@ -165,7 +168,7 @@ export default function CreateCollection() {
                               </Col>
                               <Col xs={12} md={6}>
                                 <Form.Group>
-                                  <Form.Label className="mb-2 fz-16">Token prefix</Form.Label>
+                                  <Form.Label className="mb-2 fz-16 text-white">Token prefix</Form.Label>
                                   <Form.Control
                                     type="text"
                                     name="tokenPrefix"
@@ -180,7 +183,7 @@ export default function CreateCollection() {
                             
                             <Col xs={12} className="mt-4">
                               <Form.Group className="mb-4">
-                                <Form.Label className="mb-2 fz-16">Collection Image</Form.Label>
+                                <Form.Label className="mb-2 fz-16 text-white">Collection Image</Form.Label>
                                 <Form.Control
                                   type="file"
                                   name="collectionImage"
@@ -231,7 +234,7 @@ export default function CreateCollection() {
       </div>
 
       {/* Toast Notification */}
-      <ToastContainer position="top-end" containerPosition='fixed' className="p-3">
+      <ToastContainer position="top-end" className="p-3">
         <Toast 
           show={showToast} 
           onClose={() => setShowToast(false)} 
