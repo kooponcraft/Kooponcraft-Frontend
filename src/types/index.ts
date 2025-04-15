@@ -76,3 +76,14 @@ type StoreSummary = {
     totalPurchase: number;
   };
 };
+
+
+type Coupon = {
+  _id: string;
+  tokenId: string;
+  collectionId: string;
+  tokenName: string;
+  tokenImageUrl: string;
+  priceOfCoupon: number;
+  ownerName: string;
+};
