@@ -54,7 +54,7 @@ const ExploreItems = () => {
 
 	const selectHandler = (item: { value: string; text: string }, name: string) => {
 		const selectedValue = item.value;
-		router.push(`/explore?category=${selectedValue}`);
+		router.push(`/explore/items?category=${selectedValue}`);
 	};
 
 
