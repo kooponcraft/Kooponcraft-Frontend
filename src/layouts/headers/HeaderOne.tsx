@@ -39,7 +39,7 @@ const HeaderOne = () => {
               link: "#"
             }] : stores.map((store: any) => ({
               title: store.username,
-              link: `/`,
+              link: `/store/${store.username.split(" ")[0].toLowerCase()}`,
             }));
           }
           return item;

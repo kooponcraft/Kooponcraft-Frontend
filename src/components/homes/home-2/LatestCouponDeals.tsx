@@ -39,7 +39,7 @@ const LatestCouponDeals = () => {
               </div>
             </div>
             <div className="col-5 text-end">
-              <Link className="btn rounded-pill btn-outline-primary btn-sm border-2 mb-5" href="/explore-nfts">View All Coupons</Link>
+              <Link className="btn rounded-pill btn-outline-primary btn-sm border-2 mb-5" href="/explore/nfts">View All Coupons</Link>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const LatestCouponDeals = () => {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-12"><Link className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href="#">Buy</Link></div>
+                      <div className="col-12"><Link className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href={`/items/${coupon.collectionId}/${coupon.tokenId}`}>Buy</Link></div>
                     </div>
                   </div>
                 </div>
