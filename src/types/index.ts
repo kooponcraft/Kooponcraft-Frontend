@@ -87,3 +87,12 @@ type Coupon = {
   priceOfCoupon: number;
   ownerName: string;
 };
+
+
+type LeaderboardUser = {
+  position: number;
+  username: string;
+  points: number;
+  last1DayChange: number;
+  last7DaysChange: number;
+};
