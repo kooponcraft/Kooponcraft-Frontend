@@ -134,7 +134,7 @@ export default function MyStoreItems() {
               {/* Pagination - Uncomment if needed
               <Row>
                 <Col xs={12}>
-                  <div className="funto-pagination mt-70">
+                  <div className="kooponcraft-pagination mt-70">
                     <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-center mb-0">
                         <li className="page-item active"><a className="page-link" href="#">1</a></li>
