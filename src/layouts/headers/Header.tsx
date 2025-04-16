@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
       {
-        pathname.startsWith("/dashboard") || pathname.startsWith("/live-bids") || pathname.startsWith("/my-collections") || pathname.startsWith("/my-wallet") || pathname.startsWith("/notifications") || pathname.startsWith("/settings") || pathname.startsWith("/my-transactions") || pathname.startsWith("/activity") || pathname.startsWith("/my-tokens") || pathname.startsWith("/my-store") || pathname.startsWith("/create-new") ? <DashboardHeader /> : <HeaderOne />
+        pathname.startsWith("/dashboard") || pathname.startsWith("/live-bids") || pathname.startsWith("/my-collections") || pathname.startsWith("/my-wallet") || pathname.startsWith("/notifications") || pathname.startsWith("/settings") || pathname.startsWith("/my-transactions") || pathname.startsWith("/activity") || pathname.startsWith("/my-tokens") || pathname.startsWith("/my-store") || pathname.startsWith("/collection/create") || pathname.startsWith("/items/create")? <DashboardHeader /> : <HeaderOne />
       }
     </>
   )
