@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import AppImage from "@/components/common/AppImage";
 import appAxios from "@/config/axios";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { connectWallet } from "@/lib/connectWallet";
 
 const LoginArea = () => {
@@ -16,6 +16,8 @@ const LoginArea = () => {
 		password: "",
 		rememberMe: true,
 	});
+	const searchParams = useSearchParams()
+	const callbackUrl = searchParams.get("callbackUrl")
 	const router = useRouter()
 
 	const togglePasswordVisibility = () => {
@@ -39,7 +41,7 @@ const LoginArea = () => {
 				email,
 				password,
 			});
-			router.push('/dashboard');
+			router.push(callbackUrl ? decodeURIComponent(callbackUrl) : "/dashboard")
 		} catch (error: any) {
 			setError(error?.response?.data?.error || "An error occured")
 		} finally {
@@ -67,7 +69,7 @@ const LoginArea = () => {
 		  await appAxios.post(type == "polkadot-js" ? "/loginWithPolkadot" : "/loginWithSubWallet", {
 			  address: wallet.address
 		  })
-		  router.push("/dashboard")
+		  router.push(callbackUrl ? decodeURIComponent(callbackUrl) : "/dashboard")
 		}catch(err: any){
 		  setError(err.response.data.error || "An error occured")
 		}finally{
@@ -84,7 +86,7 @@ const LoginArea = () => {
 							<h2>Welcome Back!</h2>
 							<p>
 								Didn't have an account?
-								<Link className="ms-1 hover-primary" href="/register">
+								<Link className="ms-1 hover-primary" href={"/register" + (callbackUrl ? `?callbackUrl=${encodeURIComponent(callbackUrl)}` : "")}>
 									Register now!
 								</Link>
 							</p>

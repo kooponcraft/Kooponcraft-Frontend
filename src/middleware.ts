@@ -10,7 +10,7 @@ export async function middleware(request: NextRequest) {
     if (protectedRoutes.includes(pathname)) {
         const user = await getUser()
         if (!user) {
-            return NextResponse.redirect(new URL("/login", request.nextUrl.origin));
+            return NextResponse.redirect(new URL(`/login?callbackUrl=${encodeURIComponent(pathname)}`, request.nextUrl.origin));
         }
     }
 

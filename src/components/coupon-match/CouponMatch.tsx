@@ -298,7 +298,7 @@ export default function CouponMatchGame() {
           return (
             <div 
               key={index}
-              className={`card ${isFlipped || isMatched ? 'flipped' : ''}`}
+              className={`game-card ${isFlipped || isMatched ? 'flipped' : ''}`}
               data-index={index}
               data-name={coupon.name}
               onClick={() => {
@@ -307,14 +307,14 @@ export default function CouponMatchGame() {
                 }
               }}
             >
-              <div className="card-face card-front">
-                <div className="card-content">
+              <div className="game-card-face game-card-front">
+                <div className="game-card-content">
                   <AppImage src={coupon.image} alt={coupon.name} width={80} height={80} />
                   <div>{coupon.name}</div>
                 </div>
               </div>
-              <div className="card-face card-back">
-                <div className="card-content">
+              <div className="game-card-face game-card-back">
+                <div className="game-card-content">
                   <AppImage src="/assets/img/koopon-logo.png" width={200} height={200} alt="KooponCraft" />
                 </div>
               </div>

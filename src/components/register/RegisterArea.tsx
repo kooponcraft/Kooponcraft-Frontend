@@ -5,7 +5,7 @@ import React, { FormEvent, useState } from 'react';
 import appAxios from '@/config/axios';
 import { Button, Modal, Form, Alert } from 'react-bootstrap';
 import { BsCheckCircleFill, BsClipboard } from 'react-icons/bs';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { connectWallet } from '@/lib/connectWallet';
 
 const RegisterArea = () => {
@@ -19,6 +19,8 @@ const RegisterArea = () => {
   const [mnemonic, setMnemonic] = useState("")
   const [copied, setCopied] = useState(false)
   const [error, setError] = useState<any>("")
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get("callbackUrl")
   const router = useRouter()
 
   const togglePasswordVisibility = () => {
@@ -27,7 +29,7 @@ const RegisterArea = () => {
 
   const modalClose = () => {
     setIsOpen(false)
-    router.push("/dashboard")
+    router.push(callbackUrl ? decodeURIComponent(callbackUrl) : "/dashboard")
   }
 
   const register = async (e: FormEvent<HTMLFormElement>) => {
@@ -73,7 +75,7 @@ const RegisterArea = () => {
           walletType: wallet.walletType, // This will be "Acala" for Acala accounts
           networkType: wallet.networkType,
       })
-      router.push("/dashboard")
+      router.push(callbackUrl ? decodeURIComponent(callbackUrl) : "/dashboard")
     }catch(err: any){
       setError(err.response.data.error || "An error occured")
     }finally{
@@ -129,7 +131,7 @@ const RegisterArea = () => {
                 <h2>Create your free account</h2>
                 <p>
                   Already have an account?
-                  <Link className="ms-1 hover-primary" href="/login">Log In</Link>
+                  <Link className="ms-1 hover-primary" href={"/login" + (callbackUrl ? `?callbackUrl=${encodeURIComponent(callbackUrl)}` : "")}>Log In</Link>
                 </p>
 
                 {error && <Alert variant='danger'>{error}</Alert>}
