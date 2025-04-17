@@ -59,7 +59,7 @@ const DashboardRedeemNfts = () => {
                                 <div className="d-flex align-items-center justify-content-center">
                                     <h5>Redeem Coupon Requests</h5>
                                 </div>
-                                <ul className="nav nav-tabs border-0 mb-2" id="kooponcraftTab" role="tablist">
+                                <ul className="nav nav-tabs border-0 mb-2" id="funtoTab" role="tablist">
                                     <li className="nav-item" role="presentation"><a className="rounded-pill btn btn-sm btn-primary me-1 active" id="tab--1" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Recent Requests</a></li>
                                 </ul>
                             </div>

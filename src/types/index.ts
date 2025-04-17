@@ -96,3 +96,23 @@ type LeaderboardUser = {
   last1DayChange: number;
   last7DaysChange: number;
 };
+
+
+type CouponType = {
+  name: string;
+  image: string;
+  color: string;
+};
+
+interface GameState {
+  moves: number;
+  points: number;
+  matchedPairs: number;
+  isLocked: boolean;
+  flippedCards: number[];
+  matchedCards: number[]; // New field to track matched cards
+  startTime: number;
+  timer: string;
+  canPlay: boolean;
+  cooldownMessage: string;
+}

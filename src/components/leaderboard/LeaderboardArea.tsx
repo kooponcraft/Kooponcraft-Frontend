@@ -95,7 +95,7 @@ export default function LeaderboardArea() {
           )}
           
           {/* Pagination */}
-          <div className="kooponcraft-pagination">
+          <div className="funto-pagination">
             <Pagination className="justify-content-center mb-0">
               <Pagination.Prev 
                 onClick={() => handlePageChange(Math.max(1, currentPage - 1))} 
