@@ -1,14 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { 
-  Row, 
-  Col, 
-  Card, 
-  Button, 
-  Modal,
-} from 'react-bootstrap';
+import { Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import { getUser } from '@/lib/auth/getUser';
 import appAxios from '@/config/axios';
 import AppImage from '../common/AppImage';
@@ -37,8 +31,6 @@ export default function CouponMatchGame() {
     points: '-',
     time: '-'
   });
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const countdownRef = useRef<NodeJS.Timeout | null>(null);
   const maxMoves = 12;
 
   const couponTypes: CouponType[] = [
@@ -52,6 +44,31 @@ export default function CouponMatchGame() {
     { name: 'You-Polkadot', image: '/assets/img/parachains/polkadot2.png', color: '#f97316' }
   ];
 
+  // Real-time cooldown timer
+  useEffect(() => {
+    if (!gameState.canPlay && gameState.cooldownMessage) {
+      const interval = setInterval(async () => {
+        await checkCooldown();
+      }, 60000); // Update every minute
+
+      return () => clearInterval(interval);
+    }
+  }, [gameState.canPlay, gameState.cooldownMessage]);
+
+  // Game timer effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (startGame && gameState.startTime > 0) {
+      interval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - gameState.startTime) / 1000);
+        const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+        const seconds = (elapsed % 60).toString().padStart(2, '0');
+        setGameState(prev => ({ ...prev, timer: `${minutes}:${seconds}` }));
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [startGame, gameState.startTime]);
+
   useEffect(() => {
     const fetchUser = async () => {
       setUser(await getUser());
@@ -59,13 +76,9 @@ export default function CouponMatchGame() {
     fetchUser();
     checkCooldown();
     loadPreviousGameStats();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (countdownRef.current) clearInterval(countdownRef.current);
-    };
   }, []);
 
-  const initializeGame = () => {
+  const initializeGame = useCallback(() => {
     const newGameState = {
       moves: 0,
       points: 0,
@@ -79,14 +92,13 @@ export default function CouponMatchGame() {
       cooldownMessage: gameState.cooldownMessage
     };
     const shuffled = [...couponTypes, ...couponTypes]
-        .sort(() => Math.random() - 0.5);
+      .sort(() => Math.random() - 0.5);
     setGameState(newGameState);
-    startTimer(newGameState.startTime);
     setShuffledCoupons(shuffled);
     setStartGame(true);
-  };
+  }, [couponTypes, gameState.canPlay, gameState.cooldownMessage]);
 
-  const createConfetti = (element: HTMLElement) => {
+  const createConfetti = useCallback((element: HTMLElement) => {
     const rect = element.getBoundingClientRect();
     for (let i = 0; i < 5; i++) {
       const confetti = document.createElement('div');
@@ -94,34 +106,21 @@ export default function CouponMatchGame() {
       confetti.style.left = `${rect.left + Math.random() * rect.width}px`;
       confetti.style.top = `${rect.top}px`;
       document.body.appendChild(confetti);
-      
       confetti.addEventListener('animationend', () => confetti.remove());
     }
-  };
+  }, []);
 
-  const startTimer = (startTime: number) => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    
-    timerRef.current = setInterval(() => {
-      const elapsed = Math.floor((Date.now() - startTime) / 1000);
-      const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
-      const seconds = (elapsed % 60).toString().padStart(2, '0');
-      setGameState(prev => ({ ...prev, timer: `${minutes}:${seconds}` }));
-    }, 1000);
-  };
-
-  const flipCard = (index: number, name: string) => {
+  const flipCard = useCallback((index: number, name: string) => {
     if (gameState.isLocked || 
         gameState.flippedCards.includes(index) || 
-        gameState.matchedCards.includes(index)) { // Check if card is already matched
+        gameState.matchedCards.includes(index)) {
       return;
     }
-  
-    // Allow flipping if we have 0 or 1 cards flipped
+
     if (gameState.flippedCards.length < 2) {
       const newFlippedCards = [...gameState.flippedCards, index];
       setGameState(prev => ({ ...prev, flippedCards: newFlippedCards }));
-  
+
       if (newFlippedCards.length === 2) {
         const newMoves = gameState.moves + 1;
         setGameState(prev => ({ ...prev, moves: newMoves }));
@@ -133,36 +132,32 @@ export default function CouponMatchGame() {
         }
       }
     }
-  };
+  }, [gameState]);
 
-  const checkMatch = (flippedCards: number[]) => {
+  const checkMatch = useCallback((flippedCards: number[]) => {
     setGameState(prev => ({ ...prev, isLocked: true }));
     const [index1, index2] = flippedCards;
     const card1 = document.querySelector(`[data-index="${index1}"]`) as HTMLElement;
     const card2 = document.querySelector(`[data-index="${index2}"]`) as HTMLElement;
     
     if (card1?.dataset.name === card2?.dataset.name) {
-      // Match found - add to matched cards
       setGameState(prev => ({
         ...prev,
         matchedPairs: prev.matchedPairs + 1,
         points: prev.points + 100,
-        matchedCards: [...prev.matchedCards, index1, index2], // Add both cards to matched
+        matchedCards: [...prev.matchedCards, index1, index2],
         isLocked: false,
         flippedCards: []
       }));
-  
+
       if (card1) createConfetti(card1);
       if (card2) createConfetti(card2);
-  
+
       if (gameState.matchedPairs + 1 === couponTypes.length) {
         setTimeout(() => gameComplete(), 500);
       }
     } else {
-      // No match - flip back after delay
       setTimeout(() => {
-        card1?.classList.remove('flipped');
-        card2?.classList.remove('flipped');
         setGameState(prev => ({
           ...prev,
           flippedCards: [],
@@ -170,53 +165,49 @@ export default function CouponMatchGame() {
         }));
       }, 1000);
     }
-  };
+  }, [createConfetti, couponTypes.length, gameState.matchedPairs]);
 
-  const movesLimitReached = async () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    
+  const movesLimitReached = useCallback(async () => {
     try {
       await saveScore();
       await updateProgress();
+      setShowMovesLimitModal(true);
+      startCountdown('limitCountdownTimer', () => router.push('/'));
     } catch (error) {
       console.error("Error saving game data:", error);
     }
+  }, [router]);
 
-    setShowMovesLimitModal(true);
-    startCountdown('limitCountdownTimer', () => router.push('/'));
-  };
-
-  const gameComplete = async () => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    
+  const gameComplete = useCallback(async () => {
     try {
       await saveScore();
       await updateProgress();
+      setShowVictoryModal(true);
+      startCountdown('countdownTimer', () => router.push('/'));
     } catch (error) {
       console.error("Error saving game data:", error);
     }
+  }, [router]);
 
-    setShowVictoryModal(true);
-    startCountdown('countdownTimer', () => router.push('/'));
-  };
-
-  const startCountdown = (elementId: string, callback: () => void) => {
+  const startCountdown = useCallback((elementId: string, callback: () => void) => {
     let countdown = 3;
     const countdownElement = document.getElementById(elementId);
     if (countdownElement) countdownElement.textContent = countdown.toString();
     
-    countdownRef.current = setInterval(() => {
+    const interval = setInterval(() => {
       countdown--;
       if (countdownElement) countdownElement.textContent = countdown.toString();
       
       if (countdown <= 0) {
-        if (countdownRef.current) clearInterval(countdownRef.current);
+        clearInterval(interval);
         callback();
       }
     }, 1000);
-  };
 
-  const saveScore = async () => {
+    return () => clearInterval(interval);
+  }, []);
+
+  const saveScore = useCallback(async () => {
     try {
       const gameData = {
         game: 'coupon-match',
@@ -224,15 +215,14 @@ export default function CouponMatchGame() {
         moves: gameState.moves,
         time: gameState.timer
       };
-      
       await appAxios.post('/game/saveGameScore', gameData);
       await loadPreviousGameStats();
     } catch (error) {
       console.error('Error saving score:', error);
     }
-  };
+  }, [gameState]);
 
-  const updateProgress = async () => {
+  const updateProgress = useCallback(async () => {
     try {
       await appAxios.post('/game/updateGameProgress', {
         cooldownHours: 24
@@ -240,9 +230,9 @@ export default function CouponMatchGame() {
     } catch (error) {
       console.error('Error updating game progress:', error);
     }
-  };
+  }, []);
 
-  const checkCooldown = async () => {
+  const checkCooldown = useCallback(async () => {
     try {
       const response = await appAxios.get('/game/checkGameProgress');
       
@@ -282,12 +272,11 @@ export default function CouponMatchGame() {
       }));
       return true;
     }
-  };
+  }, []);
 
-  const loadPreviousGameStats = async () => {
+  const loadPreviousGameStats = useCallback(async () => {
     try {
       const response = await appAxios.get('/game/checkGameProgress');
-      
       if (response.data.lastGameStats) {
         setLastGameStats({
           moves: response.data.lastGameStats.moves,
@@ -298,9 +287,9 @@ export default function CouponMatchGame() {
     } catch (error) {
       console.error('Error loading previous game stats:', error);
     }
-  };
+  }, []);
 
-  const renderGameBoard = () => {
+  const renderGameBoard = useCallback(() => {
     return (
       <div className="game-board">
         {shuffledCoupons.map((coupon, index) => {
@@ -334,7 +323,7 @@ export default function CouponMatchGame() {
         })}
       </div>
     );
-  };
+  }, [shuffledCoupons, gameState.flippedCards, gameState.matchedCards, flipCard]);
 
   return (
     <>
