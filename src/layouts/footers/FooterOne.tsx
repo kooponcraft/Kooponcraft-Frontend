@@ -58,7 +58,7 @@ const FooterOne = () => {
 							<div className="row">
 								<div className="col-12 col-lg-5">
 									<div className="footer-widget-area mb-70 pe-lg-4 pe-xl-5 me-lg-4 me-xl-5 border-end">
-										<Link className="d-block mb-4" href="/">
+										<Link className="d-block mb-4" style={{width: "170px"}} href="/">
 											<AppImage
 												className="light-logo"
 												src="/assets/img/core-img/logo.png"
