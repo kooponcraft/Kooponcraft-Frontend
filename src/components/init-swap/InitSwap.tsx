@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import appAxios from '@/config/axios';
+import { initiateCouponSwap } from '@/lib/initiateCouponSwap';
 
 export default function SwapArea() {
   const [ownCoupon, setOwnCoupon] = useState<Coupon | null>(null);
@@ -48,21 +49,13 @@ export default function SwapArea() {
     setCurrentLoadingId(`${desiredCoupon.collectionId}-${desiredCoupon.tokenId}`);
 
     try {
-      const response = await fetch('/api/initiateCouponSwap', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ownTokenId: ownCoupon.tokenId,
-          ownCollectionId: ownCoupon.collectionId,
-          desiredTokenId: desiredCoupon.tokenId,
-          desiredCollectionId: desiredCoupon.collectionId,
-          recipientAddress: desiredCoupon.tokenOwnerAddress
-        }),
-      });
-
-      const data = await response.json();
+      const data = await initiateCouponSwap({
+        ownTokenId: ownCoupon.tokenId,
+        ownCollectionId: ownCoupon.collectionId,
+        desiredTokenId: desiredCoupon.tokenId,
+        desiredCollectionId: desiredCoupon.collectionId,
+        recipientAddress: desiredCoupon.tokenOwnerAddress
+      })
 
       if (data.success) {
         showNotification('Swap request placed successfully!', 'success');
