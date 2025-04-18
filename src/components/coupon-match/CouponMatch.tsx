@@ -167,27 +167,58 @@ export default function CouponMatchGame() {
     }
   }, [createConfetti, couponTypes.length, gameState.matchedPairs]);
 
+  const saveScore = useCallback(async () => {
+    try {
+      const gameData = {
+        game: 'coupon-match',
+        score: gameState.points,
+        moves: gameState.moves,
+        time: gameState.timer
+      };
+      const response = await appAxios.post('/game/saveGameScore', gameData);
+
+      await loadPreviousGameStats()
+      
+      return response.data;
+    } catch (error) {
+      console.error('Error saving score:', error);
+      throw error;
+    }
+  }, [gameState])
+
+  const updateProgress = useCallback(async () => {
+    try {
+      await appAxios.post('/game/updateGameProgress', {
+        cooldownHours: 24
+      });
+    } catch (error) {
+      console.error('Error updating game progress:', error);
+    }
+  }, []);
+
   const movesLimitReached = useCallback(async () => {
     try {
+      setStartGame(false)
       await saveScore();
       await updateProgress();
       setShowMovesLimitModal(true);
       startCountdown('limitCountdownTimer', () => router.push('/'));
     } catch (error) {
-      console.error("Error saving game data:", error);
+      console.error("Error in movesLimitReached:", error);
     }
-  }, [router]);
+  }, [router, saveScore, updateProgress, gameState]);
 
   const gameComplete = useCallback(async () => {
     try {
+      setStartGame(false)
       await saveScore();
       await updateProgress();
       setShowVictoryModal(true);
       startCountdown('countdownTimer', () => router.push('/'));
     } catch (error) {
-      console.error("Error saving game data:", error);
+      console.error("Error in gameComplete:", error);
     }
-  }, [router]);
+  }, [router, saveScore, updateProgress, gameState]);
 
   const startCountdown = useCallback((elementId: string, callback: () => void) => {
     let countdown = 3;
@@ -205,31 +236,6 @@ export default function CouponMatchGame() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const saveScore = useCallback(async () => {
-    try {
-      const gameData = {
-        game: 'coupon-match',
-        score: gameState.points,
-        moves: gameState.moves,
-        time: gameState.timer
-      };
-      await appAxios.post('/game/saveGameScore', gameData);
-      await loadPreviousGameStats();
-    } catch (error) {
-      console.error('Error saving score:', error);
-    }
-  }, [gameState]);
-
-  const updateProgress = useCallback(async () => {
-    try {
-      await appAxios.post('/game/updateGameProgress', {
-        cooldownHours: 24
-      });
-    } catch (error) {
-      console.error('Error updating game progress:', error);
-    }
   }, []);
 
   const checkCooldown = useCallback(async () => {
@@ -336,20 +342,20 @@ export default function CouponMatchGame() {
                   <Card.Body className="p-4">
                     <div className="d-flex align-items-center mb-3">
                       <i className="bi bi-controller text-primary me-2" style={{ fontSize: '1.5rem' }}></i>
-                      <h5 className="mb-0">Current Game</h5>
+                      <h5 className="mb-0">{startGame ? "Current Game" : "Last Game"}</h5>
                     </div>
                     <div className="d-flex justify-content-between">
                       <div className="text-center">
                         <p className="text-muted mb-1">Moves</p>
-                        <h3 className="mb-0">{gameState.moves}</h3>
+                        <h3 className="mb-0">{startGame ? gameState.moves : lastGameStats.moves}</h3>
                       </div>
                       <div className="text-center">
                         <p className="text-muted mb-1">Points</p>
-                        <h3 className="mb-0">{gameState.points}</h3>
+                        <h3 className="mb-0">{startGame ? gameState.points : lastGameStats.points}</h3>
                       </div>
                       <div className="text-center">
                         <p className="text-muted mb-1">Time</p>
-                        <h3 className="mb-0">{gameState.timer}</h3>
+                        <h3 className="mb-0">{startGame ? gameState.timer : lastGameStats.time}</h3>
                       </div>
                     </div>
                   </Card.Body>
