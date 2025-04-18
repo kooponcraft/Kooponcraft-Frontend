@@ -168,23 +168,34 @@ export default function CouponMatchGame() {
   }, [createConfetti, couponTypes.length, gameState.matchedPairs]);
 
   const saveScore = useCallback(async () => {
+    const currentState = await new Promise<GameState>(resolve => {
+      setGameState(prev => {
+        resolve(prev);
+        return prev;
+      });
+    });
+
     try {
       const gameData = {
         game: 'coupon-match',
-        score: gameState.points,
-        moves: gameState.moves,
-        time: gameState.timer
+        score: currentState.points,
+        moves: currentState.moves,
+        time: currentState.timer
       };
       const response = await appAxios.post('/game/saveGameScore', gameData);
 
-      await loadPreviousGameStats()
+      setLastGameStats({
+        points: currentState.points.toString(),
+        moves: currentState.moves.toString(),
+        time: currentState.timer
+      });
       
       return response.data;
     } catch (error) {
       console.error('Error saving score:', error);
       throw error;
     }
-  }, [gameState])
+  }, [])
 
   const updateProgress = useCallback(async () => {
     try {
