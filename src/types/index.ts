@@ -86,6 +86,7 @@ type Coupon = {
   tokenImageUrl: string;
   priceOfCoupon: number;
   ownerName: string;
+  tokenOwnerAddress: string;
 };
 
 
