@@ -19,6 +19,7 @@ import { getUserTokens } from '@/lib/getUserTokens';
 import { initiateCouponSwap } from '@/lib/initiateCouponSwap';
 import { acceptCouponSwap } from '@/lib/acceptCouponSwap';
 import { redeemCoupon } from '@/lib/redeemCoupon';
+import AppImage from '@/components/common/AppImage';
 
 export default function MyTokenArea() {
   const router = useRouter();
@@ -149,7 +150,7 @@ export default function MyTokenArea() {
   };
 
   const renderTokenCard = (token: Token, tokenType: 'standard' | 'special' | 'item') => {
-    const couponUrl = tokenType === "standard" ? `/getCoupon/${token.collectionId}/${token.tokenId}` : '#';
+    const couponUrl = tokenType === "standard" ? `/coupon/${token.collectionId}/${token.tokenId}` : '#';
     const isOwnedByStore = token.metadata && token.metadata.storeAddress === token.tokenOwnerAddress;
     
     let tokenStatus = '';
@@ -192,7 +193,7 @@ export default function MyTokenArea() {
               <Col xs={7}>
                 <div className="name-info d-flex align-items-center">
                   <div className="author-img position-relative">
-                    <img className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
+                    <AppImage className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
                     <i className="bi bi-check position-absolute bg-success"></i>
                   </div>
                   <div className="name-author">

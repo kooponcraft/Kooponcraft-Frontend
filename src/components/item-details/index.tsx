@@ -11,7 +11,7 @@ import RelatedProjects from '../common/RelatedProjects';
 
  
 
-const ItemDetails = () => {
+const ItemDetails = ({ title, subtitle }: any) => {
 
   if (typeof window !== "undefined") {
     require("bootstrap/dist/js/bootstrap");
@@ -22,12 +22,10 @@ const ItemDetails = () => {
   return (
     <>
     
-    <Breadcrumb title="Item Details" subtitle="Item Details" />
+    <Breadcrumb title={title} subtitle={subtitle} />
     <Divider />
     <ItemDetailsArea />
     <Divider />
-    <RelatedProjects />
-    <Divider /> 
           
     </>
   );

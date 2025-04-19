@@ -151,7 +151,7 @@ const DashboardCouponSwap = () => {
                                         />
                                         <Link
                                         target="_blank"
-                                        href={`/getCoupon/${offer.ownCollectionId}/${offer.ownTokenId}`}
+                                        href={`/coupon/${offer.ownCollectionId}/${offer.ownTokenId}`}
                                         >
                                         {offer.ownTokenName}
                                         </Link>
@@ -161,7 +161,7 @@ const DashboardCouponSwap = () => {
                                     <span className="d-inline-block fw-bold fz-14">
                                         <Link
                                         target="_blank"
-                                        href={`/getCoupon/${offer.desiredCollectionId}/${offer.desiredTokenId}`}
+                                        href={`/coupon/${offer.desiredCollectionId}/${offer.desiredTokenId}`}
                                         >
                                         {offer.desiredTokenName}
                                         </Link>

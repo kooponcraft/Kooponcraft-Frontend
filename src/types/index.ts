@@ -37,19 +37,25 @@ type Collection = {
     imageFile: File | null;
     imagePreview: string;
   };
-  type Token = {
-    tokenId: string;
-    collectionId: string;
-    tokenName: string;
-    tokenImageUrl: string;
-    priceOfCoupon: number;
-    isPurchased: boolean;
-    metadata?: {
-      storeAddress: string;
-    };
-    tokenOwnerAddress: string;
-  };
+
   
+interface Token {
+  _id: string;
+  tokenId: string;
+  collectionId: string;
+  tokenName: string;
+  tokenImageUrl: string;
+  ownerName: string;
+  profileImageUrl?: string;
+  priceOfCoupon: number;
+  isPurchased: boolean;
+  tokenDescription?: string;
+  tokenOwnerAddress: string;
+  metadata?: {
+    storeAddress: string;
+  };
+}
+
   type TokenResponse = {
     success: boolean;
     allTokens: {

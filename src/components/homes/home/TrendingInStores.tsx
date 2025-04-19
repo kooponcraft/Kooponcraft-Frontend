@@ -53,7 +53,7 @@ const TrendingInStores = async () => {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-12"><a className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href={`/items/${item.collectionId}/${item.tokenId}`}>Purchase</a></div>
+                      <div className="col-12"><a className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href={`/item/${item.collectionId}/${item.tokenId}`}>Purchase</a></div>
                     </div>
                   </div>
                 </div>

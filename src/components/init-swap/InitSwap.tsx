@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { Row, Col, Card, Button, Toast, ToastContainer, Alert } from 'react-bootstrap';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import appAxios from '@/config/axios';
 import { initiateCouponSwap } from '@/lib/initiateCouponSwap';
+import AppImage from '../common/AppImage';
 
 export default function SwapArea() {
   const [ownCoupon, setOwnCoupon] = useState<Coupon | null>(null);
@@ -98,7 +98,7 @@ export default function SwapArea() {
                           <input type="hidden" name="ownCollectionId" id="ownCollectionId" value={ownCoupon.collectionId} />
 
                           <div className="img-wrap position-relative">
-                            <Image 
+                            <AppImage 
                               src={ownCoupon.tokenImageUrl} 
                               alt={ownCoupon.tokenName} 
                               width={200} 
@@ -114,7 +114,7 @@ export default function SwapArea() {
                           <div className="meta-info">
                             <div className="name-info d-flex align-items-center mb-3">
                               <div className="author-img position-relative">
-                                <Image 
+                                <AppImage 
                                   src="/assets/img/bg-img/u2.jpg" 
                                   alt="User" 
                                   width={40} 
@@ -125,7 +125,7 @@ export default function SwapArea() {
                               </div>
                               <div className="name-author ms-2">
                                 <Link 
-                                  href={`/getCoupon/${ownCoupon.collectionId}/${ownCoupon.tokenId}`}
+                                  href={`/coupon/${ownCoupon.collectionId}/${ownCoupon.tokenId}`}
                                   className="name d-block hover-primary fw-bold text-truncate"
                                   title={ownCoupon.tokenName}
                                 >
@@ -157,7 +157,7 @@ export default function SwapArea() {
                   <Card.Body className="px-4">
                     <div className="d-flex align-items-center justify-content-center">
                       <div className="img-wrap">
-                        <Image 
+                        <AppImage 
                           src="/assets/img/swap.png" 
                           alt="Swap" 
                           width={60} 
@@ -178,7 +178,7 @@ export default function SwapArea() {
                         <Row className="align-items-center g-3">
                           <Col xs={4}>
                             <div className="img-wrap position-relative">
-                              <Image 
+                              <AppImage 
                                 src={coupon.tokenImageUrl} 
                                 alt={coupon.tokenName} 
                                 width={200} 
@@ -194,7 +194,7 @@ export default function SwapArea() {
                             <div className="meta-info">
                               <div className="name-info d-flex align-items-center mb-3">
                                 <div className="author-img position-relative">
-                                  <Image 
+                                  <AppImage 
                                     src="/assets/img/bg-img/u1.jpg" 
                                     alt="User" 
                                     width={40} 
@@ -205,7 +205,7 @@ export default function SwapArea() {
                                 </div>
                                 <div className="name-author ms-2">
                                   <Link 
-                                    href={`/getCoupon/${coupon.collectionId}/${coupon.tokenId}`}
+                                    href={`/coupon/${coupon.collectionId}/${coupon.tokenId}`}
                                     className="name d-block hover-primary fw-bold text-truncate"
                                     title={coupon.tokenName}
                                   >

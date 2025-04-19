@@ -66,7 +66,7 @@ const LatestCouponDeals = () => {
                             <AppImage className="shadow" src={coupon.profileImageUrl || `https://api.dicebear.com/6.x/identicon/svg?seed=${encodeURIComponent(coupon.ownerName)}`} alt="" />
                             <i className="bi bi-check position-absolute bg-success true"></i></div>
                           <div className="name-author">
-                            <Link className="name d-block hover-primary fw-bold text-truncate" href="/coupon-details" data-bs-toggle="tooltip" data-bs-placement="top" title={coupon.tokenName}>{coupon.tokenName}</Link>
+                            <Link className="name d-block hover-primary fw-bold text-truncate" href={`/coupon/${coupon.collectionId}/${coupon.tokenId}`} data-bs-toggle="tooltip" data-bs-placement="top" title={coupon.tokenName}>{coupon.tokenName}</Link>
                             <Link className="author d-block fz-12 hover-primary text-truncate" href="/author">@{coupon.ownerName}</Link></div>
                         </div>
                       </div>
@@ -77,7 +77,7 @@ const LatestCouponDeals = () => {
                           </h6>
                         </div>
                       </div>
-                      <div className="col-12"><Link className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href={`/items/${coupon.collectionId}/${coupon.tokenId}`}>Buy</Link></div>
+                      <div className="col-12"><Link className="btn btn-primary rounded-pill btn-sm mt-3 w-100" href={`/item/${coupon.collectionId}/${coupon.tokenId}`}>Buy</Link></div>
                     </div>
                   </div>
                 </div>

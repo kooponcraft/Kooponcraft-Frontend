@@ -26,6 +26,7 @@ const walletMapping = {
     clover: "Clover",
     polkagate: "PolkaGate",
     pontem: "Pontem",
+    metamask: "MetaMask",
 };
 
 const determineWalletType = (injectedKey: string) => {
@@ -81,25 +82,44 @@ const determineNetworkFromGenesis = (genesisHash: string) => {
 
 export const connectWallet = async (wallet: keyof typeof walletMapping) => {
     try {
-        if (!window.injectedWeb3) {
+        if (!window.injectedWeb3 && wallet !== "metamask") {
             // modal
-            throw new Error(`${determineWalletType(wallet)} Extension Not Found`)
+            throw new Error(`${determineWalletType(wallet)} Extension Not Found`);
+        }
+
+        if (wallet === "metamask") {
+            if (!window.ethereum) {
+                throw new Error("MetaMask Extension Not Found");
+            }
+
+            const accounts = await window.ethereum.request({
+                method: "eth_requestAccounts",
+            });
+
+            if (!accounts || accounts.length === 0) {
+                throw new Error("No accounts found in MetaMask");
+            }
+
+            const account = { address: accounts[0] };
+
+            return {
+                connected: true,
+                networkType: "Ethereum",
+                walletType: "MetaMask",
+                ...account,
+            };
         }
 
         // Simulate a delay to ensure injectedWeb3 is ready
         await new Promise((resolve) => setTimeout(resolve, 100));
         const allInjected = await window.injectedWeb3;
 
-        const availableWallets = Object.keys(allInjected);
+        const availableWallets = allInjected ? Object.keys(allInjected) : [];
 
         // Select the requested wallet or fallback to the first available wallet
-        // const selectedWallet = allInjected[wallet]
-        //     ? wallet
-        //     : (availableWallets[0] as keyof typeof walletMapping);
+        const selectedWallet = wallet;
 
-        const selectedWallet = wallet
-
-        const injected = allInjected[selectedWallet];
+        const injected =  allInjected ? allInjected[selectedWallet] : null;
         if (!injected) {
             throw new Error(
                 `No compatible ${determineWalletType(wallet)} wallet extension found`
@@ -111,7 +131,11 @@ export const connectWallet = async (wallet: keyof typeof walletMapping) => {
 
         if (!accounts || accounts.length === 0) {
             // modal
-            throw new Error(`Please create or import an account in your ${determineWalletType(wallet)} extension first`)
+            throw new Error(
+                `Please create or import an account in your ${determineWalletType(
+                    wallet
+                )} extension first`
+            );
         }
 
         const account = accounts[0];
