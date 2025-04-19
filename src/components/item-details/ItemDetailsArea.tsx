@@ -27,6 +27,7 @@ import AppImage from '../common/AppImage';
 import { purchaseItem } from '@/lib/purchaseItem';
 import { getUser } from '@/lib/auth/getUser';
 import { connectWallet } from '@/lib/connectWallet';
+import { purchaseCoupon } from '@/lib/purchaseCoupon';
 
 export default function ItemDetailsPage() {
   const router = useRouter();
@@ -82,16 +83,21 @@ export default function ItemDetailsPage() {
     setToastVariant('success');
 
     try {
-      const data = await purchaseItem({
-        tokenId: token.tokenId,
-        collectionId: token.collectionId,
-        applyTokenId: selectedCoupon?.split('-')[0],
-        applyCollectionId: selectedCoupon?.split('-')[1],
-      });
+      const data = await (
+        type == "item" ? purchaseItem({
+          tokenId: token.tokenId,
+          collectionId: token.collectionId,
+          applyTokenId: selectedCoupon?.split('-')[0],
+          applyCollectionId: selectedCoupon?.split('-')[1],
+        }) : purchaseCoupon({
+          tokenId: token.tokenId,
+          collectionId: token.collectionId,
+        })
+      )
 
       if (data.success) {
         setToastMessage('Purchase successful!');
-        router.push('/my-tokens')
+        router.push(type == "item" ? '/my-tokens' : '/dashboard')
       }
     } catch (error: any) {
       setToastVariant('danger');
@@ -322,7 +328,7 @@ export default function ItemDetailsPage() {
           <Row xs={1} md={2} lg={3} className="g-4">
             {moreCoupons.map((coupon) => (
               <Col key={coupon._id}>
-                <CouponCard coupon={coupon} />
+                <CouponCard coupon={coupon} type={type || ""} />
               </Col>
             ))}
           </Row>
@@ -524,7 +530,7 @@ const WalletModal = ({
   </Modal>
 );
 
-const CouponCard = ({ coupon }: { coupon: Token }) => (
+const CouponCard = ({ coupon, type }: { coupon: Token; type: string }) => (
   <Card className="h-100 shadow-sm">
     <div className="position-relative" style={{ height: '200px' }}>
       <AppImage
@@ -568,7 +574,7 @@ const CouponCard = ({ coupon }: { coupon: Token }) => (
         variant="primary" 
         className="w-100"
         as="link"
-        href={`/item/${coupon.collectionId}/${coupon.tokenId}`}
+        href={`/${type}/${coupon.collectionId}/${coupon.tokenId}`}
       >
         View Details
       </Button>

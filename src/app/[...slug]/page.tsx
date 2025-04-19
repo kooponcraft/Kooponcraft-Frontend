@@ -46,7 +46,7 @@ export default async function DynamicPage({ params }: any ) {
         if(data?.success === false){
             return <Error />
         }
-        return <ItemDetails title={toProperCase(type)} subtitle={data.token?.tokenName}/>;
+        return <ItemDetails title={toProperCase(type) + " Details"} subtitle={data.token?.tokenName}/>;
     }
 
     return <Error />;
