@@ -34,7 +34,7 @@ export default function SwapArea() {
     };
 
     fetchData();
-  }, []);
+  }, [cid, tid]);
 
   const showNotification = (message: string, variant: 'success' | 'danger') => {
     setToastMessage(message);

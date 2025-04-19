@@ -67,7 +67,7 @@ const menu_data:DataType[] = [
 	// 	sub_menus: [
 	// 		{ link: "/activity", title: "Activity" },
 	// 		{ link: "/ranking", title: "Ranking" },
-	// 		{ link: "/create-new", title: "Create New Items" },
+	// 		{ link: "/collection/create", title: "Create New Items" },
 	// 		{ link: "/connet-wallet", title: "Connect Wallet" },
 	// 		{ link: "/author", title: "Author Profile" },
 	// 		{

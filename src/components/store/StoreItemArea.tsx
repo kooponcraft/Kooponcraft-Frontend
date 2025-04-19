@@ -16,6 +16,7 @@ import {
 import { getStores } from '@/lib/getStores';
 import { getStoreCoupons } from '@/lib/getStoreCoupons';
 import { purchaseCoupon } from '@/lib/purchaseCoupon';
+import AppImage from '../common/AppImage';
 
 export default function StoreItemArea() {
   const pathname = usePathname();
@@ -133,7 +134,7 @@ export default function StoreItemArea() {
                       <Card className="nft-card shadow-sm">
                         <Card.Body>
                           <div className="img-wrap">
-                            <img 
+                            <AppImage 
                               className="fixed-size" 
                               src={coupon.tokenImageUrl} 
                               alt={coupon.tokenName}
@@ -166,7 +167,7 @@ export default function StoreItemArea() {
                             <Col xs={8}>
                               <div className="name-info d-flex align-items-center">
                                 <div className="author-img position-relative">
-                                  <img className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
+                                  <AppImage className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
                                   <i className="bi bi-check position-absolute bg-success"></i>
                                 </div>
                                 <div className="name-author">

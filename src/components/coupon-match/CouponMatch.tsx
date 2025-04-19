@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Row, Col, Card, Button, Modal } from 'react-bootstrap';
 import { getUser } from '@/lib/auth/getUser';
@@ -33,7 +33,7 @@ export default function CouponMatchGame() {
   });
   const maxMoves = 12;
 
-  const couponTypes: CouponType[] = [
+  const couponTypes = useMemo(() => [
     { name: 'UNQ', image: '/assets/img/parachains/unique1.png', color: '#f472b6' },
     { name: 'Unique', image: '/assets/img/parachains/unique22.png', color: '#8b5cf6' },
     { name: 'Moonbeam', image: '/assets/img/parachains/moonbeam1.jpg', color: '#f59e0b' },
@@ -42,212 +42,7 @@ export default function CouponMatchGame() {
     { name: 'You-Acala', image: '/assets/img/parachains/acala3.png', color: '#ef4444' },
     { name: 'Polkadot', image: '/assets/img/parachains/polkadot1.png', color: '#14b8a6' },
     { name: 'You-Polkadot', image: '/assets/img/parachains/polkadot2.png', color: '#f97316' }
-  ];
-
-  // Real-time cooldown timer
-  useEffect(() => {
-    if (!gameState.canPlay && gameState.cooldownMessage) {
-      const interval = setInterval(async () => {
-        await checkCooldown();
-      }, 60000); // Update every minute
-
-      return () => clearInterval(interval);
-    }
-  }, [gameState.canPlay, gameState.cooldownMessage]);
-
-  // Game timer effect
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (startGame && gameState.startTime > 0) {
-      interval = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - gameState.startTime) / 1000);
-        const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
-        const seconds = (elapsed % 60).toString().padStart(2, '0');
-        setGameState(prev => ({ ...prev, timer: `${minutes}:${seconds}` }));
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [startGame, gameState.startTime]);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      setUser(await getUser());
-    };
-    fetchUser();
-    checkCooldown();
-    loadPreviousGameStats();
-  }, []);
-
-  const initializeGame = useCallback(() => {
-    const newGameState = {
-      moves: 0,
-      points: 0,
-      matchedPairs: 0,
-      isLocked: false,
-      flippedCards: [],
-      matchedCards: [],
-      startTime: Date.now(),
-      timer: '00:00',
-      canPlay: gameState.canPlay,
-      cooldownMessage: gameState.cooldownMessage
-    };
-    const shuffled = [...couponTypes, ...couponTypes]
-      .sort(() => Math.random() - 0.5);
-    setGameState(newGameState);
-    setShuffledCoupons(shuffled);
-    setStartGame(true);
-  }, [couponTypes, gameState.canPlay, gameState.cooldownMessage]);
-
-  const createConfetti = useCallback((element: HTMLElement) => {
-    const rect = element.getBoundingClientRect();
-    for (let i = 0; i < 5; i++) {
-      const confetti = document.createElement('div');
-      confetti.className = 'confetti';
-      confetti.style.left = `${rect.left + Math.random() * rect.width}px`;
-      confetti.style.top = `${rect.top}px`;
-      document.body.appendChild(confetti);
-      confetti.addEventListener('animationend', () => confetti.remove());
-    }
-  }, []);
-
-  const flipCard = useCallback((index: number, name: string) => {
-    if (gameState.isLocked || 
-        gameState.flippedCards.includes(index) || 
-        gameState.matchedCards.includes(index)) {
-      return;
-    }
-
-    if (gameState.flippedCards.length < 2) {
-      const newFlippedCards = [...gameState.flippedCards, index];
-      setGameState(prev => ({ ...prev, flippedCards: newFlippedCards }));
-
-      if (newFlippedCards.length === 2) {
-        const newMoves = gameState.moves + 1;
-        setGameState(prev => ({ ...prev, moves: newMoves }));
-        
-        setTimeout(() => checkMatch(newFlippedCards), 500);
-        
-        if (newMoves >= maxMoves) {
-          setTimeout(() => movesLimitReached(), 1000);
-        }
-      }
-    }
-  }, [gameState]);
-
-  const checkMatch = useCallback((flippedCards: number[]) => {
-    setGameState(prev => ({ ...prev, isLocked: true }));
-    const [index1, index2] = flippedCards;
-    const card1 = document.querySelector(`[data-index="${index1}"]`) as HTMLElement;
-    const card2 = document.querySelector(`[data-index="${index2}"]`) as HTMLElement;
-    
-    if (card1?.dataset.name === card2?.dataset.name) {
-      setGameState(prev => ({
-        ...prev,
-        matchedPairs: prev.matchedPairs + 1,
-        points: prev.points + 100,
-        matchedCards: [...prev.matchedCards, index1, index2],
-        isLocked: false,
-        flippedCards: []
-      }));
-
-      if (card1) createConfetti(card1);
-      if (card2) createConfetti(card2);
-
-      if (gameState.matchedPairs + 1 === couponTypes.length) {
-        setTimeout(() => gameComplete(), 500);
-      }
-    } else {
-      setTimeout(() => {
-        setGameState(prev => ({
-          ...prev,
-          flippedCards: [],
-          isLocked: false
-        }));
-      }, 1000);
-    }
-  }, [createConfetti, couponTypes.length, gameState.matchedPairs]);
-
-  const saveScore = useCallback(async () => {
-    const currentState = await new Promise<GameState>(resolve => {
-      setGameState(prev => {
-        resolve(prev);
-        return prev;
-      });
-    });
-
-    try {
-      const gameData = {
-        game: 'coupon-match',
-        score: currentState.points,
-        moves: currentState.moves,
-        time: currentState.timer
-      };
-      const response = await appAxios.post('/game/saveGameScore', gameData);
-
-      setLastGameStats({
-        points: currentState.points.toString(),
-        moves: currentState.moves.toString(),
-        time: currentState.timer
-      });
-      
-      return response.data;
-    } catch (error) {
-      console.error('Error saving score:', error);
-      throw error;
-    }
-  }, [])
-
-  const updateProgress = useCallback(async () => {
-    try {
-      await appAxios.post('/game/updateGameProgress', {
-        cooldownHours: 24
-      });
-    } catch (error) {
-      console.error('Error updating game progress:', error);
-    }
-  }, []);
-
-  const movesLimitReached = useCallback(async () => {
-    try {
-      setStartGame(false)
-      await saveScore();
-      await updateProgress();
-      setShowMovesLimitModal(true);
-      startCountdown('limitCountdownTimer', () => router.push('/'));
-    } catch (error) {
-      console.error("Error in movesLimitReached:", error);
-    }
-  }, [router, saveScore, updateProgress, gameState]);
-
-  const gameComplete = useCallback(async () => {
-    try {
-      setStartGame(false)
-      await saveScore();
-      await updateProgress();
-      setShowVictoryModal(true);
-      startCountdown('countdownTimer', () => router.push('/'));
-    } catch (error) {
-      console.error("Error in gameComplete:", error);
-    }
-  }, [router, saveScore, updateProgress, gameState]);
-
-  const startCountdown = useCallback((elementId: string, callback: () => void) => {
-    let countdown = 3;
-    const countdownElement = document.getElementById(elementId);
-    if (countdownElement) countdownElement.textContent = countdown.toString();
-    
-    const interval = setInterval(() => {
-      countdown--;
-      if (countdownElement) countdownElement.textContent = countdown.toString();
-      
-      if (countdown <= 0) {
-        clearInterval(interval);
-        callback();
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  ], []);
 
   const checkCooldown = useCallback(async () => {
     try {
@@ -305,6 +100,211 @@ export default function CouponMatchGame() {
       console.error('Error loading previous game stats:', error);
     }
   }, []);
+
+  // Real-time cooldown timer
+  useEffect(() => {
+    if (!gameState.canPlay && gameState.cooldownMessage) {
+      const interval = setInterval(async () => {
+        await checkCooldown();
+      }, 60000); // Update every minute
+
+      return () => clearInterval(interval);
+    }
+  }, [gameState.canPlay, gameState.cooldownMessage, checkCooldown]);
+
+  // Game timer effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (startGame && gameState.startTime > 0) {
+      interval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - gameState.startTime) / 1000);
+        const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+        const seconds = (elapsed % 60).toString().padStart(2, '0');
+        setGameState(prev => ({ ...prev, timer: `${minutes}:${seconds}` }));
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [startGame, gameState.startTime]);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      setUser(await getUser());
+    };
+    fetchUser();
+    checkCooldown();
+    loadPreviousGameStats();
+  }, [checkCooldown, loadPreviousGameStats]);
+
+  const initializeGame = useCallback(() => {
+    const newGameState = {
+      moves: 0,
+      points: 0,
+      matchedPairs: 0,
+      isLocked: false,
+      flippedCards: [],
+      matchedCards: [],
+      startTime: Date.now(),
+      timer: '00:00',
+      canPlay: gameState.canPlay,
+      cooldownMessage: gameState.cooldownMessage
+    };
+    const shuffled = [...couponTypes, ...couponTypes]
+      .sort(() => Math.random() - 0.5);
+    setGameState(newGameState);
+    setShuffledCoupons(shuffled);
+    setStartGame(true);
+  }, [couponTypes, gameState.canPlay, gameState.cooldownMessage]);
+
+  const createConfetti = useCallback((element: HTMLElement) => {
+    const rect = element.getBoundingClientRect();
+    for (let i = 0; i < 5; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = `${rect.left + Math.random() * rect.width}px`;
+      confetti.style.top = `${rect.top}px`;
+      document.body.appendChild(confetti);
+      confetti.addEventListener('animationend', () => confetti.remove());
+    }
+  }, []);
+
+  const startCountdown = useCallback((elementId: string, callback: () => void) => {
+    let countdown = 3;
+    const countdownElement = document.getElementById(elementId);
+    if (countdownElement) countdownElement.textContent = countdown.toString();
+    
+    const interval = setInterval(() => {
+      countdown--;
+      if (countdownElement) countdownElement.textContent = countdown.toString();
+      
+      if (countdown <= 0) {
+        clearInterval(interval);
+        callback();
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const saveScore = useCallback(async () => {
+    const currentState = await new Promise<GameState>(resolve => {
+      setGameState(prev => {
+        resolve(prev);
+        return prev;
+      });
+    });
+
+    try {
+      const gameData = {
+        game: 'coupon-match',
+        score: currentState.points,
+        moves: currentState.moves,
+        time: currentState.timer
+      };
+      const response = await appAxios.post('/game/saveGameScore', gameData);
+
+      setLastGameStats({
+        points: currentState.points.toString(),
+        moves: currentState.moves.toString(),
+        time: currentState.timer
+      });
+      
+      return response.data;
+    } catch (error) {
+      console.error('Error saving score:', error);
+      throw error;
+    }
+  }, [])
+
+  const updateProgress = useCallback(async () => {
+    try {
+      await appAxios.post('/game/updateGameProgress', {
+        cooldownHours: 24
+      });
+    } catch (error) {
+      console.error('Error updating game progress:', error);
+    }
+  }, []);
+
+  const movesLimitReached = useCallback(async () => {
+    try {
+      setStartGame(false)
+      await saveScore();
+      await updateProgress();
+      setShowMovesLimitModal(true);
+      startCountdown('limitCountdownTimer', () => router.push('/'));
+    } catch (error) {
+      console.error("Error in movesLimitReached:", error);
+    }
+  }, [router, saveScore, updateProgress, startCountdown]);
+
+  const gameComplete = useCallback(async () => {
+    try {
+      setStartGame(false)
+      await saveScore();
+      await updateProgress();
+      setShowVictoryModal(true);
+      startCountdown('countdownTimer', () => router.push('/'));
+    } catch (error) {
+      console.error("Error in gameComplete:", error);
+    }
+  }, [router, saveScore, updateProgress, startCountdown]);
+
+  const checkMatch = useCallback((flippedCards: number[]) => {
+    setGameState(prev => ({ ...prev, isLocked: true }));
+    const [index1, index2] = flippedCards;
+    const card1 = document.querySelector(`[data-index="${index1}"]`) as HTMLElement;
+    const card2 = document.querySelector(`[data-index="${index2}"]`) as HTMLElement;
+    
+    if (card1?.dataset.name === card2?.dataset.name) {
+      setGameState(prev => ({
+        ...prev,
+        matchedPairs: prev.matchedPairs + 1,
+        points: prev.points + 100,
+        matchedCards: [...prev.matchedCards, index1, index2],
+        isLocked: false,
+        flippedCards: []
+      }));
+
+      if (card1) createConfetti(card1);
+      if (card2) createConfetti(card2);
+
+      if (gameState.matchedPairs + 1 === couponTypes.length) {
+        setTimeout(() => gameComplete(), 500);
+      }
+    } else {
+      setTimeout(() => {
+        setGameState(prev => ({
+          ...prev,
+          flippedCards: [],
+          isLocked: false
+        }));
+      }, 1000);
+    }
+  }, [createConfetti, couponTypes.length, gameState.matchedPairs, gameComplete]);
+
+  const flipCard = useCallback((index: number, name: string) => {
+    if (gameState.isLocked || 
+        gameState.flippedCards.includes(index) || 
+        gameState.matchedCards.includes(index)) {
+      return;
+    }
+
+    if (gameState.flippedCards.length < 2) {
+      const newFlippedCards = [...gameState.flippedCards, index];
+      setGameState(prev => ({ ...prev, flippedCards: newFlippedCards }));
+
+      if (newFlippedCards.length === 2) {
+        const newMoves = gameState.moves + 1;
+        setGameState(prev => ({ ...prev, moves: newMoves }));
+        
+        setTimeout(() => checkMatch(newFlippedCards), 500);
+        
+        if (newMoves >= maxMoves) {
+          setTimeout(() => movesLimitReached(), 1000);
+        }
+      }
+    }
+  }, [gameState, checkMatch, movesLimitReached]);
 
   const renderGameBoard = useCallback(() => {
     return (
@@ -403,7 +403,7 @@ export default function CouponMatchGame() {
           <Modal.Title>Congratulations! 🎉</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>You've completed the Coupon Match game!</p>
+          <p>You&apos;ve completed the Coupon Match game!</p>
           <p>Moves: <span>{gameState.moves}</span></p>
           <p>Time: <span>{gameState.timer}</span></p>
           <p>Points Earned: <span>{gameState.points}</span></p>
@@ -421,7 +421,7 @@ export default function CouponMatchGame() {
           <Modal.Title>Game Over! ⏱️</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>You've reached the maximum number of moves (12)!</p>
+          <p>You&apos;ve reached the maximum number of moves (12)!</p>
           <p>Moves: <span>{gameState.moves}</span></p>
           <p>Time: <span>{gameState.timer}</span></p>
           <p>Points Earned: <span>{gameState.points}</span></p>

@@ -20,6 +20,7 @@ import { initiateCouponSwap } from '@/lib/initiateCouponSwap';
 import { acceptCouponSwap } from '@/lib/acceptCouponSwap';
 import { redeemCoupon } from '@/lib/redeemCoupon';
 import AppImage from '@/components/common/AppImage';
+import Link from 'next/link';
 
 export default function MyTokenArea() {
   const router = useRouter();
@@ -251,7 +252,10 @@ export default function MyTokenArea() {
 
   return (
     <>
-      
+      <div className="create-new-button">
+        <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i>
+        </Link>
+      </div>
       <div className="admin-wrapper">
         <Container>
           <h3 className="mb-3">All My Coupons</h3>

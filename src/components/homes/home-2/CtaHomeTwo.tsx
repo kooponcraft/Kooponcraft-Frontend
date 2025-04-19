@@ -19,7 +19,7 @@ const CtaHomeTwo = () => {
 								data-aos-duration="750"
 								data-aos-delay="600"
 							>
-								Don't waste any more time! Get started with <span className="text-warning">Kooponcraft</span> Now!
+								Don&apos;t waste any more time! Get started with <span className="text-warning">Kooponcraft</span> Now!
 							</h2>
 						</div>
 						<div className="col-12 col-md-4 col-lg-3">

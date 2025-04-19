@@ -1,9 +1,11 @@
 
 
 'use client'
+import AppImage from "@/components/common/AppImage";
 import { getCollections } from "@/lib/getCollections";
 import { mintItem } from "@/lib/mintItem";
 import { mintToken } from "@/lib/mintToken";
+import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from 'react';
@@ -17,7 +19,7 @@ const MyCollectionArea = () => {
   const [loading, setLoading] = useState(false);
   
   // Mint Token Modal State
-  const [showMintModal, setShowMintModal] = useState(true);
+  const [showMintModal, setShowMintModal] = useState(false);
   const [mintData, setMintData] = useState<MintData>({
     collectionId: '',
     tokenName: '',
@@ -230,6 +232,9 @@ const MyCollectionArea = () => {
 
   return (
     <>
+    <div className="create-new-button">
+        <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
+      </div>
       <div className="admin-wrapper">
         <Container fluid className="px-4">
           <div className="collections-header mb-4">
@@ -253,7 +258,7 @@ const MyCollectionArea = () => {
               <Button 
                 variant="primary" 
                 className="w-100 w-md-initial"
-                onClick={() => router.push('/create-new')}
+                onClick={() => router.push('/collection/create')}
               >
                 Create Collection
               </Button>
@@ -489,7 +494,7 @@ const MyCollectionArea = () => {
                 <div className="mb-3">
                   <div className="border rounded" style={{ width: '150px', height: '150px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {mintData.imagePreview ? (
-                      <img src={mintData.imagePreview} alt="Preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                      <AppImage src={mintData.imagePreview} alt="Preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
                     ) : (
                       <span>Preview</span>
                     )}
@@ -614,7 +619,7 @@ const MyCollectionArea = () => {
                 <div className="mb-3">
                   <div className="border rounded" style={{ width: '150px', height: '150px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {mintItemData.imagePreview ? (
-                      <img src={mintItemData.imagePreview} alt="Preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                      <AppImage src={mintItemData.imagePreview} alt="Preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
                     ) : (
                       <span>Preview</span>
                     )}

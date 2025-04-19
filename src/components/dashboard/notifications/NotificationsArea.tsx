@@ -14,7 +14,7 @@ const NotificationsArea = () => {
     <>
       <div className="create-new-button">
         <Link className="shadow-lg btn btn-warning"
-          href="/create-new"
+          href="/collections/create"
           data-bs-toggle="tooltip"
           data-bs-placement="left"
           title="Create New NFT">

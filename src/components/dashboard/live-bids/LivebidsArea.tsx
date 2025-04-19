@@ -39,7 +39,7 @@ const LivebidsArea = () => {
   return (
     <>
       <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/create-new" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
+        <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
       </div>
       <div className="admin-wrapper">
         <div className="container">

@@ -85,7 +85,7 @@ const LoginArea = () => {
 						<div className="register-card">
 							<h2>Welcome Back!</h2>
 							<p>
-								Didn't have an account?
+								Didn&apos;t have an account?
 								<Link className="ms-1 hover-primary" href={"/register" + (callbackUrl ? `?callbackUrl=${encodeURIComponent(callbackUrl)}` : "")}>
 									Register now!
 								</Link>

@@ -71,7 +71,7 @@ const MyWalletArea = () => {
   return (
     <>
       <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/create-new"
+        <Link className="shadow-lg btn btn-warning" href="/collection/create"
           data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
           <i className="fz-18 bi bi-plus-lg"></i>
         </Link>

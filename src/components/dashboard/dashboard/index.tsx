@@ -19,7 +19,7 @@ const Dashboard = () => {
 			<div className="create-new-button">
 				<Link
 					className="shadow-lg btn btn-warning"
-					href="/create-new"
+					href="/collection/create"
 					data-bs-toggle="tooltip"
 					data-bs-placement="left"
 					title="Create New NFT"

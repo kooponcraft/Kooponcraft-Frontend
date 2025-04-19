@@ -26,7 +26,7 @@ const RareToken = async() => {
                             <div className="token-name-wrapper">WONDERLAND TOKEN</div>
                             <h3 className="mb-3">🌟 Exclusive Rare Token Alert!</h3>
                             <p className="mb-4">
-                                Here's your chance to win this exclusive limited edition coupon
+                                Here&apos;s your chance to win this exclusive limited edition coupon
                                 token! Play our Coupon Match game to win this rare token.
                             </p>
                             <div className="points-badge mb-3">

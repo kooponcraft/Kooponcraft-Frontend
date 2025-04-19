@@ -24,7 +24,7 @@ const HeroAreaHomeTwo = async () => {
 									data-aos-duration="750"
 									data-aos-delay="500"
 								>
-									Imagine you get a coupon for a free cup of coffee. With KooponCraft, you could redeem that for your drink—or, if coffee isn't your thing, you could sell it to someone else who really wants it. The possibilities are endless.
+									Imagine you get a coupon for a free cup of coffee. With KooponCraft, you could redeem that for your drink—or, if coffee isn&apos;t your thing, you could sell it to someone else who really wants it. The possibilities are endless.
 								</p>
 								<Link
 									className={`btn ${ user ? "btn-primary" : "btn-warning" } rounded-pill`}

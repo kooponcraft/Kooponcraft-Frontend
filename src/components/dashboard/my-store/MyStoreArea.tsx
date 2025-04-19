@@ -29,35 +29,35 @@ export default function MyStoreArea() {
   const [toastVariant, setToastVariant] = useState<'success' | 'danger'>('success');
 
   useEffect(() => {
+    const loadTransactions = async () => {
+      try {
+        setLoading(true);
+        const data = await getStoreTransactions()
+        
+        if (data?.success) {
+          if (data.purchases && data.purchases.length > 0) {
+            setPurchases(data.purchases);
+            setStoreSummary({
+              totalSales: data.totalSales,
+              totalItems: data.totalItems,
+              totalTransactions: data.totalTransactions,
+              highestBuyer: data.highestBuyer
+            });
+          }
+        } else {
+          setError('No transactions found');
+        }
+      } catch (err) {
+        console.error('Error fetching transactions:', err);
+        setError('Error fetching transactions');
+        showNotification('Failed to load transactions', 'danger');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     loadTransactions();
   }, []);
-
-  const loadTransactions = async () => {
-    try {
-      setLoading(true);
-      const data = await getStoreTransactions()
-      
-      if (data?.success) {
-        if (data.purchases && data.purchases.length > 0) {
-          setPurchases(data.purchases);
-          setStoreSummary({
-            totalSales: data.totalSales,
-            totalItems: data.totalItems,
-            totalTransactions: data.totalTransactions,
-            highestBuyer: data.highestBuyer
-          });
-        }
-      } else {
-        setError('No transactions found');
-      }
-    } catch (err) {
-      console.error('Error fetching transactions:', err);
-      setError('Error fetching transactions');
-      showNotification('Failed to load transactions', 'danger');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const showNotification = (message: string, variant: 'success' | 'danger') => {
     setToastMessage(message);
@@ -68,7 +68,7 @@ export default function MyStoreArea() {
   return (
     <>
        <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/create-new"
+        <Link className="shadow-lg btn btn-warning" href="/collection/create"
           data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
           <i className="fz-18 bi bi-plus-lg"></i>
         </Link>

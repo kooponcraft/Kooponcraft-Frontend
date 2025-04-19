@@ -1,5 +1,6 @@
 'use client';
 
+import AppImage from '@/components/common/AppImage';
 import { getStoreItems } from '@/lib/getStoreItems';
 import { useState, useEffect } from 'react';
 import { 
@@ -79,7 +80,7 @@ export default function MyStoreItems() {
                       <Card className="nft-card shadow-sm">
                         <Card.Body>
                           <div className="img-wrap">
-                            <img 
+                            <AppImage 
                               src={item.tokenImageUrl} 
                               alt={item.tokenName}
                               style={{ width: '100%', height: 'auto' }}
@@ -90,7 +91,7 @@ export default function MyStoreItems() {
                             <Col xs={8}>
                               <div className="name-info d-flex align-items-center">
                                 <div className="author-img position-relative">
-                                  <img className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
+                                  <AppImage className="shadow" src="/assets/img/bg-img/u2.jpg" alt="" />
                                   <i className="bi bi-check position-absolute bg-success"></i>
                                 </div>
                                 <div className="name-author">
