@@ -39,7 +39,7 @@ export default function CreateNewArea() {
                 <div className="tab-pane fade show active">
                   <Card>
                     <Card.Body className="p-3 p-sm-5">
-                      { pathname == "/items/create" ? <ItemsForm showNotification={showNotification}/> : pathname == "/collection/create" ? <CollectionForm showNotification={showNotification}/> : notFound() }
+                      { pathname == "/items/create" ? <ItemsForm showNotification={showNotification}/> : pathname == "/collection/create" ? <CollectionForm showNotification={showNotification}/> : null }
                     </Card.Body>
                   </Card>
                 </div>
