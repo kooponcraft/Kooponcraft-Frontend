@@ -15,6 +15,7 @@ import {
 } from 'react-bootstrap';
 import { getStoreTransactions } from '@/lib/getStoreTransactions';
 import Link from 'next/link';
+import { getUser } from '@/lib/auth/getUser';
 
 export default function MyStoreArea() {
   const router = useRouter();
@@ -22,6 +23,15 @@ export default function MyStoreArea() {
   const [purchases, setPurchases] = useState<Purchase[]>([]);
   const [storeSummary, setStoreSummary] = useState<StoreSummary | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  
+    useEffect(() => {
+      (
+        async () => {
+          setUser(await getUser())
+        }
+      )()
+    }, [])
   
   // Toast notifications
   const [showToast, setShowToast] = useState(false);
@@ -67,12 +77,14 @@ export default function MyStoreArea() {
 
   return (
     <>
-       <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/collection/create"
-          data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
-          <i className="fz-18 bi bi-plus-lg"></i>
-        </Link>
-      </div>
+      {user?.isAdmin &&  
+        <div className="create-new-button">
+          <Link className="shadow-lg btn btn-warning" href="/collection/create"
+            data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
+            <i className="fz-18 bi bi-plus-lg"></i>
+          </Link>
+        </div>
+      }
       <div className="admin-wrapper">
         <Container>
           <Row className="g-4 justify-content-center pb-4">

@@ -1,16 +1,29 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import DashboardHeader from './DashboardHeader'
 import HeaderOne from './HeaderOne'
+import adminRoutes from '@/data/adminRoutes'
+import { getUser } from '@/lib/auth/getUser'
+import dashboardRoutes from '@/data/dashboardRoutes'
 
 const Header = () => {
     const pathname = usePathname()
 
+    // const [user, setUser] = useState<User | null>(null);
+    
+    //   useEffect(() => {
+    //     (
+    //       async () => {
+    //         setUser(await getUser())
+    //       }
+    //     )()
+    //   }, [])
+
   return (
     <>
       {
-        pathname.startsWith("/dashboard") || pathname.startsWith("/live-bids") || pathname.startsWith("/my-collections") || pathname.startsWith("/my-wallet") || pathname.startsWith("/notifications") || pathname.startsWith("/settings") || pathname.startsWith("/my-transactions") || pathname.startsWith("/activity") || pathname.startsWith("/my-tokens") || pathname.startsWith("/my-store") || pathname.startsWith("/collection/create") || pathname.startsWith("/items/create") || pathname.startsWith("/swap-coupon") || pathname.startsWith("/collection") ? <DashboardHeader /> : <HeaderOne />
+        dashboardRoutes.some(route => pathname.startsWith(route)) ? <DashboardHeader /> : <HeaderOne />
       }
     </>
   )

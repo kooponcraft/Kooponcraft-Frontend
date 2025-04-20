@@ -2,6 +2,7 @@
 
 'use client'
 import AppImage from "@/components/common/AppImage";
+import { getUser } from "@/lib/auth/getUser";
 import { getCollections } from "@/lib/getCollections";
 import { mintItem } from "@/lib/mintItem";
 import { mintToken } from "@/lib/mintToken";
@@ -17,6 +18,15 @@ const MyCollectionArea = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('newest');
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  
+    useEffect(() => {
+      (
+        async () => {
+          setUser(await getUser())
+        }
+      )()
+    }, [])
   
   // Mint Token Modal State
   const [showMintModal, setShowMintModal] = useState(false);
@@ -232,9 +242,12 @@ const MyCollectionArea = () => {
 
   return (
     <>
-    <div className="create-new-button">
+    {
+      user?.isAdmin &&  
+      <div className="create-new-button">
         <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
       </div>
+    }
       <div className="admin-wrapper">
         <Container fluid className="px-4">
           <div className="collections-header mb-4">

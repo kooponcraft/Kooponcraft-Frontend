@@ -1,7 +1,9 @@
 'use client';
 
 import AppImage from '@/components/common/AppImage';
+import { getUser } from '@/lib/auth/getUser';
 import { getStoreItems } from '@/lib/getStoreItems';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { 
   Container, 
@@ -30,8 +32,14 @@ export default function MyStoreItems() {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [toastVariant, setToastVariant] = useState<'success' | 'danger'>('success');
-
-  useEffect(() => {
+  const [user, setUser] = useState<User | null>(null);
+    
+    useEffect(() => {
+    (
+      async () => {
+        setUser(await getUser())
+      }
+    )()
     fetchStoreItems();
   }, []);
 
@@ -58,7 +66,13 @@ export default function MyStoreItems() {
 
   return (
     <>
-      
+      {        user?.isAdmin && (
+        <div className="create-new-button">
+          <Link className="shadow-lg btn btn-warning" href="/items/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New Item">
+            <i className="fz-18 bi bi-plus-lg"></i>
+          </Link>
+        </div>
+      )}
       <div className="admin-wrapper">
         <Container>
           <Row className="g-4 g-xl-5">

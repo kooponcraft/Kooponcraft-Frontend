@@ -3,10 +3,11 @@
 
 import AppImage from "@/components/common/AppImage";
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import live_bids_data from '@/data/live-bids-data';
 
 import dynamic from 'next/dynamic';
+import { getUser } from "@/lib/auth/getUser";
 const MyTimer = dynamic(() => import('../../common/Timer'), { ssr: false });
 
 const LivebidsArea = () => {
@@ -14,6 +15,15 @@ const LivebidsArea = () => {
   const [count, setCount] = useState(8);
   const [noMorePost, setNoMorePost] = useState(false);
   const countSlice = live_bids_data.slice(0, count);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    (
+      async () => {
+        setUser(await getUser())
+      }
+    )()
+  }, [])
 
   const handleLoadMore = () => {
     setCount(count + 4);
@@ -38,9 +48,12 @@ const LivebidsArea = () => {
 
   return (
     <>
-      <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
-      </div>
+      {
+       user?.isAdmin &&  
+        <div className="create-new-button">
+          <Link className="shadow-lg btn btn-warning" href="/collection/create" data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i></Link>
+        </div>
+      }
       <div className="admin-wrapper">
         <div className="container">
           <h5 className="mb-3">Your all live bids</h5>

@@ -11,22 +11,27 @@ import DashboardTodaysPick from "./DashboardTodaysPick";
 import DashboardTopAuthorBuyer from "./DashboardTopAuthorBuyer";
 import DashboardCouponSwap from "./DashboardCouponSwap";
 import DashboardRedeemNfts from "./DashboardRedeemNfts";
+import { getUser } from "@/lib/auth/getUser";
 
-const Dashboard = () => {
+const Dashboard = async () => {
+	const user = await getUser()
 	return (
 		<>
 			
-			<div className="create-new-button">
-				<Link
-					className="shadow-lg btn btn-warning"
-					href="/collection/create"
-					data-bs-toggle="tooltip"
-					data-bs-placement="left"
-					title="Create New NFT"
-				>
-					<i className="fz-18 bi bi-plus-lg"></i>
-				</Link>
-			</div>
+			{ 
+			user?.isAdmin &&
+				<div className="create-new-button">
+					<Link
+						className="shadow-lg btn btn-warning"
+						href="/collection/create"
+						data-bs-toggle="tooltip"
+						data-bs-placement="left"
+						title="Create New NFT"
+					>
+						<i className="fz-18 bi bi-plus-lg"></i>
+					</Link>
+				</div>
+			}
 			<div className="admin-wrapper">
 				<div className="container">
 					<div className="row g-4">
