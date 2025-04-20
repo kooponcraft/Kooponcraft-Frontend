@@ -70,12 +70,16 @@ const MyWalletArea = () => {
 
   return (
     <>
-      <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/collection/create"
-          data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
-          <i className="fz-18 bi bi-plus-lg"></i>
-        </Link>
-      </div>
+    {
+      user?.isAdmin && (
+        <div className="create-new-button">
+          <Link className="shadow-lg btn btn-warning" href="/collection/create"
+            data-bs-toggle="tooltip" data-bs-placement="left" title="Create New NFT">
+            <i className="fz-18 bi bi-plus-lg"></i>
+          </Link>
+        </div>
+      )
+    }
       <div className="admin-wrapper">
         <div className="container">
           <div className="row justify-content-center">

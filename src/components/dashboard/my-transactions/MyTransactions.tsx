@@ -1,9 +1,11 @@
+import { getUser } from '@/lib/auth/getUser'
 import { getAllTransactions } from '@/lib/getAllTransactions'
 import Link from 'next/link'
 import React from 'react'
 
 const MyTransactionsArea = async () => {
     const transactions = await getAllTransactions()
+    const user = await getUser()
     const icons = [
         { icon: '<i class="me-1 bi bi-percent"></i>', message: 'You have an offer!' },
         { icon: '<i class="bg-info me-1 bi bi-tags"></i>', message: 'Congratulations! You sold an item.' },
@@ -13,12 +15,16 @@ const MyTransactionsArea = async () => {
 
   return (
     <>
-        <div className="create-new-button">
-        <Link className="shadow-lg btn btn-warning" href="/collection/create"
-          data-bs-toggle="tooltip"
-          data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i>
-        </Link>
-        </div>
+        {
+            user?.isAdmin && (
+                <div className="create-new-button">
+                <Link className="shadow-lg btn btn-warning" href="/collection/create"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left" title="Create New NFT"><i className="fz-18 bi bi-plus-lg"></i>
+                </Link>
+                </div>
+            )
+        }
         <div className="admin-wrapper">
             <div className="container">
             <div className="row g-4 justify-content-center">
