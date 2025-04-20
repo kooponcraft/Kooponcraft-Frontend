@@ -89,6 +89,7 @@ export default function ItemDetailsPage() {
           collectionId: token.collectionId,
           applyTokenId: selectedCoupon?.split('-')[0],
           applyCollectionId: selectedCoupon?.split('-')[1],
+          tokenType: token.tokenType,
         }) : purchaseCoupon({
           tokenId: token.tokenId,
           collectionId: token.collectionId,

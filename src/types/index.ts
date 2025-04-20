@@ -22,8 +22,10 @@ interface User {
 type Collection = {
     collectionId: string;
     name: string;
+    description: string;
     collectionImageUrl?: string;
     tokens?: any[];
+    walletAddress: string;
     createdAt: string;
   };
   
@@ -44,6 +46,7 @@ interface Token {
   tokenId: string;
   collectionId: string;
   tokenName: string;
+  tokenType: string;
   tokenImageUrl: string;
   ownerName: string;
   profileImageUrl?: string;

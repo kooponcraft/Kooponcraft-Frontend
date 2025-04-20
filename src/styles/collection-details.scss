@@ -1,0 +1,85 @@
+.collection-header {
+    min-height: 300px;
+    margin-bottom: 100px;
+    // width: 100%;
+  }
+  
+  .banner-wrapper {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+  }
+  
+  .collection-info-card {
+    background: #0C153B;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
+  
+  .collection-avatar {
+    width: 130px;
+    height: 130px;
+    margin-top: -85px;
+  }
+  
+  .creator-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .collection-title {
+    color: #fff;
+  }
+  
+  .creator-link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .creator-link:hover {
+    color: #ffc107;
+  }
+  
+  @media (max-width: 768px) {
+    .collection-info-card {
+      padding: 1.5rem;
+    }
+    
+    .collection-avatar {
+      width: 100px;
+      height: 100px;
+      margin-top: -70px;
+    }
+  }
