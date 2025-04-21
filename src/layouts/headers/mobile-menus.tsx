@@ -4,6 +4,8 @@ import Link from "next/link";
 import menu_data from "./MenuData";
 import { logout } from "@/lib/auth/logout";
 import AppImage from "@/components/common/AppImage";
+import useTheme from "next-theme";
+import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 interface MobileMenusProps {
   setOpenMenu: (value: boolean) => void;
@@ -14,6 +16,7 @@ interface MobileMenusProps {
 
 const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filteredMenuData, user }) => {
   const [navTitle, setNavTitle] = useState("");
+  const { theme, toggle } = useTheme()
   //openMobileMenu
   const openMobileMenu = (menu: string) => {
     if (navTitle === menu) {
@@ -118,18 +121,40 @@ const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filter
                     <span className="position-absolute rounded-pill bg-danger text-white px-1" style={{ fontSize: 12, top: -5, left: -5 }}>{user.points}</span>
                     <AppImage src='/assets/img/core-img/coins.png' alt='coins image' width={40} height={40} />
                   </div>
-                  <button
-                    className="btn btn-danger btn-sm rounded-pill"
-                    onClick={logout}
-                  >
-                    Logout
-                  </button>
+                  <div className="d-flex">
+                    <div
+                      className="fs-2 me-3"
+                      style={{ cursor: "pointer" }}
+                      onClick={toggle}
+                    >
+                      {theme == "light" ? (
+                        <BsSunFill />
+                      ) : (
+                        <BsMoonFill />
+                      )}
+                    </div>
+                    <button
+                      className="btn btn-danger btn-sm rounded-pill"
+                      onClick={logout}
+                    >
+                      Logout
+                    </button>
+                  </div>
                 </div>
               ) : (
+                <>
+                  <div className="fs-2 me-3" style={{ cursor: "pointer" }} onClick={toggle}>
+                    {theme == "light" ? (
+                      <BsSunFill />
+                    ) : (
+                      <BsMoonFill />
+                    )}
+                  </div>
                 <div className="d-flex flex-column gap-2 align-items-stretch w-100">
                   <Link className="btn btn-outline-warning btn-sm rounded-pill" href="/login">Login</Link>
                   <Link className="btn btn-warning btn-sm rounded-pill" href="/register">Get Started</Link>
                 </div>
+              </>
               )
 
             }
