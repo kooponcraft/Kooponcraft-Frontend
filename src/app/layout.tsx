@@ -4,6 +4,7 @@ import FooterOne from "@/layouts/footers/FooterOne";
 import Header from "@/layouts/headers/Header";
 import "@/styles/index.scss";
 import { Metadata } from "next";
+import Provider from "./provider";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -66,12 +67,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark">
-      <body  suppressHydrationWarning={true}>
-        <Header />
-        {children}
-        <FooterOne />
-      </body>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <Provider>
+        <body>
+          <Header />
+          {children}
+          <FooterOne />
+        </body>
+      </Provider>
     </html>
   );
 }

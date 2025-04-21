@@ -13,6 +13,8 @@ import { getUser } from '@/lib/auth/getUser';
 import menu_data from './MenuData';
 import { logout } from '@/lib/auth/logout';
 import { getStores } from '@/lib/getStores';
+import { BsMoonFill, BsSunFill } from 'react-icons/bs';
+import useTheme from 'next-theme';
 
 
 const HeaderOne = () => {
@@ -21,6 +23,7 @@ const HeaderOne = () => {
   const [openMenu, setOpenMenu] = useState(false)
   const [user, setUser] = useState<User | null>(null);
   const [filteredMenuData, setFilteredMenuData] = useState(menu_data);
+  const { theme, toggle } = useTheme()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,6 +116,18 @@ const HeaderOne = () => {
                     </div>
                   )
                 } */}
+
+                <div
+                  className="fs-2 me-3"
+                  style={{ cursor: "pointer" }}
+                  onClick={toggle}
+                >
+                  {theme == "light" ? (
+                    <BsSunFill />
+                  ) : (
+                    <BsMoonFill />
+                  )}
+                </div>
 
                 {
                   user ? (

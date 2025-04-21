@@ -10,6 +10,8 @@ import { logout } from "@/lib/auth/logout";
 import { getUser } from "@/lib/auth/getUser";
 import { getUserBalance } from "@/lib/getUserBalance";
 import { usePathname } from "next/navigation";
+import useTheme from "next-theme";
+import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 const AdminNav = [
   {
@@ -75,6 +77,7 @@ const DashboardHeader = () => {
   const pathname = usePathname()
   const [user, setUser] = useState<User | null>(null)
   const [balance, setBalance] = useState<any>()
+  const { theme, toggle } = useTheme()
 
   const [isActive, setActive] = useState(false);
 
@@ -107,9 +110,21 @@ const DashboardHeader = () => {
                 <input className="form-control" type="text" placeholder="Search" />
                 <button className="position-absolute" type="submit"><i className="bi bi-search"></i></button>
               </div>
+
             </div>
 
             <div className="header-meta d-flex align-items-center">
+              <div
+                className="fs-2 me-3"
+                style={{ cursor: "pointer" }}
+                onClick={toggle}
+              >
+                {theme == "light" ? (
+                  <BsSunFill />
+                ) : (
+                  <BsMoonFill />
+                )}
+              </div>
               <div onClick={handleToggle} className="menu-toggler ms-2 ms-sm-3" id="dashboardMenuTrigger">
                 <i className="bi bi-list"></i>
               </div>
