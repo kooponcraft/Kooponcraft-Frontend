@@ -3,12 +3,15 @@ import Error from "@/components/error";
 import { getUser } from "@/lib/auth/getUser";
 import React from "react";
 
-const user = await getUser();
-export const metadata = {
-    title: `${ !user?.isAdmin ? "404" : "My Store" } - Kooponcraft`,
+export async function generateMetadata() {
+    const user = await getUser();
+    return {
+        title: `${ !user?.isAdmin ? "404" : "My Store" } - Kooponcraft`,
+    }
 };
 
-const index = () => {
+const index = async () => {
+    const user = await getUser();
     if (!user?.isAdmin) {
 		return <Error />
 	}

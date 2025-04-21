@@ -1,4 +1,4 @@
-
+export const runtime = "nodejs";
 
 import FooterOne from "@/layouts/footers/FooterOne";
 import Header from "@/layouts/headers/Header";

@@ -3,9 +3,9 @@ import Error from "@/components/error";
 import { getUser } from "@/lib/auth/getUser";
 import React from "react";
 
-const user = await getUser();
 
 export async function generateMetadata({ params }: any) {
+	const user = await getUser();
 	const { slug } = await params
 
 	if (!user?.isAdmin) {
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: any) {
   }
 
 const index = async ({ params }: any) => {
+	const user = await getUser();
 	const { slug } = await params
 
 	if (!user?.isAdmin) {

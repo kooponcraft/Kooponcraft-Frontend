@@ -15,9 +15,10 @@ export async function generateMetadata({ params }: {
 }
 
 
-const Index = async ({ params }: { params: { item: string } }) => {
+const Index = async ({ params }: { params: Promise<{ item: string }> }) => {
+  const { item } = await params
   const stores = await getStores()
-  const username = stores.find((store: any) => (store.username as string).split(" ")[0].toLowerCase() == params.item)?.username
+  const username = stores.find((store: any) => (store.username as string).split(" ")[0].toLowerCase() == item)?.username
 
   if (!username) {
     return <Error />

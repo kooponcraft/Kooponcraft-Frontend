@@ -28,14 +28,15 @@ const HeaderOne = () => {
   useEffect(() => {
     const fetchData = async () => {
       const fetchedUser = await getUser();
-      const stores = await getStores()
       setUser(fetchedUser);
-      setFilteredMenuData(
+      const filteredData = await Promise.all(
         menu_data.filter((item) =>
           fetchedUser
             ? item.isAuthenticated === true || item.isAuthenticated === undefined
             : item.isAuthenticated === false || item.isAuthenticated === undefined
-        ).map((item) => {
+        ).map(async (item) => {
+          if(!fetchedUser) return item;
+          const stores = await getStores();
           if (item.id === 8) {
             item.sub_menus = stores.length < 1 ? [{
               title: "No Stores Available",
@@ -48,7 +49,8 @@ const HeaderOne = () => {
           return item;
         })
       );
-    };
+      setFilteredMenuData(filteredData);
+  };
 
     fetchData();
   }, []);
