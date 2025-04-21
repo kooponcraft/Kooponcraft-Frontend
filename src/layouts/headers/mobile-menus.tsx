@@ -5,7 +5,7 @@ import menu_data from "./MenuData";
 import { logout } from "@/lib/auth/logout";
 import AppImage from "@/components/common/AppImage";
 import useTheme from "next-theme";
-import { BsSunFill, BsMoonFill } from "react-icons/bs";
+import { BsSunFill, BsMoonFill, BsFire } from "react-icons/bs";
 
 interface MobileMenusProps {
   setOpenMenu: (value: boolean) => void;
@@ -123,7 +123,7 @@ const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filter
                   </div>
                   <div className="d-flex">
                     <div
-                      className="fs-2 me-3"
+                      className="fs-3 me-3"
                       style={{ cursor: "pointer" }}
                       onClick={toggle}
                     >
@@ -132,6 +132,12 @@ const MobileMenus: React.FC<MobileMenusProps> = ({ setOpenMenu, openMenu, filter
                       ) : (
                         <BsMoonFill />
                       )}
+                    </div>
+                    <div className="position-relative me-3">
+                      <BsFire className='fs-1 text-danger' />
+                      <span className="position-absolute start-50 text-white user-select-none translate-middle-x" style={{ fontSize: 16, fontWeight: 700, bottom: 2 }}>
+                        {user.currentStreak}
+                      </span>
                     </div>
                     <button
                       className="btn btn-danger btn-sm rounded-pill"

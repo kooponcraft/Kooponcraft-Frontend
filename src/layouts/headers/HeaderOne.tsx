@@ -13,7 +13,7 @@ import { getUser } from '@/lib/auth/getUser';
 import menu_data from './MenuData';
 import { logout } from '@/lib/auth/logout';
 import { getStores } from '@/lib/getStores';
-import { BsMoonFill, BsSunFill } from 'react-icons/bs';
+import { BsFire, BsMoonFill, BsSunFill } from 'react-icons/bs';
 import useTheme from 'next-theme';
 
 
@@ -120,7 +120,7 @@ const HeaderOne = () => {
                 } */}
 
                 <div
-                  className="fs-2 me-3"
+                  className="fs-3 me-3"
                   style={{ cursor: "pointer" }}
                   onClick={toggle}
                 >
@@ -134,18 +134,12 @@ const HeaderOne = () => {
                 {
                   user ? (
                     <>
-                        {/* STREAK */}
-                        {/* <div className="position-relative">
-                          <AppImage
-                            src="/assets/img/core-img/fire.png"
-                            alt="streak icon"
-                            width={40}
-                            height={40}
-                          />
-                          <span className="position-absolute start-50 text-white translate-middle-x" style={{ fontSize: 20, fontWeight: 700, bottom: 2 }}>
-                            {user.currentStreak}
-                          </span>
-                        </div> */}
+                      <div className="position-relative">
+                        <BsFire className='fs-2 text-danger' />
+                        <span className="position-absolute start-50 text-white user-select-none translate-middle-x" style={{ fontSize: 16, fontWeight: 700, bottom: 0 }}>
+                          {user.currentStreak}
+                        </span>
+                      </div>
                       <div className="position-relative ms-3">
                         <span className="position-absolute rounded-pill bg-danger text-white px-1" style={{fontSize: 12, top: -5, left: -5}}>{user.points}</span>
                         <AppImage src='/assets/img/core-img/coins.png' alt='coins image' width={40} height={40} />
