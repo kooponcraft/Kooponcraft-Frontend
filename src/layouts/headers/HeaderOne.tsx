@@ -80,7 +80,7 @@ const HeaderOne = () => {
           <div className="container">
 
             <Link className="navbar-brand" style={{width: "170px"}} href="/">
-              <AppImage className="light-logo" src="/assets/img/core-img/logo.png" alt="" />
+              <AppImage className="light-logo" src="/assets/img/core-img/logo-white.png" alt="" />
               <AppImage className="dark-logo" src="/assets/img/core-img/logo-white.png" alt="" />
 
             </Link>

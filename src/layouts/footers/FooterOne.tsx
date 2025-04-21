@@ -73,7 +73,7 @@ const FooterOne = () => {
 										<Link className="d-block mb-4" style={{width: "170px"}} href="/">
 											<AppImage
 												className="light-logo"
-												src="/assets/img/core-img/logo.png"
+												src="/assets/img/core-img/logo-white.png"
 												alt=""
 											/>
 											<AppImage
