@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import Breadcrumb from "../common/Breadcrumb";
 import Divider from "../common/Divider";
@@ -11,7 +11,9 @@ const ExploreTwo = () => {
 			
 			<Breadcrumb title="Explore" subtitle="Explore Items" />
 			<Divider />
-			<ExploreItems />
+			<Suspense fallback={<div></div>}>
+				<ExploreItems />
+			</Suspense>
 			<Divider />
 			
 		</>

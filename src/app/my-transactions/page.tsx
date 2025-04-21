@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import MyTransactions from "@/components/dashboard/my-transactions";
 import React from "react";
 
