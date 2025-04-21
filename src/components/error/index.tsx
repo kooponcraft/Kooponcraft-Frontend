@@ -17,7 +17,7 @@ const Error = () => {
 						<div className="col-12 col-sm-10 col-md-9 col-lg-6">
 							<AppImage
 								className="mb-5"
-								src="/assets/img/illustrator/6.png"
+								src="/assets/img/koopon-logo.png"
 								alt=""
 							/>
 							<h2>Uh oh! Nothing found.</h2>
